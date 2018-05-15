@@ -3,9 +3,11 @@
   "name": "Generation Health Medical Clinic",
   "latitude": "53.374805",
   "longitude": "-6.363206",
-  "doctors": 5,
-  "nurses": 2,
-  "consultants": 9,
+  "staff": {
+    "doctors": 5,
+    "nurses": 2,
+    "consultants": 9
+  },
   "department": [
     "General Medical Care",
     "Antenatal Care",
@@ -26,9 +28,11 @@
   "name": "The Gables Medical Centre",
   "latitude": "53.292195",
   "longitude": "-6.267867",
-  "doctors": 0,
-  "nurses": 0,
-  "consultants": 0,
+  "staff": {
+    "doctors": 0,
+    "nurses": 0,
+    "consultants": 0
+  },
   "department": [
     "General Medical Care",
     "Antenatal Care",
@@ -49,9 +53,11 @@
   "name": "Dame Street Medical Centre",
   "latitude": "53.344039",
   "longitude": "-6.2651859",
-  "doctors": 0,
-  "nurses": 5,
-  "consultants": 5,
+  "staff": {
+    "doctors": 0,
+    "nurses": 5,
+    "consultants": 5
+  },
   "department": [
     "General Medical Care",
     "Sexual Health",
@@ -71,9 +77,11 @@
   "name": "Clane Hospital",
   "latitude": "53.2894759",
   "longitude": "-6.70087",
-  "doctors": 10,
-  "nurses": 5,
-  "consultants": 2,
+  "staff": {
+    "doctors": 10,
+    "nurses": 5,
+    "consultants": 2
+  },
   "department": [
     "Bone Density (DXA) Scanning",
     "C Urea Breath Testing",
@@ -91,9 +99,11 @@
   "name": "Mercer's Medical Centre",
   "latitude": "53.3406686",
   "longitude": "-6.2637945",
-  "doctors": 6,
-  "nurses": 6,
-  "consultants": 10,
+  "staff": {
+    "doctors": 6,
+    "nurses": 6,
+    "consultants": 10
+  },
   "department": [
     "Family Medicine",
     "Antenatal Care",
@@ -114,9 +124,11 @@
   "name": "Talbot St Medical Centre",
   "latitude": "53.3504362",
   "longitude": "-6.256053",
-  "doctors": 7,
-  "nurses": 5,
-  "consultants": 3,
+  "staff": {
+    "doctors": 7,
+    "nurses": 5,
+    "consultants": 3
+  },
   "department": [
     "Family Medicine",
     "Antenatal Care",
@@ -137,9 +149,11 @@
   "name": "Custom House Square Medical Centre",
   "latitude": "53.3494447",
   "longitude": "-6.2446355",
-  "doctors": 2,
-  "nurses": 6,
-  "consultants": 8,
+  "staff": {
+    "doctors": 2,
+    "nurses": 6,
+    "consultants": 8
+  },
   "department": [
     "Personal Medical",
     "Corporate Medical",
@@ -160,9 +174,11 @@
   "name": "Charter Medical",
   "latitude": "53.349634",
   "longitude": "-6.278271",
-  "doctors": 1,
-  "nurses": 1,
-  "consultants": 2,
+  "staff": {
+    "doctors": 1,
+    "nurses": 1,
+    "consultants": 2
+  },
   "department": [
     "Elderly Clinic",
     "Minor injuries Clinic",
@@ -178,9 +194,11 @@
   "name": "Walk-In Clinic",
   "latitude": "53.3263112",
   "longitude": "-6.2648058",
-  "doctors": 9,
-  "nurses": 1,
-  "consultants": 6,
+  "staff": {
+    "doctors": 9,
+    "nurses": 1,
+    "consultants": 6
+  },
   "department": [
     "General Medical Care"
   ]
@@ -190,9 +208,11 @@
   "name": "Aungier Street Clinic",
   "latitude": "53.3378396",
   "longitude": "-6.2661283",
-  "doctors": 6,
-  "nurses": 0,
-  "consultants": 10,
+  "staff": {
+    "doctors": 6,
+    "nurses": 0,
+    "consultants": 10
+  },
   "department": [
     "General Medical Care",
     "Antenatal Care",
@@ -207,4 +227,5 @@
     "Vaccinations",
     "Cryotherapy"
   ]
-}]
+}
+]
