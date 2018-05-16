@@ -1,21 +1,33 @@
 queue()
-        .defer(d3.json, "data/clinics.json")
+        .defer(d3.csv, "data/clinics.csv")
         .await(makeGraphs);
+
 
 //*************************************************************************************************
 // Cross filter Function   
 function makeGraphs(error, clinicData){
+        var data = clinicData; // Puts my data into console, so I can drill-down through it and find stuff.
         var ndx = crossfilter(clinicData);
-
-        show_staff_balance(ndx);
+        console.log(data);
+        
+        data = 
+        show_staff_balance_1(ndx);
+        
 
         dc.renderAll();
 
 }
 
-function show_staff_balance(ndx){
-        var dim = ndx.dimension(dc.pluck('staff'));
+//*************************************************************************************************
+// Balance of staff member types to each clinic (doctors, nurses & consultants) 
+
+function show_staff_balance_1(ndx){
+        
+        var dim = ndx.dimension(dc.pluck([].doctors)
+      
+        
         var group = dim.group();
+       
 
         dc.barChart("#staff-profile")
                 .width(350)
@@ -28,6 +40,7 @@ function show_staff_balance(ndx){
                 .xUnits(dc.units.ordinal)
                 .xAxisLabel("Staff")
                 .yAxisLabel("Number of Staff")
-                .yAxis().ticks(20);
+                .yAxis().ticks(10);
 
 }
+
