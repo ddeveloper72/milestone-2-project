@@ -6,30 +6,34 @@ queue()
 //*************************************************************************************************
 // Cross filter Function   
 function makeGraphs(error, clinicData){
-        var data = clinicData; // Puts my data into console, so I can drill-down through it and find stuff.
-        var ndx = crossfilter(clinicData);
-        console.log(data);
-        
-        data = 
-        show_staff_balance_1(ndx);
-        
-
-        dc.renderAll();
-
-}
+       var ndx = crossfilter(clinicData);
+       
+       show_facility_type_selector(ndx);
+       show_facility_type(ndx);       
+       
+       dc.renderAll();
+        }
 
 //*************************************************************************************************
-// Balance of staff member types to each clinic (doctors, nurses & consultants) 
+// Medical facility selector switch (shows number of facilities in the dropdown)
 
-function show_staff_balance_1(ndx){
-        
-        var dim = ndx.dimension(dc.pluck([].doctors)
-      
-        
+        function show_facility_type_selector(ndx){
+        dim = ndx.dimension(dc.pluck('type'));
+        group = dim.group()
+        dc.selectMenu("#service_type_selector")
+                .dimension(dim)
+                .group(group);
+        }
+
+
+//*************************************************************************************************
+// Count of all the medical facilities in a bar chart 
+    
+function show_facility_type(ndx) {
+        var dim = ndx.dimension(dc.pluck('type'));
         var group = dim.group();
-       
-
-        dc.barChart("#staff-profile")
+        
+        dc.barChart("#facility_type")
                 .width(350)
                 .height(250)
                 .margins({top: 10, right: 50, bottom: 30, left: 50})
@@ -38,9 +42,8 @@ function show_staff_balance_1(ndx){
                 .transitionDuration(500)
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
-                .xAxisLabel("Staff")
-                .yAxisLabel("Number of Staff")
+                .xAxisLabel("Facility Type")
+                .yAxisLabel("Different Facilities")
                 .yAxis().ticks(10);
 
 }
-
