@@ -25,9 +25,7 @@
 .custom_chart {
     margin-bottom: 40px;
 }
-div#services_map1 {
+div#map {
     min-height: 360px;
-}
-div#services_map2 {
-    min-height: 360px;
+    max-width: 600px;
 }
