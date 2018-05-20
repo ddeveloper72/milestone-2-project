@@ -3,59 +3,6 @@ queue()
         .defer(d3.json, "data/clinics.json")
         .await(makeGraphs);
         
-//*************************************************************************************************
-// Map Function   
-        function initMap() {
-                var map = new google.maps.Map(document.getElementById("services_map"), {
-                    zoom: 4,
-                    center: {
-                        lat: 53.275688,
-                        lng: -6.548086
-                    }
-                })
-                var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                //var locations = [
-                //    { lat: 53.374805, lng: -6.363206 },
-                //    { lat: 53.292195, lng: -6.267867 },
-                //    { lat: 53.344039, lng: -6.2651859 },
-                //    { lat: 53.2894759, lng: -6.70087 },
-                //    { lat: 53.3406686, lng: -6.2637945 },
-                //    { lat: 53.3504362, lng: -6.256053 },
-                //    { lat: 53.3352058, lng: -6.2503739 },
-                //    { lat: 53.3494447, lng: -6.2446355 },
-                //    { lat: 53.349634, lng: -6.278271 },
-                //    { lat: 53.3263112, lng: -6.2648058 },
-                //    { lat: 53.3378396, lng: -6.2661283 },
-                //    { lat: 53.3354127, lng: -6.2944968 }
-                //]
-               function csvToArray(csvString){
-                       var locations = [];
-                       var csvRows = csvString.split(/\n/);
-                       var csvHeaders = csvRows.shift().split(',');
-
-                       for (var rowIndex = 0; rowIndex < csvRows.length; ++rowIndex){
-                               var rowArray = csvRows[rowIndex].split(',');
-                               var rowObject = locations[rowIndex].split(',');
-
-                               for (var peopIndex = 0; propIndex < rowArray.length; ++propIndex){
-                                       var propValue = rowArray[propIndex];
-                                       var propLabel = csvHeaders[propIndex];
-                                       rowObject[proplabel.trim()] = propValue;
-                               }
-                       }
-                       return locations;
-                       
-               
-
-                var markers = locations.map(function(locations, i) {
-                    return new google.maps.Marker({
-                        position: locations,
-                        label: labels[i % labels.length]
-                    });
-                });
-                var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' })
-            } }           
-
 
 //*************************************************************************************************
 // Cross filter Function   
