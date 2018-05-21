@@ -29,3 +29,20 @@ div#map {
     min-height: 360px;
     max-width: 600px;
 }
+
+div#map2 {
+    min-height: 360px;
+    max-width: 600px;
+}
+.dc-chart g.axis text {
+  
+    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+}
+.dc-chart g.axis text span::before {
+    content: "\A";
+    white-space: pre;
+  }

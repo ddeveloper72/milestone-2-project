@@ -1,9 +1,8 @@
 queue()
         .defer(d3.csv, "data/clinics.csv")
-        .defer(d3.json, "data/clinics.json")
+        //.defer(d3.json, "data/clinics.json")
         .await(makeGraphs);
         
-
 //*************************************************************************************************
 // Cross filter Function   
 function makeGraphs(error, clinicData){
@@ -18,7 +17,7 @@ function makeGraphs(error, clinicData){
        show_facility_type(ndx);
        show_facility_name(ndx);
        show_number_staff(ndx);
-       //show_patient_numbers(ndx)       
+       show_average_waiting_time(ndx);       
              
        
        dc.renderAll();
@@ -75,6 +74,7 @@ function show_number_staff(ndx){
         var doctors_dim = ndx.dimension(dc.pluck('name'));
         var nurses_dim = ndx.dimension(dc.pluck('name'));
         var counsellors_dim = ndx.dimension(dc.pluck('name'));
+        
         var number_of_doctors = doctors_dim.group().reduceSum(dc.pluck('staff/doctors'));
         var number_of_nurses = nurses_dim.group().reduceSum(dc.pluck('staff/nurses'));
         var number_of_counsellors = counsellors_dim.group().reduceSum(dc.pluck('staff/counsellor'));
@@ -92,29 +92,49 @@ function show_number_staff(ndx){
                .x(d3.scale.ordinal())
                .xUnits(dc.units.ordinal)
                .xAxisLabel("Facilities")
-               .yAxisLabel("Doctors")
+               .yAxisLabel("Staff")
                .yAxis().ticks(10);
                
 }
 //*************************************************************************************************
-// Number of patients visited
+// Patient waiting time
+function show_average_waiting_time(ndx) {
 
-//function show_patient_numbers(ndx) {
-//
-//var date_dim = ndx.dimension(dc.pluck('date'));
-//var patients_per_day = date_dim.group().reduceSum(dc.pluck('name'));
-//
-//var minDate = date_dim.bottom(1)[0].date;
-//var maxDate = date_dim.top(1)[0].date;
-//
-//dc.lineChart("#number_patients")
-//.width(1000)
-//.height(300)
-//.margins({top: 10, right: 50, bottom: 30, left: 50})
-//.dimension(date_dim)
-//.group(patients_per_day)
-//.transitionDuration(500)
-//.x(d3.time.scale().domain([minDate, maxDate]))
-//.xAxisLabel("month")
-//.yAxis().tics(4);
-//}
+        var time_dim = ndx.dimension(dc.pluck('days'));
+
+        waiting_times_per_day = time_dim.group().reduceSum(dc.pluck('days'));
+
+                function add_item(p, v){
+                        p.count++;
+                        p.total += v.days;
+                        p.average = p.total / p.days;
+                        return p;
+                }
+                function remove_item(p, v){
+                        p.count--;
+                        if(p.count == 0){
+                                p.total -=v.days;
+                                p.average = p.total / p.count;
+                                return p;
+                        }
+                }
+                function initialise(){
+                        return {count:0, total:0, average:0}
+                }
+                var averageWaitingTimesPerDay = dim.group().reduce(add_item, remove_item, initialise);
+
+        dc.lineChart("#ave_waiting_times")
+                .width(1000)
+                .height(300)
+                .margins({top: 10, right: 50, bottom: 30, left: 50})
+                .dimension(time_dim)
+                .group(averageWaitingTimesPerDay)
+                .valueAccessor(function(d){
+                        return d.value.average
+                })
+                .transitionDuration(500)
+                .xUnits(dc.units.ordinal)
+                .xAxisLabel("Times of Day")
+                .yAxisLabel("Waiting times")
+                .yAxis().ticks(5);
+}

@@ -1,5 +1,6 @@
 //*************************************************************************************************
-// Map Function  
+// Map Function  This code snipet was adapted from stack overflow, "Loading latitude longitude
+// data using Google maps API using CSV data"
 $.get('data/clinics.csv', function(data){
     function initialize() {
                 var bounds = new google.maps.LatLngBounds();
@@ -9,7 +10,7 @@ $.get('data/clinics.csv', function(data){
                 var map = new google.maps.Map(document.getElementById("map"), mapOptions);
                 map.setTilt(45);                  
                 
-                //var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                
                 var markers = [];
                 
                 
