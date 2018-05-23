@@ -13,18 +13,17 @@ var data = 1
 function makeGraphs(error, clinicData){
        // localStorage.setItem("error", JSON.stringify(error));
        // 
-       localStorage.setItem("clinicData", JSON.stringify(clinicData));
-       var get_data = localStorage.getItem("clinicData");
-       data = JSON.parse(clinicData);  //data - i could choose any name.
-        //var ndx = crossfilter(clinicData);
+       // localStorage.setItem("clinicData", JSON.stringify(clinicData));
+       // var get_data = localStorage.getItem("clinicData");
+       // data = JSON.parse(clinicData);  //data - i could choose any name.
+       // var ndx = crossfilter(clinicData);
        // 
-       var ndx = data;
        show_facility_type_selector(ndx);
-       //show_facility_type(ndx);
-       //show_facility_name(ndx);
-       //show_number_staff(ndx);
-       //show_average_waiting_time(ndx);       
-       //data = ndx; 
+       show_facility_type(ndx);
+       show_facility_name(ndx);
+       show_number_staff(ndx);
+       show_average_waiting_time(ndx);       
+       data = clinicData; 
         
        
         //dc.renderAll();
@@ -39,15 +38,15 @@ function makeGraphs(error, clinicData){
 
 //*************************************************************************************************
 // Medical facility selector switch (shows number of facilities in the dropdown)
-        function show_facility_type_selector(ndx){
-
-                     
-        dim = ndx.dimension(dc.pluck('type'));
-        group = dim.group()
-        dc.selectMenu("#service_type_selector")
-                .dimension(dim)
-                .group(group);
-        }
+//        function show_facility_type_selector(ndx){
+//
+//                     
+//        dim = ndx.dimension(dc.pluck('type'));
+//        group = dim.group()
+//        dc.selectMenu("#service_type_selector")
+//                .dimension(dim)
+//                .group(group);
+//        }
 ////*************************************************************************************************
 // Medical facility name selector switch (shows specific facility in the dropdown)
 //

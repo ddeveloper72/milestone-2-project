@@ -1,1370 +1,1334 @@
 {
-   "1": {
+  "1": {
       "name": "Generation Health Medical Clinic",
       "lat": 53.374805,
       "long": -6.363206,
       "staff": {
-         "doctors": 3,
-         "nurses": 1,
-         "counsellor": 1
+        "doctors": 3,
+        "nurses": 1,
+        "counsellor": 1
       },
       "department": [
-         "General Medical Care",
-         "Antenatal Care",
-         "Children's Care",
-         "Family Planning",
-         "Women's Health",
-         "Men's Health",
-         "Mental Health",
-         "Preventative Health and Promotion",
-         "Travel Health",
-         "Medicals",
-         "Vaccinations",
-         "Dermatology"
+        "General Medical Care",
+        "Antenatal Care",
+        "Children's Care",
+        "Family Planning",
+        "Women's Health",
+        "Men's Health",
+        "Mental Health",
+        "Preventative Health and Promotion",
+        "Travel Health",
+        "Medicals",
+        "Vaccinations",
+        "Dermatology"
       ],
       "services": 12,
       "type": "Clinic",
-      "Mon": {
-         "8-9am": 4,
-         "9-10am": 25,
-         "10-11am": 10,
-         "11-12pm": 29,
-         "12-1pm": 20,
-         "1-2pm": 38,
-         "2-3pm": 23,
-         "3-4pm": 35,
-         "4-5pm": 22,
-         "5-6pm": 27
-      },
-      "Tue": {
-         "8-9am": 2,
-         "9-10am": 29,
-         "10-11am": 11,
-         "11-12pm": 17,
-         "12-1pm": 39,
-         "1-2pm": 36,
-         "2-3pm": 29,
-         "3-4pm": 40,
-         "4-5pm": 23,
-         "5-6pm": 25
-      },
-      "Wed": {
-         "8-9am": 7,
-         "9-10am": 30,
-         "10-11am": 20,
-         "11-12pm": 22,
-         "12-1pm": 25,
-         "1-2pm": 24,
-         "2-3pm": 21,
-         "3-4pm": 35,
-         "4-5pm": 36,
-         "5-6pm": 22
-      },
-      "Thu": {
-         "8-9am": 3,
-         "9-10am": 15,
-         "10-11am": 15,
-         "11-12pm": 31,
-         "12-1pm": 24,
-         "1-2pm": 25,
-         "2-3pm": 25,
-         "3-4pm": 36,
-         "4-5pm": 39,
-         "5-6pm": 28
-      },
-      "Fri": {
-         "8-9am": 15,
-         "9-10am": 23,
-         "10-11am": 30,
-         "11-12pm": 11,
-         "12-1pm": 23,
-         "1-2pm": 34,
-         "2-3pm": 27,
-         "3-4pm": 40,
-         "4-5pm": 26,
-         "5-6pm": 29
-      },
-      "Sat": {
-         "8-9am": 5,
-         "9-10am": 26,
-         "10-11am": 20,
-         "11-12pm": 13,
-         "12-1pm": 35,
-         "1-2pm": 24,
-         "2-3pm": 20,
-         "3-4pm": 38,
-         "4-5pm": 34,
-         "5-6pm": 20
-      },
-      "date": {
-         "Sun 01": [],
-         "Mon 02": [],
-         "Tue 03": [],
-         "Wed 04": [],
-         "Thu 05": [],
-         "Fri 06": [],
-         "Sat 07": [],
-         "Sun 08": [],
-         "Mon 09": [],
-         "Tue 10": [],
-         "Wed 11": [],
-         "Thu 12": [],
-         "Fri 13": [],
-         "Sat 14": []
-      }
-   },
-   "2": {
+      "days": [{
+          "Mon": {
+            "8-9am": 4,
+            "9-10am": 25,
+            "10-11am": 10,
+            "11-12pm": 29,
+            "12-1pm": 20,
+            "1-2pm": 38,
+            "2-3pm": 23,
+            "3-4pm": 35,
+            "4-5pm": 22,
+            "5-6pm": 27
+          }
+        },
+        {
+          "Tue": {
+            "8-9am": 2,
+            "9-10am": 29,
+            "10-11am": 11,
+            "11-12pm": 17,
+            "12-1pm": 39,
+            "1-2pm": 36,
+            "2-3pm": 29,
+            "3-4pm": 40,
+            "4-5pm": 23,
+            "5-6pm": 25
+          }
+        },
+        {
+          "Wed": {
+            "8-9am": 7,
+            "9-10am": 30,
+            "10-11am": 20,
+            "11-12pm": 22,
+            "12-1pm": 25,
+            "1-2pm": 24,
+            "2-3pm": 21,
+            "3-4pm": 35,
+            "4-5pm": 36,
+            "5-6pm": 22
+          }
+        },
+        {
+          "Thu": {
+            "8-9am": 3,
+            "9-10am": 15,
+            "10-11am": 15,
+            "11-12pm": 31,
+            "12-1pm": 24,
+            "1-2pm": 25,
+            "2-3pm": 25,
+            "3-4pm": 36,
+            "4-5pm": 39,
+            "5-6pm": 28
+          }
+        },
+        {
+          "Fri": {
+            "8-9am": 15,
+            "9-10am": 23,
+            "10-11am": 30,
+            "11-12pm": 11,
+            "12-1pm": 23,
+            "1-2pm": 34,
+            "2-3pm": 27,
+            "3-4pm": 40,
+            "4-5pm": 26,
+            "5-6pm": 29
+          }
+        },
+        {
+          "Sat": {
+            "8-9am": 5,
+            "9-10am": 26,
+            "10-11am": 20,
+            "11-12pm": 13,
+            "12-1pm": 35,
+            "1-2pm": 24,
+            "2-3pm": 20,
+            "3-4pm": 38,
+            "4-5pm": 34,
+            "5-6pm": 20
+          }
+        }
+      ]
+    },
+    "2": {
       "name": "The Gables Medical Centre",
       "lat": 53.292195,
       "long": -6.267867,
       "staff": {
-         "doctors": 2,
-         "nurses": 1,
-         "counsellor": 0
+        "doctors": 2,
+        "nurses": 1,
+        "counsellor": 0
       },
       "department": [
-         "General Medical Care",
-         "Antenatal Care",
-         "Children's Care",
-         "Family Planning",
-         "Women's Health",
-         "Men's Health",
-         "Mental Health",
-         "Chronic Disease Management",
-         "Travel Health",
-         "Medicals",
-         "Vaccinations",
-         "Dermatology"
+        "General Medical Care",
+        "Antenatal Care",
+        "Children's Care",
+        "Family Planning",
+        "Women's Health",
+        "Men's Health",
+        "Mental Health",
+        "Chronic Disease Management",
+        "Travel Health",
+        "Medicals",
+        "Vaccinations",
+        "Dermatology"
       ],
       "services": 12,
       "type": "Medical Center",
-      "Mon": {
-         "8-9am": 3,
-         "9-10am": 23,
-         "10-11am": 20,
-         "11-12pm": 22,
-         "12-1pm": 37,
-         "1-2pm": 39,
-         "2-3pm": 22,
-         "3-4pm": 35,
-         "4-5pm": 29,
-         "5-6pm": 24
-      },
-      "Tue": {
-         "8-9am": 2,
-         "9-10am": 28,
-         "10-11am": 18,
-         "11-12pm": 12,
-         "12-1pm": 22,
-         "1-2pm": 30,
-         "2-3pm": 34,
-         "3-4pm": 36,
-         "4-5pm": 38,
-         "5-6pm": 27
-      },
-      "Wed": {
-         "8-9am": 4,
-         "9-10am": 30,
-         "10-11am": 15,
-         "11-12pm": 30,
-         "12-1pm": 26,
-         "1-2pm": 35,
-         "2-3pm": 27,
-         "3-4pm": 28,
-         "4-5pm": 24,
-         "5-6pm": 24
-      },
-      "Thu": {
-         "8-9am": 6,
-         "9-10am": 14,
-         "10-11am": 29,
-         "11-12pm": 12,
-         "12-1pm": 25,
-         "1-2pm": 21,
-         "2-3pm": 35,
-         "3-4pm": 29,
-         "4-5pm": 25,
-         "5-6pm": 29
-      },
-      "Fri": {
-         "8-9am": 17,
-         "9-10am": 28,
-         "10-11am": 11,
-         "11-12pm": 32,
-         "12-1pm": 29,
-         "1-2pm": 33,
-         "2-3pm": 25,
-         "3-4pm": 40,
-         "4-5pm": 23,
-         "5-6pm": 38
-      },
-      "Sat": {
-         "8-9am": 6,
-         "9-10am": 16,
-         "10-11am": 40,
-         "11-12pm": 22,
-         "12-1pm": 22,
-         "1-2pm": 38,
-         "2-3pm": 21,
-         "3-4pm": 25,
-         "4-5pm": 32,
-         "5-6pm": 28
-      },
-      "date": {
-         "Sun 01": [],
-         "Mon 02": [],
-         "Tue 03": [],
-         "Wed 04": [],
-         "Thu 05": [],
-         "Fri 06": [],
-         "Sat 07": [],
-         "Sun 08": [],
-         "Mon 09": [],
-         "Tue 10": [],
-         "Wed 11": [],
-         "Thu 12": [],
-         "Fri 13": [],
-         "Sat 14": []
-      }
-   },
-   "3": {
+      "days": [{
+          "Mon": {
+            "8-9am": 3,
+            "9-10am": 23,
+            "10-11am": 20,
+            "11-12pm": 22,
+            "12-1pm": 37,
+            "1-2pm": 39,
+            "2-3pm": 22,
+            "3-4pm": 35,
+            "4-5pm": 29,
+            "5-6pm": 24
+          }
+        },
+        {
+          "Tue": {
+            "8-9am": 2,
+            "9-10am": 28,
+            "10-11am": 18,
+            "11-12pm": 12,
+            "12-1pm": 22,
+            "1-2pm": 30,
+            "2-3pm": 34,
+            "3-4pm": 36,
+            "4-5pm": 38,
+            "5-6pm": 27
+          }
+        },
+        {
+          "Wed": {
+            "8-9am": 4,
+            "9-10am": 30,
+            "10-11am": 15,
+            "11-12pm": 30,
+            "12-1pm": 26,
+            "1-2pm": 35,
+            "2-3pm": 27,
+            "3-4pm": 28,
+            "4-5pm": 24,
+            "5-6pm": 24
+          }
+        },
+        {
+          "Thu": {
+            "8-9am": 6,
+            "9-10am": 14,
+            "10-11am": 29,
+            "11-12pm": 12,
+            "12-1pm": 25,
+            "1-2pm": 21,
+            "2-3pm": 35,
+            "3-4pm": 29,
+            "4-5pm": 25,
+            "5-6pm": 29
+          }
+        },
+        {
+          "Fri": {
+            "8-9am": 17,
+            "9-10am": 28,
+            "10-11am": 11,
+            "11-12pm": 32,
+            "12-1pm": 29,
+            "1-2pm": 33,
+            "2-3pm": 25,
+            "3-4pm": 40,
+            "4-5pm": 23,
+            "5-6pm": 38
+          }
+        },
+        {
+          "Sat": {
+            "8-9am": 6,
+            "9-10am": 16,
+            "10-11am": 40,
+            "11-12pm": 22,
+            "12-1pm": 22,
+            "1-2pm": 38,
+            "2-3pm": 21,
+            "3-4pm": 25,
+            "4-5pm": 32,
+            "5-6pm": 28
+          }
+        }
+      ]
+    },
+    "3": {
       "name": "Dame Street Medical Centre",
       "lat": 53.344039,
       "long": -6.2651859,
       "staff": {
-         "doctors": 3,
-         "nurses": 0,
-         "counsellor": 0
+        "doctors": 3,
+        "nurses": 0,
+        "counsellor": 0
       },
       "department": [
-         "General Medical Care",
-         "Sexual Health",
-         "Women's Health",
-         "Men's Health",
-         "Mental Health",
-         "Preventative Health and Promotion",
-         "Travel Health",
-         "Medicals",
-         "Vaccinations",
-         "Blood Tests",
-         "Dermatology",
-         ""
+        "General Medical Care",
+        "Sexual Health",
+        "Women's Health",
+        "Men's Health",
+        "Mental Health",
+        "Preventative Health and Promotion",
+        "Travel Health",
+        "Medicals",
+        "Vaccinations",
+        "Blood Tests",
+        "Dermatology",
+        ""
       ],
       "services": 11,
       "type": "Medical Center",
-      "Mon": {
-         "8-9am": 4,
-         "9-10am": 16,
-         "10-11am": 26,
-         "11-12pm": 34,
-         "12-1pm": 40,
-         "1-2pm": 38,
-         "2-3pm": 37,
-         "3-4pm": 22,
-         "4-5pm": 38,
-         "5-6pm": 38
-      },
-      "Tue": {
-         "8-9am": 2,
-         "9-10am": 18,
-         "10-11am": 29,
-         "11-12pm": 22,
-         "12-1pm": 31,
-         "1-2pm": 32,
-         "2-3pm": 35,
-         "3-4pm": 28,
-         "4-5pm": 20,
-         "5-6pm": 23
-      },
-      "Wed": {
-         "8-9am": 4,
-         "9-10am": 12,
-         "10-11am": 20,
-         "11-12pm": 28,
-         "12-1pm": 24,
-         "1-2pm": 37,
-         "2-3pm": 28,
-         "3-4pm": 23,
-         "4-5pm": 22,
-         "5-6pm": 28
-      },
-      "Thu": {
-         "8-9am": 7,
-         "9-10am": 27,
-         "10-11am": 36,
-         "11-12pm": 32,
-         "12-1pm": 34,
-         "1-2pm": 36,
-         "2-3pm": 30,
-         "3-4pm": 27,
-         "4-5pm": 26,
-         "5-6pm": 24
-      },
-      "Fri": {
-         "8-9am": 5,
-         "9-10am": 10,
-         "10-11am": 25,
-         "11-12pm": 20,
-         "12-1pm": 36,
-         "1-2pm": 32,
-         "2-3pm": 25,
-         "3-4pm": 26,
-         "4-5pm": 27,
-         "5-6pm": 28
-      },
-      "Sat": {
-         "8-9am": 3,
-         "9-10am": 19,
-         "10-11am": 18,
-         "11-12pm": 10,
-         "12-1pm": 27,
-         "1-2pm": 34,
-         "2-3pm": 30,
-         "3-4pm": 24,
-         "4-5pm": 27,
-         "5-6pm": 24
-      },
-      "date": {
-         "Sun 01": [],
-         "Mon 02": [],
-         "Tue 03": [],
-         "Wed 04": [],
-         "Thu 05": [],
-         "Fri 06": [],
-         "Sat 07": [],
-         "Sun 08": [],
-         "Mon 09": [],
-         "Tue 10": [],
-         "Wed 11": [],
-         "Thu 12": [],
-         "Fri 13": [],
-         "Sat 14": []
-      }
-   },
-   "4": {
+      "days": [{
+          "Mon": {
+            "8-9am": 4,
+            "9-10am": 16,
+            "10-11am": 26,
+            "11-12pm": 34,
+            "12-1pm": 40,
+            "1-2pm": 38,
+            "2-3pm": 37,
+            "3-4pm": 22,
+            "4-5pm": 38,
+            "5-6pm": 38
+          }
+        },
+        {
+          "Tue": {
+            "8-9am": 2,
+            "9-10am": 18,
+            "10-11am": 29,
+            "11-12pm": 22,
+            "12-1pm": 31,
+            "1-2pm": 32,
+            "2-3pm": 35,
+            "3-4pm": 28,
+            "4-5pm": 20,
+            "5-6pm": 23
+          }
+        },
+        {
+          "Wed": {
+            "8-9am": 4,
+            "9-10am": 12,
+            "10-11am": 20,
+            "11-12pm": 28,
+            "12-1pm": 24,
+            "1-2pm": 37,
+            "2-3pm": 28,
+            "3-4pm": 23,
+            "4-5pm": 22,
+            "5-6pm": 28
+          }
+        },
+        {
+          "Thu": {
+            "8-9am": 7,
+            "9-10am": 27,
+            "10-11am": 36,
+            "11-12pm": 32,
+            "12-1pm": 34,
+            "1-2pm": 36,
+            "2-3pm": 30,
+            "3-4pm": 27,
+            "4-5pm": 26,
+            "5-6pm": 24
+          }
+        },
+        {
+          "Fri": {
+            "8-9am": 5,
+            "9-10am": 10,
+            "10-11am": 25,
+            "11-12pm": 20,
+            "12-1pm": 36,
+            "1-2pm": 32,
+            "2-3pm": 25,
+            "3-4pm": 26,
+            "4-5pm": 27,
+            "5-6pm": 28
+          }
+        },
+        {
+          "Sat": {
+            "8-9am": 3,
+            "9-10am": 19,
+            "10-11am": 18,
+            "11-12pm": 10,
+            "12-1pm": 27,
+            "1-2pm": 34,
+            "2-3pm": 30,
+            "3-4pm": 24,
+            "4-5pm": 27,
+            "5-6pm": 24
+          }
+        }
+      ]
+    },
+    "4": {
       "name": "Clane Hospital",
       "lat": 53.2894759,
       "long": -6.70087,
       "staff": {
-         "doctors": 10,
-         "nurses": 5,
-         "counsellor": 2
+        "doctors": 10,
+        "nurses": 5,
+        "counsellor": 2
       },
       "department": [
-         "Bone Density (DXA) Scanning",
-         "C Urea Breath Testing",
-         "Minor Ops",
-         "Open Access Cardiology",
-         "Open Access Endoscopy",
-         "Physiotherapy",
-         "Radiology Department",
-         "Vascular Laboratory",
-         "Blood Tests",
-         "",
-         "",
-         ""
+        "Bone Density (DXA) Scanning",
+        "C Urea Breath Testing",
+        "Minor Ops",
+        "Open Access Cardiology",
+        "Open Access Endoscopy",
+        "Physiotherapy",
+        "Radiology Department",
+        "Vascular Laboratory",
+        "Blood Tests",
+        "",
+        "",
+        ""
       ],
       "services": 10,
       "type": "Hospital",
-      "Mon": {
-         "8-9am": 5,
-         "9-10am": 15,
-         "10-11am": 22,
-         "11-12pm": 11,
-         "12-1pm": 34,
-         "1-2pm": 20,
-         "2-3pm": 29,
-         "3-4pm": 31,
-         "4-5pm": 26,
-         "5-6pm": 27
-      },
-      "Tue": {
-         "8-9am": 3,
-         "9-10am": 18,
-         "10-11am": 13,
-         "11-12pm": 13,
-         "12-1pm": 35,
-         "1-2pm": 23,
-         "2-3pm": 32,
-         "3-4pm": 36,
-         "4-5pm": 36,
-         "5-6pm": 38
-      },
-      "Wed": {
-         "8-9am": 6,
-         "9-10am": 12,
-         "10-11am": 11,
-         "11-12pm": 30,
-         "12-1pm": 32,
-         "1-2pm": 35,
-         "2-3pm": 23,
-         "3-4pm": 36,
-         "4-5pm": 26,
-         "5-6pm": 31
-      },
-      "Thu": {
-         "8-9am": 4,
-         "9-10am": 16,
-         "10-11am": 29,
-         "11-12pm": 23,
-         "12-1pm": 21,
-         "1-2pm": 21,
-         "2-3pm": 20,
-         "3-4pm": 33,
-         "4-5pm": 29,
-         "5-6pm": 38
-      },
-      "Fri": {
-         "8-9am": 3,
-         "9-10am": 25,
-         "10-11am": 16,
-         "11-12pm": 39,
-         "12-1pm": 20,
-         "1-2pm": 21,
-         "2-3pm": 35,
-         "3-4pm": 28,
-         "4-5pm": 33,
-         "5-6pm": 38
-      },
-      "Sat": {
-         "8-9am": 2,
-         "9-10am": 25,
-         "10-11am": 25,
-         "11-12pm": 35,
-         "12-1pm": 29,
-         "1-2pm": 33,
-         "2-3pm": 25,
-         "3-4pm": 28,
-         "4-5pm": 35,
-         "5-6pm": 34
-      },
-      "date": {
-         "Sun 01": [],
-         "Mon 02": [],
-         "Tue 03": [],
-         "Wed 04": [],
-         "Thu 05": [],
-         "Fri 06": [],
-         "Sat 07": [],
-         "Sun 08": [],
-         "Mon 09": [],
-         "Tue 10": [],
-         "Wed 11": [],
-         "Thu 12": [],
-         "Fri 13": [],
-         "Sat 14": []
-      }
-   },
-   "5": {
+      "days": [{
+          "Mon": {
+            "8-9am": 5,
+            "9-10am": 15,
+            "10-11am": 22,
+            "11-12pm": 11,
+            "12-1pm": 34,
+            "1-2pm": 20,
+            "2-3pm": 29,
+            "3-4pm": 31,
+            "4-5pm": 26,
+            "5-6pm": 27
+          }
+        },
+        {
+          "Tue": {
+            "8-9am": 3,
+            "9-10am": 18,
+            "10-11am": 13,
+            "11-12pm": 13,
+            "12-1pm": 35,
+            "1-2pm": 23,
+            "2-3pm": 32,
+            "3-4pm": 36,
+            "4-5pm": 36,
+            "5-6pm": 38
+          }
+        },
+        {
+          "Wed": {
+            "8-9am": 6,
+            "9-10am": 12,
+            "10-11am": 11,
+            "11-12pm": 30,
+            "12-1pm": 32,
+            "1-2pm": 35,
+            "2-3pm": 23,
+            "3-4pm": 36,
+            "4-5pm": 26,
+            "5-6pm": 31
+          }
+        },
+        {
+          "Thu": {
+            "8-9am": 4,
+            "9-10am": 16,
+            "10-11am": 29,
+            "11-12pm": 23,
+            "12-1pm": 21,
+            "1-2pm": 21,
+            "2-3pm": 20,
+            "3-4pm": 33,
+            "4-5pm": 29,
+            "5-6pm": 38
+          }
+        },
+        {
+          "Fri": {
+            "8-9am": 3,
+            "9-10am": 25,
+            "10-11am": 16,
+            "11-12pm": 39,
+            "12-1pm": 20,
+            "1-2pm": 21,
+            "2-3pm": 35,
+            "3-4pm": 28,
+            "4-5pm": 33,
+            "5-6pm": 38
+          }
+        },
+        {
+          "Sat": {
+            "8-9am": 2,
+            "9-10am": 25,
+            "10-11am": 25,
+            "11-12pm": 35,
+            "12-1pm": 29,
+            "1-2pm": 33,
+            "2-3pm": 25,
+            "3-4pm": 28,
+            "4-5pm": 35,
+            "5-6pm": 34
+          }
+        }
+      ]
+    },
+    "5": {
       "name": "Mercer's Medical Centre",
       "lat": 53.3406686,
       "long": -6.2637945,
       "staff": {
-         "doctors": 4,
-         "nurses": 0,
-         "counsellor": 10
+        "doctors": 4,
+        "nurses": 0,
+        "counsellor": 10
       },
       "department": [
-         "Family Medicine",
-         "Antenatal Care",
-         "Children's Care",
-         "Family Planning",
-         "Women's Health",
-         "Men's Health",
-         "Mental Health",
-         "STI Screening",
-         "Travel Health",
-         "Medicals",
-         "Vaccinations",
-         "24HR Blood Pressure Monitor"
+        "Family Medicine",
+        "Antenatal Care",
+        "Children's Care",
+        "Family Planning",
+        "Women's Health",
+        "Men's Health",
+        "Mental Health",
+        "STI Screening",
+        "Travel Health",
+        "Medicals",
+        "Vaccinations",
+        "24HR Blood Pressure Monitor"
       ],
       "services": 12,
       "type": "Medical Center",
-      "Mon": {
-         "8-9am": 2,
-         "9-10am": 26,
-         "10-11am": 16,
-         "11-12pm": 21,
-         "12-1pm": 26,
-         "1-2pm": 26,
-         "2-3pm": 24,
-         "3-4pm": 27,
-         "4-5pm": 33,
-         "5-6pm": 24
-      },
-      "Tue": {
-         "8-9am": 2,
-         "9-10am": 16,
-         "10-11am": 27,
-         "11-12pm": 31,
-         "12-1pm": 40,
-         "1-2pm": 28,
-         "2-3pm": 20,
-         "3-4pm": 20,
-         "4-5pm": 25,
-         "5-6pm": 40
-      },
-      "Wed": {
-         "8-9am": 6,
-         "9-10am": 12,
-         "10-11am": 14,
-         "11-12pm": 29,
-         "12-1pm": 34,
-         "1-2pm": 31,
-         "2-3pm": 40,
-         "3-4pm": 23,
-         "4-5pm": 34,
-         "5-6pm": 23
-      },
-      "Thu": {
-         "8-9am": 7,
-         "9-10am": 17,
-         "10-11am": 29,
-         "11-12pm": 17,
-         "12-1pm": 27,
-         "1-2pm": 21,
-         "2-3pm": 37,
-         "3-4pm": 26,
-         "4-5pm": 29,
-         "5-6pm": 31
-      },
-      "Fri": {
-         "8-9am": 10,
-         "9-10am": 15,
-         "10-11am": 37,
-         "11-12pm": 27,
-         "12-1pm": 40,
-         "1-2pm": 30,
-         "2-3pm": 23,
-         "3-4pm": 37,
-         "4-5pm": 29,
-         "5-6pm": 31
-      },
-      "Sat": {
-         "8-9am": 3,
-         "9-10am": 20,
-         "10-11am": 29,
-         "11-12pm": 33,
-         "12-1pm": 35,
-         "1-2pm": 25,
-         "2-3pm": 35,
-         "3-4pm": 20,
-         "4-5pm": 28,
-         "5-6pm": 32
-      },
-      "date": {
-         "Sun 01": [],
-         "Mon 02": [],
-         "Tue 03": [],
-         "Wed 04": [],
-         "Thu 05": [],
-         "Fri 06": [],
-         "Sat 07": [],
-         "Sun 08": [],
-         "Mon 09": [],
-         "Tue 10": [],
-         "Wed 11": [],
-         "Thu 12": [],
-         "Fri 13": [],
-         "Sat 14": []
-      }
-   },
-   "6": {
+      "days": [{
+          "Mon": {
+            "8-9am": 2,
+            "9-10am": 26,
+            "10-11am": 16,
+            "11-12pm": 21,
+            "12-1pm": 26,
+            "1-2pm": 26,
+            "2-3pm": 24,
+            "3-4pm": 27,
+            "4-5pm": 33,
+            "5-6pm": 24
+          }
+        },
+        {
+          "Tue": {
+            "8-9am": 2,
+            "9-10am": 16,
+            "10-11am": 27,
+            "11-12pm": 31,
+            "12-1pm": 40,
+            "1-2pm": 28,
+            "2-3pm": 20,
+            "3-4pm": 20,
+            "4-5pm": 25,
+            "5-6pm": 40
+          }
+        },
+        {
+          "Wed": {
+            "8-9am": 6,
+            "9-10am": 12,
+            "10-11am": 14,
+            "11-12pm": 29,
+            "12-1pm": 34,
+            "1-2pm": 31,
+            "2-3pm": 40,
+            "3-4pm": 23,
+            "4-5pm": 34,
+            "5-6pm": 23
+          }
+        },
+        {
+          "Thu": {
+            "8-9am": 7,
+            "9-10am": 17,
+            "10-11am": 29,
+            "11-12pm": 17,
+            "12-1pm": 27,
+            "1-2pm": 21,
+            "2-3pm": 37,
+            "3-4pm": 26,
+            "4-5pm": 29,
+            "5-6pm": 31
+          }
+        },
+        {
+          "Fri": {
+            "8-9am": 10,
+            "9-10am": 15,
+            "10-11am": 37,
+            "11-12pm": 27,
+            "12-1pm": 40,
+            "1-2pm": 30,
+            "2-3pm": 23,
+            "3-4pm": 37,
+            "4-5pm": 29,
+            "5-6pm": 31
+          }
+        },
+        {
+          "Sat": {
+            "8-9am": 3,
+            "9-10am": 20,
+            "10-11am": 29,
+            "11-12pm": 33,
+            "12-1pm": 35,
+            "1-2pm": 25,
+            "2-3pm": 35,
+            "3-4pm": 20,
+            "4-5pm": 28,
+            "5-6pm": 32
+          }
+        }
+      ]
+    },
+    "6": {
       "name": "Talbot St Medical Centre",
       "lat": 53.3504362,
       "long": -6.256053,
       "staff": {
-         "doctors": 1,
-         "nurses": 0,
-         "counsellor": 0
+        "doctors": 1,
+        "nurses": 0,
+        "counsellor": 0
       },
       "department": [
-         "Family Medicine",
-         "Antenatal Care",
-         "Children's Care",
-         "Family Planning",
-         "Women's Health",
-         "Men's Health",
-         "Mental Health",
-         "Blood Tests",
-         "Travel Health",
-         "Medicals",
-         "Vaccinations",
-         "STI Screening"
+        "Family Medicine",
+        "Antenatal Care",
+        "Children's Care",
+        "Family Planning",
+        "Women's Health",
+        "Men's Health",
+        "Mental Health",
+        "Blood Tests",
+        "Travel Health",
+        "Medicals",
+        "Vaccinations",
+        "STI Screening"
       ],
       "services": 12,
       "type": "Medical Center",
-      "Mon": {
-         "8-9am": 3,
-         "9-10am": 26,
-         "10-11am": 29,
-         "11-12pm": 27,
-         "12-1pm": 24,
-         "1-2pm": 39,
-         "2-3pm": 38,
-         "3-4pm": 32,
-         "4-5pm": 33,
-         "5-6pm": 29
-      },
-      "Tue": {
-         "8-9am": 2,
-         "9-10am": 28,
-         "10-11am": 21,
-         "11-12pm": 28,
-         "12-1pm": 32,
-         "1-2pm": 39,
-         "2-3pm": 31,
-         "3-4pm": 40,
-         "4-5pm": 36,
-         "5-6pm": 36
-      },
-      "Wed": {
-         "8-9am": 9,
-         "9-10am": 29,
-         "10-11am": 25,
-         "11-12pm": 31,
-         "12-1pm": 21,
-         "1-2pm": 22,
-         "2-3pm": 37,
-         "3-4pm": 20,
-         "4-5pm": 35,
-         "5-6pm": 21
-      },
-      "Thu": {
-         "8-9am": 5,
-         "9-10am": 23,
-         "10-11am": 10,
-         "11-12pm": 28,
-         "12-1pm": 33,
-         "1-2pm": 34,
-         "2-3pm": 23,
-         "3-4pm": 27,
-         "4-5pm": 26,
-         "5-6pm": 28
-      },
-      "Fri": {
-         "8-9am": 6,
-         "9-10am": 23,
-         "10-11am": 25,
-         "11-12pm": 27,
-         "12-1pm": 35,
-         "1-2pm": 36,
-         "2-3pm": 29,
-         "3-4pm": 24,
-         "4-5pm": 40,
-         "5-6pm": 28
-      },
-      "Sat": {
-         "8-9am": 6,
-         "9-10am": 10,
-         "10-11am": 22,
-         "11-12pm": 15,
-         "12-1pm": 40,
-         "1-2pm": 21,
-         "2-3pm": 25,
-         "3-4pm": 25,
-         "4-5pm": 37,
-         "5-6pm": 29
-      },
-      "date": {
-         "Sun 01": [],
-         "Mon 02": [],
-         "Tue 03": [],
-         "Wed 04": [],
-         "Thu 05": [],
-         "Fri 06": [],
-         "Sat 07": [],
-         "Sun 08": [],
-         "Mon 09": [],
-         "Tue 10": [],
-         "Wed 11": [],
-         "Thu 12": [],
-         "Fri 13": [],
-         "Sat 14": []
-      }
-   },
-   "7": {
+      "days": [{
+          "Mon": {
+            "8-9am": 3,
+            "9-10am": 26,
+            "10-11am": 29,
+            "11-12pm": 27,
+            "12-1pm": 24,
+            "1-2pm": 39,
+            "2-3pm": 38,
+            "3-4pm": 32,
+            "4-5pm": 33,
+            "5-6pm": 29
+          }
+        },
+        {
+          "Tue": {
+            "8-9am": 2,
+            "9-10am": 28,
+            "10-11am": 21,
+            "11-12pm": 28,
+            "12-1pm": 32,
+            "1-2pm": 39,
+            "2-3pm": 31,
+            "3-4pm": 40,
+            "4-5pm": 36,
+            "5-6pm": 36
+          }
+        },
+        {
+          "Wed": {
+            "8-9am": 9,
+            "9-10am": 29,
+            "10-11am": 25,
+            "11-12pm": 31,
+            "12-1pm": 21,
+            "1-2pm": 22,
+            "2-3pm": 37,
+            "3-4pm": 20,
+            "4-5pm": 35,
+            "5-6pm": 21
+          }
+        },
+        {
+          "Thu": {
+            "8-9am": 5,
+            "9-10am": 23,
+            "10-11am": 10,
+            "11-12pm": 28,
+            "12-1pm": 33,
+            "1-2pm": 34,
+            "2-3pm": 23,
+            "3-4pm": 27,
+            "4-5pm": 26,
+            "5-6pm": 28
+          }
+        },
+        {
+          "Fri": {
+            "8-9am": 6,
+            "9-10am": 23,
+            "10-11am": 25,
+            "11-12pm": 27,
+            "12-1pm": 35,
+            "1-2pm": 36,
+            "2-3pm": 29,
+            "3-4pm": 24,
+            "4-5pm": 40,
+            "5-6pm": 28
+          }
+        },
+        {
+          "Sat": {
+            "8-9am": 6,
+            "9-10am": 10,
+            "10-11am": 22,
+            "11-12pm": 15,
+            "12-1pm": 40,
+            "1-2pm": 21,
+            "2-3pm": 25,
+            "3-4pm": 25,
+            "4-5pm": 37,
+            "5-6pm": 29
+          }
+        }
+      ]
+    },
+    "7": {
       "name": "D2 Medical Centre",
       "lat": 53.3352058,
       "long": -6.2503739,
       "staff": {
-         "doctors": 5,
-         "nurses": 2,
-         "counsellor": 1
+        "doctors": 5,
+        "nurses": 2,
+        "counsellor": 1
       },
       "department": [
-         "Personal Medical",
-         "Corporate Medical",
-         "Insurance Medicals",
-         "Sexual Health",
-         "Women's Health",
-         "Private Executive Medical",
-         "Minor Surgery",
-         "Travel Medical Care",
-         "Nursing Care",
-         "",
-         "",
-         ""
+        "Personal Medical",
+        "Corporate Medical",
+        "Insurance Medicals",
+        "Sexual Health",
+        "Women's Health",
+        "Private Executive Medical",
+        "Minor Surgery",
+        "Travel Medical Care",
+        "Nursing Care",
+        "",
+        "",
+        ""
       ],
       "services": 9,
       "type": "Medical Center",
-      "Mon": {
-         "8-9am": 3,
-         "9-10am": 15,
-         "10-11am": 34,
-         "11-12pm": 19,
-         "12-1pm": 34,
-         "1-2pm": 20,
-         "2-3pm": 31,
-         "3-4pm": 31,
-         "4-5pm": 31,
-         "5-6pm": 32
-      },
-      "Tue": {
-         "8-9am": 3,
-         "9-10am": 27,
-         "10-11am": 14,
-         "11-12pm": 16,
-         "12-1pm": 28,
-         "1-2pm": 23,
-         "2-3pm": 23,
-         "3-4pm": 20,
-         "4-5pm": 31,
-         "5-6pm": 34
-      },
-      "Wed": {
-         "8-9am": 4,
-         "9-10am": 10,
-         "10-11am": 34,
-         "11-12pm": 17,
-         "12-1pm": 27,
-         "1-2pm": 24,
-         "2-3pm": 23,
-         "3-4pm": 27,
-         "4-5pm": 29,
-         "5-6pm": 20
-      },
-      "Thu": {
-         "8-9am": 3,
-         "9-10am": 21,
-         "10-11am": 14,
-         "11-12pm": 33,
-         "12-1pm": 22,
-         "1-2pm": 34,
-         "2-3pm": 27,
-         "3-4pm": 34,
-         "4-5pm": 23,
-         "5-6pm": 36
-      },
-      "Fri": {
-         "8-9am": 18,
-         "9-10am": 27,
-         "10-11am": 34,
-         "11-12pm": 25,
-         "12-1pm": 22,
-         "1-2pm": 26,
-         "2-3pm": 21,
-         "3-4pm": 27,
-         "4-5pm": 32,
-         "5-6pm": 22
-      },
-      "Sat": {
-         "8-9am": 6,
-         "9-10am": 18,
-         "10-11am": 40,
-         "11-12pm": 30,
-         "12-1pm": 34,
-         "1-2pm": 20,
-         "2-3pm": 21,
-         "3-4pm": 32,
-         "4-5pm": 28,
-         "5-6pm": 30
-      },
-      "date": {
-         "Sun 01": [],
-         "Mon 02": [],
-         "Tue 03": [],
-         "Wed 04": [],
-         "Thu 05": [],
-         "Fri 06": [],
-         "Sat 07": [],
-         "Sun 08": [],
-         "Mon 09": [],
-         "Tue 10": [],
-         "Wed 11": [],
-         "Thu 12": [],
-         "Fri 13": [],
-         "Sat 14": []
-      }
-   },
-   "8": {
+      "days": [{
+          "Mon": {
+            "8-9am": 3,
+            "9-10am": 15,
+            "10-11am": 34,
+            "11-12pm": 19,
+            "12-1pm": 34,
+            "1-2pm": 20,
+            "2-3pm": 31,
+            "3-4pm": 31,
+            "4-5pm": 31,
+            "5-6pm": 32
+          }
+        },
+        {
+          "Tue": {
+            "8-9am": 3,
+            "9-10am": 27,
+            "10-11am": 14,
+            "11-12pm": 16,
+            "12-1pm": 28,
+            "1-2pm": 23,
+            "2-3pm": 23,
+            "3-4pm": 20,
+            "4-5pm": 31,
+            "5-6pm": 34
+          }
+        },
+        {
+          "Wed": {
+            "8-9am": 4,
+            "9-10am": 10,
+            "10-11am": 34,
+            "11-12pm": 17,
+            "12-1pm": 27,
+            "1-2pm": 24,
+            "2-3pm": 23,
+            "3-4pm": 27,
+            "4-5pm": 29,
+            "5-6pm": 20
+          }
+        },
+        {
+          "Thu": {
+            "8-9am": 3,
+            "9-10am": 21,
+            "10-11am": 14,
+            "11-12pm": 33,
+            "12-1pm": 22,
+            "1-2pm": 34,
+            "2-3pm": 27,
+            "3-4pm": 34,
+            "4-5pm": 23,
+            "5-6pm": 36
+          }
+        },
+        {
+          "Fri": {
+            "8-9am": 18,
+            "9-10am": 27,
+            "10-11am": 34,
+            "11-12pm": 25,
+            "12-1pm": 22,
+            "1-2pm": 26,
+            "2-3pm": 21,
+            "3-4pm": 27,
+            "4-5pm": 32,
+            "5-6pm": 22
+          }
+        },
+        {
+          "Sat": {
+            "8-9am": 6,
+            "9-10am": 18,
+            "10-11am": 40,
+            "11-12pm": 30,
+            "12-1pm": 34,
+            "1-2pm": 20,
+            "2-3pm": 21,
+            "3-4pm": 32,
+            "4-5pm": 28,
+            "5-6pm": 30
+          }
+        }
+      ]
+    },
+    "8": {
       "name": "Custom House Square Medical Centre",
       "lat": 53.3494447,
       "long": -6.2446355,
       "staff": {
-         "doctors": 5,
-         "nurses": 2,
-         "counsellor": 1
+        "doctors": 5,
+        "nurses": 2,
+        "counsellor": 1
       },
       "department": [
-         "Personal Medical",
-         "Corporate Medical",
-         "Insurance Medicals",
-         "Sexual Health",
-         "Women's Health",
-         "Men's Health",
-         "Minor Surgery",
-         "Preventative Health and Promotion",
-         "Travel Health",
-         "Medicals",
-         "Vaccinations",
-         "Nursing Care"
+        "Personal Medical",
+        "Corporate Medical",
+        "Insurance Medicals",
+        "Sexual Health",
+        "Women's Health",
+        "Men's Health",
+        "Minor Surgery",
+        "Preventative Health and Promotion",
+        "Travel Health",
+        "Medicals",
+        "Vaccinations",
+        "Nursing Care"
       ],
       "services": 12,
       "type": "Medical Center",
-      "Mon": {
-         "8-9am": 4,
-         "9-10am": 27,
-         "10-11am": 14,
-         "11-12pm": 17,
-         "12-1pm": 38,
-         "1-2pm": 36,
-         "2-3pm": 34,
-         "3-4pm": 24,
-         "4-5pm": 30,
-         "5-6pm": 23
-      },
-      "Tue": {
-         "8-9am": 2,
-         "9-10am": 20,
-         "10-11am": 26,
-         "11-12pm": 29,
-         "12-1pm": 28,
-         "1-2pm": 36,
-         "2-3pm": 31,
-         "3-4pm": 30,
-         "4-5pm": 21,
-         "5-6pm": 40
-      },
-      "Wed": {
-         "8-9am": 3,
-         "9-10am": 25,
-         "10-11am": 25,
-         "11-12pm": 29,
-         "12-1pm": 23,
-         "1-2pm": 22,
-         "2-3pm": 33,
-         "3-4pm": 39,
-         "4-5pm": 32,
-         "5-6pm": 26
-      },
-      "Thu": {
-         "8-9am": 5,
-         "9-10am": 21,
-         "10-11am": 33,
-         "11-12pm": 13,
-         "12-1pm": 40,
-         "1-2pm": 27,
-         "2-3pm": 37,
-         "3-4pm": 35,
-         "4-5pm": 36,
-         "5-6pm": 31
-      },
-      "Fri": {
-         "8-9am": 2,
-         "9-10am": 28,
-         "10-11am": 14,
-         "11-12pm": 14,
-         "12-1pm": 20,
-         "1-2pm": 25,
-         "2-3pm": 32,
-         "3-4pm": 31,
-         "4-5pm": 39,
-         "5-6pm": 25
-      },
-      "Sat": {
-         "8-9am": 3,
-         "9-10am": 12,
-         "10-11am": 34,
-         "11-12pm": 15,
-         "12-1pm": 26,
-         "1-2pm": 24,
-         "2-3pm": 21,
-         "3-4pm": 28,
-         "4-5pm": 21,
-         "5-6pm": 21
-      },
-      "date": {
-         "Sun 01": [],
-         "Mon 02": [],
-         "Tue 03": [],
-         "Wed 04": [],
-         "Thu 05": [],
-         "Fri 06": [],
-         "Sat 07": [],
-         "Sun 08": [],
-         "Mon 09": [],
-         "Tue 10": [],
-         "Wed 11": [],
-         "Thu 12": [],
-         "Fri 13": [],
-         "Sat 14": []
-      }
-   },
-   "9": {
+      "days": [{
+          "Mon": {
+            "8-9am": 4,
+            "9-10am": 27,
+            "10-11am": 14,
+            "11-12pm": 17,
+            "12-1pm": 38,
+            "1-2pm": 36,
+            "2-3pm": 34,
+            "3-4pm": 24,
+            "4-5pm": 30,
+            "5-6pm": 23
+          }
+        },
+        {
+          "Tue": {
+            "8-9am": 2,
+            "9-10am": 20,
+            "10-11am": 26,
+            "11-12pm": 29,
+            "12-1pm": 28,
+            "1-2pm": 36,
+            "2-3pm": 31,
+            "3-4pm": 30,
+            "4-5pm": 21,
+            "5-6pm": 40
+          }
+        },
+        {
+          "Wed": {
+            "8-9am": 3,
+            "9-10am": 25,
+            "10-11am": 25,
+            "11-12pm": 29,
+            "12-1pm": 23,
+            "1-2pm": 22,
+            "2-3pm": 33,
+            "3-4pm": 39,
+            "4-5pm": 32,
+            "5-6pm": 26
+          }
+        },
+        {
+          "Thu": {
+            "8-9am": 5,
+            "9-10am": 21,
+            "10-11am": 33,
+            "11-12pm": 13,
+            "12-1pm": 40,
+            "1-2pm": 27,
+            "2-3pm": 37,
+            "3-4pm": 35,
+            "4-5pm": 36,
+            "5-6pm": 31
+          }
+        },
+        {
+          "Fri": {
+            "8-9am": 2,
+            "9-10am": 28,
+            "10-11am": 14,
+            "11-12pm": 14,
+            "12-1pm": 20,
+            "1-2pm": 25,
+            "2-3pm": 32,
+            "3-4pm": 31,
+            "4-5pm": 39,
+            "5-6pm": 25
+          }
+        },
+        {
+          "Sat": {
+            "8-9am": 3,
+            "9-10am": 12,
+            "10-11am": 34,
+            "11-12pm": 15,
+            "12-1pm": 26,
+            "1-2pm": 24,
+            "2-3pm": 21,
+            "3-4pm": 28,
+            "4-5pm": 21,
+            "5-6pm": 21
+          }
+        }
+      ]
+    },
+    "9": {
       "name": "Charter Medical",
       "lat": 53.349634,
       "long": -6.278271,
       "staff": {
-         "doctors": 1,
-         "nurses": 1,
-         "counsellor": 2
+        "doctors": 1,
+        "nurses": 1,
+        "counsellor": 2
       },
       "department": [
-         "Elderly Clinic",
-         "Minor injuries Clinic",
-         "Health Screening",
-         "Sexual Health",
-         "Women's Health",
-         "Corporate Health",
-         "Physiotherapy",
-         "",
-         "",
-         "",
-         "",
-         ""
+        "Elderly Clinic",
+        "Minor injuries Clinic",
+        "Health Screening",
+        "Sexual Health",
+        "Women's Health",
+        "Corporate Health",
+        "Physiotherapy",
+        "",
+        "",
+        "",
+        "",
+        ""
       ],
       "services": 7,
       "type": "Medical Center",
-      "Mon": {
-         "8-9am": 2,
-         "9-10am": 14,
-         "10-11am": 34,
-         "11-12pm": 39,
-         "12-1pm": 36,
-         "1-2pm": 20,
-         "2-3pm": 24,
-         "3-4pm": 27,
-         "4-5pm": 22,
-         "5-6pm": 27
-      },
-      "Tue": {
-         "8-9am": 2,
-         "9-10am": 12,
-         "10-11am": 13,
-         "11-12pm": 32,
-         "12-1pm": 30,
-         "1-2pm": 28,
-         "2-3pm": 35,
-         "3-4pm": 26,
-         "4-5pm": 27,
-         "5-6pm": 30
-      },
-      "Wed": {
-         "8-9am": 3,
-         "9-10am": 10,
-         "10-11am": 16,
-         "11-12pm": 22,
-         "12-1pm": 37,
-         "1-2pm": 27,
-         "2-3pm": 27,
-         "3-4pm": 38,
-         "4-5pm": 29,
-         "5-6pm": 20
-      },
-      "Thu": {
-         "8-9am": 7,
-         "9-10am": 29,
-         "10-11am": 35,
-         "11-12pm": 33,
-         "12-1pm": 23,
-         "1-2pm": 22,
-         "2-3pm": 27,
-         "3-4pm": 22,
-         "4-5pm": 31,
-         "5-6pm": 36
-      },
-      "Fri": {
-         "8-9am": 8,
-         "9-10am": 22,
-         "10-11am": 37,
-         "11-12pm": 11,
-         "12-1pm": 32,
-         "1-2pm": 30,
-         "2-3pm": 33,
-         "3-4pm": 25,
-         "4-5pm": 20,
-         "5-6pm": 24
-      },
-      "Sat": {
-         "8-9am": 5,
-         "9-10am": 14,
-         "10-11am": 25,
-         "11-12pm": 22,
-         "12-1pm": 29,
-         "1-2pm": 39,
-         "2-3pm": 22,
-         "3-4pm": 29,
-         "4-5pm": 28,
-         "5-6pm": 35
-      },
-      "date": {
-         "Sun 01": [],
-         "Mon 02": [],
-         "Tue 03": [],
-         "Wed 04": [],
-         "Thu 05": [],
-         "Fri 06": [],
-         "Sat 07": [],
-         "Sun 08": [],
-         "Mon 09": [],
-         "Tue 10": [],
-         "Wed 11": [],
-         "Thu 12": [],
-         "Fri 13": [],
-         "Sat 14": []
-      }
-   },
-   "10": {
+      "days": [{
+          "Mon": {
+            "8-9am": 2,
+            "9-10am": 14,
+            "10-11am": 34,
+            "11-12pm": 39,
+            "12-1pm": 36,
+            "1-2pm": 20,
+            "2-3pm": 24,
+            "3-4pm": 27,
+            "4-5pm": 22,
+            "5-6pm": 27
+          }
+        },
+        {
+          "Tue": {
+            "8-9am": 2,
+            "9-10am": 12,
+            "10-11am": 13,
+            "11-12pm": 32,
+            "12-1pm": 30,
+            "1-2pm": 28,
+            "2-3pm": 35,
+            "3-4pm": 26,
+            "4-5pm": 27,
+            "5-6pm": 30
+          }
+        },
+        {
+          "Wed": {
+            "8-9am": 3,
+            "9-10am": 10,
+            "10-11am": 16,
+            "11-12pm": 22,
+            "12-1pm": 37,
+            "1-2pm": 27,
+            "2-3pm": 27,
+            "3-4pm": 38,
+            "4-5pm": 29,
+            "5-6pm": 20
+          }
+        },
+        {
+          "Thu": {
+            "8-9am": 7,
+            "9-10am": 29,
+            "10-11am": 35,
+            "11-12pm": 33,
+            "12-1pm": 23,
+            "1-2pm": 22,
+            "2-3pm": 27,
+            "3-4pm": 22,
+            "4-5pm": 31,
+            "5-6pm": 36
+          }
+        },
+        {
+          "Fri": {
+            "8-9am": 8,
+            "9-10am": 22,
+            "10-11am": 37,
+            "11-12pm": 11,
+            "12-1pm": 32,
+            "1-2pm": 30,
+            "2-3pm": 33,
+            "3-4pm": 25,
+            "4-5pm": 20,
+            "5-6pm": 24
+          }
+        },
+        {
+          "Sat": {
+            "8-9am": 5,
+            "9-10am": 14,
+            "10-11am": 25,
+            "11-12pm": 22,
+            "12-1pm": 29,
+            "1-2pm": 39,
+            "2-3pm": 22,
+            "3-4pm": 29,
+            "4-5pm": 28,
+            "5-6pm": 35
+          }
+        }
+      ]
+    },
+    "10": {
       "name": "Walk-In Clinic",
       "lat": 53.3263112,
       "long": -6.2648058,
       "staff": {
-         "doctors": 9,
-         "nurses": 1,
-         "counsellor": 6
+        "doctors": 9,
+        "nurses": 1,
+        "counsellor": 6
       },
       "department": [
-         "General Medical Care",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
+        "General Medical Care",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
       ],
       "services": 1,
       "type": "Clinic",
-      "Mon": {
-         "8-9am": 4,
-         "9-10am": 25,
-         "10-11am": 15,
-         "11-12pm": 15,
-         "12-1pm": 38,
-         "1-2pm": 39,
-         "2-3pm": 28,
-         "3-4pm": 35,
-         "4-5pm": 36,
-         "5-6pm": 40
-      },
-      "Tue": {
-         "8-9am": 3,
-         "9-10am": 26,
-         "10-11am": 32,
-         "11-12pm": 30,
-         "12-1pm": 39,
-         "1-2pm": 33,
-         "2-3pm": 26,
-         "3-4pm": 33,
-         "4-5pm": 31,
-         "5-6pm": 33
-      },
-      "Wed": {
-         "8-9am": 7,
-         "9-10am": 23,
-         "10-11am": 19,
-         "11-12pm": 31,
-         "12-1pm": 28,
-         "1-2pm": 24,
-         "2-3pm": 20,
-         "3-4pm": 26,
-         "4-5pm": 25,
-         "5-6pm": 34
-      },
-      "Thu": {
-         "8-9am": 6,
-         "9-10am": 14,
-         "10-11am": 38,
-         "11-12pm": 26,
-         "12-1pm": 40,
-         "1-2pm": 35,
-         "2-3pm": 38,
-         "3-4pm": 25,
-         "4-5pm": 39,
-         "5-6pm": 25
-      },
-      "Fri": {
-         "8-9am": 19,
-         "9-10am": 18,
-         "10-11am": 28,
-         "11-12pm": 11,
-         "12-1pm": 28,
-         "1-2pm": 27,
-         "2-3pm": 25,
-         "3-4pm": 37,
-         "4-5pm": 35,
-         "5-6pm": 40
-      },
-      "Sat": {
-         "8-9am": 3,
-         "9-10am": 25,
-         "10-11am": 24,
-         "11-12pm": 28,
-         "12-1pm": 34,
-         "1-2pm": 25,
-         "2-3pm": 25,
-         "3-4pm": 23,
-         "4-5pm": 26,
-         "5-6pm": 20
-      },
-      "date": {
-         "Sun 01": [],
-         "Mon 02": [],
-         "Tue 03": [],
-         "Wed 04": [],
-         "Thu 05": [],
-         "Fri 06": [],
-         "Sat 07": [],
-         "Sun 08": [],
-         "Mon 09": [],
-         "Tue 10": [],
-         "Wed 11": [],
-         "Thu 12": [],
-         "Fri 13": [],
-         "Sat 14": []
-      }
-   },
-   "11": {
+      "days": [{
+          "Mon": {
+            "8-9am": 4,
+            "9-10am": 25,
+            "10-11am": 15,
+            "11-12pm": 15,
+            "12-1pm": 38,
+            "1-2pm": 39,
+            "2-3pm": 28,
+            "3-4pm": 35,
+            "4-5pm": 36,
+            "5-6pm": 40
+          }
+        },
+        {
+          "Tue": {
+            "8-9am": 3,
+            "9-10am": 26,
+            "10-11am": 32,
+            "11-12pm": 30,
+            "12-1pm": 39,
+            "1-2pm": 33,
+            "2-3pm": 26,
+            "3-4pm": 33,
+            "4-5pm": 31,
+            "5-6pm": 33
+          }
+        },
+        {
+          "Wed": {
+            "8-9am": 7,
+            "9-10am": 23,
+            "10-11am": 19,
+            "11-12pm": 31,
+            "12-1pm": 28,
+            "1-2pm": 24,
+            "2-3pm": 20,
+            "3-4pm": 26,
+            "4-5pm": 25,
+            "5-6pm": 34
+          }
+        },
+        {
+          "Thu": {
+            "8-9am": 6,
+            "9-10am": 14,
+            "10-11am": 38,
+            "11-12pm": 26,
+            "12-1pm": 40,
+            "1-2pm": 35,
+            "2-3pm": 38,
+            "3-4pm": 25,
+            "4-5pm": 39,
+            "5-6pm": 25
+          }
+        },
+        {
+          "Fri": {
+            "8-9am": 19,
+            "9-10am": 18,
+            "10-11am": 28,
+            "11-12pm": 11,
+            "12-1pm": 28,
+            "1-2pm": 27,
+            "2-3pm": 25,
+            "3-4pm": 37,
+            "4-5pm": 35,
+            "5-6pm": 40
+          }
+        },
+        {
+          "Sat": {
+            "8-9am": 3,
+            "9-10am": 25,
+            "10-11am": 24,
+            "11-12pm": 28,
+            "12-1pm": 34,
+            "1-2pm": 25,
+            "2-3pm": 25,
+            "3-4pm": 23,
+            "4-5pm": 26,
+            "5-6pm": 20
+          }
+        }
+      ]
+    },
+    "11": {
       "name": "Aungier Street Clinic",
       "lat": 53.3378396,
       "long": -6.2661283,
       "staff": {
-         "doctors": 6,
-         "nurses": 0,
-         "counsellor": 10
+        "doctors": 6,
+        "nurses": 0,
+        "counsellor": 10
       },
       "department": [
-         "General Medical Care",
-         "Antenatal Care",
-         "Children's Care",
-         "Family Planning",
-         "Women's Health",
-         "Men's Health",
-         "Mental Health",
-         "Preventative Health and Promotion",
-         "Travel Health",
-         "Dermatology",
-         "Vaccinations",
-         "Cryotherapy"
+        "General Medical Care",
+        "Antenatal Care",
+        "Children's Care",
+        "Family Planning",
+        "Women's Health",
+        "Men's Health",
+        "Mental Health",
+        "Preventative Health and Promotion",
+        "Travel Health",
+        "Dermatology",
+        "Vaccinations",
+        "Cryotherapy"
       ],
       "services": 12,
       "type": "Clinic",
-      "Mon": {
-         "8-9am": 5,
-         "9-10am": 27,
-         "10-11am": 18,
-         "11-12pm": 10,
-         "12-1pm": 33,
-         "1-2pm": 31,
-         "2-3pm": 36,
-         "3-4pm": 27,
-         "4-5pm": 21,
-         "5-6pm": 23
-      },
-      "Tue": {
-         "8-9am": 3,
-         "9-10am": 30,
-         "10-11am": 36,
-         "11-12pm": 12,
-         "12-1pm": 34,
-         "1-2pm": 29,
-         "2-3pm": 37,
-         "3-4pm": 21,
-         "4-5pm": 20,
-         "5-6pm": 39
-      },
-      "Wed": {
-         "8-9am": 9,
-         "9-10am": 24,
-         "10-11am": 40,
-         "11-12pm": 26,
-         "12-1pm": 36,
-         "1-2pm": 26,
-         "2-3pm": 21,
-         "3-4pm": 20,
-         "4-5pm": 35,
-         "5-6pm": 20
-      },
-      "Thu": {
-         "8-9am": 7,
-         "9-10am": 22,
-         "10-11am": 14,
-         "11-12pm": 18,
-         "12-1pm": 23,
-         "1-2pm": 32,
-         "2-3pm": 21,
-         "3-4pm": 22,
-         "4-5pm": 25,
-         "5-6pm": 35
-      },
-      "Fri": {
-         "8-9am": 9,
-         "9-10am": 26,
-         "10-11am": 29,
-         "11-12pm": 20,
-         "12-1pm": 30,
-         "1-2pm": 39,
-         "2-3pm": 24,
-         "3-4pm": 29,
-         "4-5pm": 28,
-         "5-6pm": 37
-      },
-      "Sat": {
-         "8-9am": 5,
-         "9-10am": 25,
-         "10-11am": 14,
-         "11-12pm": 31,
-         "12-1pm": 27,
-         "1-2pm": 22,
-         "2-3pm": 25,
-         "3-4pm": 24,
-         "4-5pm": 20,
-         "5-6pm": 31
-      },
-      "date": {
-         "Sun 01": [],
-         "Mon 02": [],
-         "Tue 03": [],
-         "Wed 04": [],
-         "Thu 05": [],
-         "Fri 06": [],
-         "Sat 07": [],
-         "Sun 08": [],
-         "Mon 09": [],
-         "Tue 10": [],
-         "Wed 11": [],
-         "Thu 12": [],
-         "Fri 13": [],
-         "Sat 14": []
-      }
-   },
-   "12": {
+      "days": [{
+          "Mon": {
+            "8-9am": 5,
+            "9-10am": 27,
+            "10-11am": 18,
+            "11-12pm": 10,
+            "12-1pm": 33,
+            "1-2pm": 31,
+            "2-3pm": 36,
+            "3-4pm": 27,
+            "4-5pm": 21,
+            "5-6pm": 23
+          }
+        },
+        {
+          "Tue": {
+            "8-9am": 3,
+            "9-10am": 30,
+            "10-11am": 36,
+            "11-12pm": 12,
+            "12-1pm": 34,
+            "1-2pm": 29,
+            "2-3pm": 37,
+            "3-4pm": 21,
+            "4-5pm": 20,
+            "5-6pm": 39
+          }
+        },
+        {
+          "Wed": {
+            "8-9am": 9,
+            "9-10am": 24,
+            "10-11am": 40,
+            "11-12pm": 26,
+            "12-1pm": 36,
+            "1-2pm": 26,
+            "2-3pm": 21,
+            "3-4pm": 20,
+            "4-5pm": 35,
+            "5-6pm": 20
+          }
+        },
+        {
+          "Thu": {
+            "8-9am": 7,
+            "9-10am": 22,
+            "10-11am": 14,
+            "11-12pm": 18,
+            "12-1pm": 23,
+            "1-2pm": 32,
+            "2-3pm": 21,
+            "3-4pm": 22,
+            "4-5pm": 25,
+            "5-6pm": 35
+          }
+        },
+        {
+          "Fri": {
+            "8-9am": 9,
+            "9-10am": 26,
+            "10-11am": 29,
+            "11-12pm": 20,
+            "12-1pm": 30,
+            "1-2pm": 39,
+            "2-3pm": 24,
+            "3-4pm": 29,
+            "4-5pm": 28,
+            "5-6pm": 37
+          }
+        },
+        {
+          "Sat": {
+            "8-9am": 5,
+            "9-10am": 25,
+            "10-11am": 14,
+            "11-12pm": 31,
+            "12-1pm": 27,
+            "1-2pm": 22,
+            "2-3pm": 25,
+            "3-4pm": 24,
+            "4-5pm": 20,
+            "5-6pm": 31
+          }
+        }
+      ]
+    },
+    "12": {
       "name": "Rialto Medical Centre",
       "lat": 53.3354127,
       "long": -6.2944968,
       "staff": {
-         "doctors": 4,
-         "nurses": 2,
-         "counsellor": 0
+        "doctors": 4,
+        "nurses": 2,
+        "counsellor": 0
       },
       "department": [
-         "GP Consultations",
-         "Mother & Baby",
-         "Women's Health",
-         "Practice Nurse",
-         "Screening",
-         "Sexual Health",
-         "Travel Vaccines",
-         "Flu Vaccine",
-         "Whooping Cough",
-         "",
-         "",
-         ""
+        "GP Consultations",
+        "Mother & Baby",
+        "Women's Health",
+        "Practice Nurse",
+        "Screening",
+        "Sexual Health",
+        "Travel Vaccines",
+        "Flu Vaccine",
+        "Whooping Cough",
+        "",
+        "",
+        ""
       ],
       "services": 9,
       "type": "Medical Center",
-      "Mon": {
-         "8-9am": 2,
-         "9-10am": 25,
-         "10-11am": 14,
-         "11-12pm": 16,
-         "12-1pm": 32,
-         "1-2pm": 22,
-         "2-3pm": 34,
-         "3-4pm": 39,
-         "4-5pm": 21,
-         "5-6pm": 29
-      },
-      "Tue": {
-         "8-9am": 2,
-         "9-10am": 15,
-         "10-11am": 15,
-         "11-12pm": 35,
-         "12-1pm": 23,
-         "1-2pm": 39,
-         "2-3pm": 25,
-         "3-4pm": 30,
-         "4-5pm": 35,
-         "5-6pm": 20
-      },
-      "Wed": {
-         "8-9am": 8,
-         "9-10am": 14,
-         "10-11am": 40,
-         "11-12pm": 27,
-         "12-1pm": 21,
-         "1-2pm": 40,
-         "2-3pm": 22,
-         "3-4pm": 20,
-         "4-5pm": 30,
-         "5-6pm": 34
-      },
-      "Thu": {
-         "8-9am": 4,
-         "9-10am": 13,
-         "10-11am": 33,
-         "11-12pm": 22,
-         "12-1pm": 36,
-         "1-2pm": 28,
-         "2-3pm": 25,
-         "3-4pm": 26,
-         "4-5pm": 22,
-         "5-6pm": 35
-      },
-      "Fri": {
-         "8-9am": 11,
-         "9-10am": 25,
-         "10-11am": 30,
-         "11-12pm": 20,
-         "12-1pm": 24,
-         "1-2pm": 32,
-         "2-3pm": 25,
-         "3-4pm": 21,
-         "4-5pm": 25,
-         "5-6pm": 28
-      },
-      "Sat": {
-         "8-9am": 3,
-         "9-10am": 11,
-         "10-11am": 22,
-         "11-12pm": 10,
-         "12-1pm": 40,
-         "1-2pm": 34,
-         "2-3pm": 29,
-         "3-4pm": 25,
-         "4-5pm": 23,
-         "5-6pm": 26
-      },
-      "date": {
-         "Sun 01": [],
-         "Mon 02": [],
-         "Tue 03": [],
-         "Wed 04": [],
-         "Thu 05": [],
-         "Fri 06": [],
-         "Sat 07": [],
-         "Sun 08": [],
-         "Mon 09": [],
-         "Tue 10": [],
-         "Wed 11": [],
-         "Thu 12": [],
-         "Fri 13": [],
-         "Sat 14": []
-      }
-   }
-}
+      "days": [{
+          "Mon": {
+            "8-9am": 2,
+            "9-10am": 25,
+            "10-11am": 14,
+            "11-12pm": 16,
+            "12-1pm": 32,
+            "1-2pm": 22,
+            "2-3pm": 34,
+            "3-4pm": 39,
+            "4-5pm": 21,
+            "5-6pm": 29
+          }
+        },
+        {
+          "Tue": {
+            "8-9am": 2,
+            "9-10am": 15,
+            "10-11am": 15,
+            "11-12pm": 35,
+            "12-1pm": 23,
+            "1-2pm": 39,
+            "2-3pm": 25,
+            "3-4pm": 30,
+            "4-5pm": 35,
+            "5-6pm": 20
+          }
+        },
+        {
+          "Wed": {
+            "8-9am": 8,
+            "9-10am": 14,
+            "10-11am": 40,
+            "11-12pm": 27,
+            "12-1pm": 21,
+            "1-2pm": 40,
+            "2-3pm": 22,
+            "3-4pm": 20,
+            "4-5pm": 30,
+            "5-6pm": 34
+          }
+        },
+        {
+          "Thu": {
+            "8-9am": 4,
+            "9-10am": 13,
+            "10-11am": 33,
+            "11-12pm": 22,
+            "12-1pm": 36,
+            "1-2pm": 28,
+            "2-3pm": 25,
+            "3-4pm": 26,
+            "4-5pm": 22,
+            "5-6pm": 35
+          }
+        },
+        {
+          "Fri": {
+            "8-9am": 11,
+            "9-10am": 25,
+            "10-11am": 30,
+            "11-12pm": 20,
+            "12-1pm": 24,
+            "1-2pm": 32,
+            "2-3pm": 25,
+            "3-4pm": 21,
+            "4-5pm": 25,
+            "5-6pm": 28
+          }
+        },
+        {
+          "Sat": {
+            "8-9am": 3,
+            "9-10am": 11,
+            "10-11am": 22,
+            "11-12pm": 10,
+            "12-1pm": 40,
+            "1-2pm": 34,
+            "2-3pm": 29,
+            "3-4pm": 25,
+            "4-5pm": 23,
+            "5-6pm": 26
+          }
+        }
+      ]
+    }
+  }
