@@ -18,7 +18,7 @@
     <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
     <script type="text/javascript" src="static/js/dc.min.js"></script>
     <script type="text/javascript" src="static/js/queue.min.js"></script>
-    
+
     <script type="text/javascript" src="static/js/map.js"></script>
     <script type="text/javascript" src="static/js/graph.js"></script>
     <link rel="stylesheet" href="static/css/style.css" type="text/css" />
@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">Medical Services</a>
@@ -38,50 +38,54 @@
 
     <main>
         <section class="section">
-            <div class="container">
-                <div>
+            <div class="container-fluid">
+                <div class="row">
                     <h1>Your Local Medical Services</h1>
 
                 </div>
-
-                <div id="service_type_selector">Select the Medical Center Type </div>
-                <div id="facility_name_selector">Select the Medical Center Name </div>
-
+                <div class="col-xs-12">
+                    <div id="service_type_selector" class="number-box">Select the Medical Center Type </div>
+                    <div id="facility_name_selector" class="number-box">Select the Medical Center Name </div>
+                </div>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <div id="map">Map</div>
+                <div class="row">
+                    <div class="col">
+                        <h2>Geographic Locations of Medical Facilities</h2>
+                        <div id="map" class="custom-chart">Map</div>
+                    </div>
+                    <div class="col">
+                        <H2>Medical Facility Types</H2>
+                        <div id="facility_type" class="custom-chart"></div>
+                        <p>Local medical facilities an be catagorised into Hospitals, Medical Centers, Medical Clinics, walkin
+                            clinics and local General Practice services. </p>
+                    </div>
+                </div>
+            </div>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                    <h2>Medical Facility Type</h2>
-                <div id="facility_type"></div>
-
+                <div class="row">
+                    <div class="col">
+                        <h2>Staff Numbers per Facility</h2>
+                        <div id="staff_numbers"></div>
+                    </div>
+                    <div class="col">
+                        <h2>Average Waiting Times</h2>
+                        <div id="ave_waiting_times" class="custom-chart"></div>
+                    </div>
+                </div>
             </div>
+
         </section>
 
-        <section class="section">
-            <div class="container">
-                
-                <div id="staff_numbers"></div>
-                <h2>Average Waiting Times</h2>
-                <div id="ave_waiting_times"></div>
 
-            </div>
-        </section>
-        <section class="section">
-            <div class="container">
-                
-                <div id="patients-per_day"></div>
-                <h2>Number of Patients per Day</h2>
-                <div id="visits_per_day"></div>
 
-            </div>
-        </section>
 
 
     </main>

@@ -7,7 +7,7 @@
     font-weight: 500;
 }
 
-.section-heading, #discipline-selector {
+.section-heading, #service_type_selector {
     display: inline-block;
     float: none;
     margin: 0;
@@ -28,19 +28,16 @@
 div#map {
     min-height: 360px;
     max-width: 600px;
+    
 }
 
-div#map2 {
-    min-height: 360px;
-    max-width: 600px;
-}
 .dc-chart g.axis text {
   
-    transform: rotate(-5deg);
-    -webkit-transform: rotate(-5deg);
-    -moz-transform: rotate(-5deg);
-    -ms-transform: rotate(-5deg);
-    -o-transform: rotate(-5deg);
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
 }
 .dc-chart g.axis text span::before {
     content: "\A";

@@ -56,10 +56,10 @@ function show_facility_type_selector(ndx) {
 
 function show_facility_name(ndx) {
         dim = ndx.dimension(dc.pluck('name'));
+        group = dim.group()
         dc.selectMenu("#facility_name_selector")
                 .dimension(dim)
-                .group(group)
-                .numberVisible();
+                .group(group);
 }
 
 
@@ -83,18 +83,20 @@ function show_facility_type(ndx) {
 // Number of staff per facility 
 function show_number_staff(ndx) {
 
-        var doctors_dim = ndx.dimension(dc.pluck('name'));
-        var nurses_dim = ndx.dimension(dc.pluck('name'));
-        var counsellors_dim = ndx.dimension(dc.pluck('name'));
+        var doctors_dim = ndx.dimension(dc.pluck('type'));
+        var nurses_dim = ndx.dimension(dc.pluck('type'));
+        var counsellors_dim = ndx.dimension(dc.pluck('type'));
+        var consultants_dim = ndx.dimension(dc.pluck('type'));
 
 
         var number_of_doctors = doctors_dim.group().reduceSum(dc.pluck('staff/doctors'));
         var number_of_nurses = nurses_dim.group().reduceSum(dc.pluck('staff/nurses'));
         var number_of_counsellors = counsellors_dim.group().reduceSum(dc.pluck('staff/counsellor'));
+        var number_of_consultants = consultants_dim.group().reduceSum(dc.pluck('staff/consultants'));
 
         var stackedChart = dc.barChart("#staff_numbers");
         stackedChart
-                .width(1600)
+                .width(630)
                 .height(250)
                 .margins({
                         top: 10,
@@ -106,16 +108,19 @@ function show_number_staff(ndx) {
                 .group(number_of_doctors, "Doctors")
                 .stack(number_of_nurses, "Nurses")
                 .stack(number_of_counsellors, "Counselors/Therapists")
+                .stack(number_of_consultants, "Consultants")
                 .transitionDuration(500)
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
-                .legend(dc.legend().x(1540).y(20).itemHeight(15).gap(5))
+                .legend(dc.legend().x(500).y(20).itemHeight(15).gap(5))
                 .margins({
                         top: 10,
                         right: 100,
                         bottom: 30,
                         left: 30
                 })
+                .elasticY(true)
+                .elasticX(true)
                 .xAxisLabel("Facilities")
                 .yAxisLabel("Staff")
                 .yAxis().ticks(10);
@@ -177,9 +182,10 @@ function show_average_waiting_time(ndx) {
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
                 .elasticY(true)
+                .elasticX(true)
                 .xAxisLabel("Facility")
                 .yAxisLabel("Minutes")
-                .yAxis().ticks(10);
+                .yAxis().ticks();
 }
 //*************************************************************************************************
 // Patients visits per day
