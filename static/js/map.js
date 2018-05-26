@@ -1,35 +1,44 @@
 //*************************************************************************************************
 // Map Function  This code snipet was adapted from stack overflow, "Loading latitude longitude
 // data using Google maps API using CSV data"
-$.get('data/clinics.csv', function(data){
-    function initialize() {
+function initMap() {} // now it IS a function and it is in global
+
+$.get('data/clinics.csv', function(clinicData){
+    initMap = function() {
+                
                 var bounds = new google.maps.LatLngBounds();
                 var mapOptions = {
                 mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
-                var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-                map.setTilt(45);                  
                 
-                
-                var markers = [];
+                var mapOptions = {
+                    zoom: 4,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    mapTypeControl: false,
+                    streetViewControl: false,
+                    panControl: false
+                  };
+                map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+                var markers = [];               
                 
                 
                 var infoWindowContent = [];
 
-                data = csvToArray(data);
-                data.forEach(function(item){
+                clinicData = csvToArray(clinicData);
+                clinicData.forEach(function(item){
                     markers.push([item.name, parseFloat(item.lat), parseFloat(item.long)]);
                     infoWindowContent.push([item.type]);
                 
                 });
-                console.log(infoWindowContent);
+                //console.log(infoWindowContent);
                 
                 var infoWindow = new google.maps.InfoWindow(),
                 marker, i;
 
                 
                 for (i = 0; i < markers.length -1; i++){
-                    console.log(markers[i][1]);
+                    //console.log(markers[i][1]);
                     var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
 
                     bounds.extend(position);
@@ -58,7 +67,7 @@ $.get('data/clinics.csv', function(data){
                     });
                 
                 }
-                initialize();
+                initMap();
         });
         
         function csvToArray(csvString){
