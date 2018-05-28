@@ -38,14 +38,23 @@
 
     <main>
         <section class="section">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
-                    <h1>Your Local Medical Services</h1>
-
-                </div>
-                <div class="col-xs-12">
-                    <div id="service_type_selector" class="number-box">Select the Medical Center Type </div>
-                    <div id="facility_name_selector" class="number-box">Select the Medical Center Name </div>
+                    <div class="col-12 col-md-6">
+                        <h1 class="section-heading">Your Local Medical Services</h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <h4 class="section-heading">Medical Center Type:</h4>
+                            <br>
+                            <div id="service_type_selector" class="list-box"></div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h4 class="section-heading">Medical Center Name:</h4>
+                            <br>
+                            <div id="facility_name_selector" class="list-box"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -53,41 +62,69 @@
         <section class="section">
             <div class="container">
                 <div class="row">
-                    <div class="col">
-                        <h2>Geographic Locations of Medical Facilities</h2>
+                    <div class="col-12 col-md-6">
+                        <h2 class="section-heading">Geographic Locations of Medical Facilities</h2>
                         <div id="map" class="custom-chart">Map</div>
+                        <br>
+                        <p>Each medical facility has its own location identified on the map. Hover over the pin to see the facility
+                            name, or click on it to see the facility type. Use CTRL+Mouse Scroll to zoom in and out of the
+                            map.</p>
                     </div>
-                    <div class="col">
-                        <H2>Medical Facility Types</H2>
-                        <div id="facility_type" class="custom-chart"></div>
-                        <p>Local medical facilities an be catagorised into Hospitals, Medical Centers, Medical Clinics, walkin
-                            clinics and local General Practice services. </p>
+                    <div class="col-12 col-md-6 ">
+                        <H2 class="section-heading">Appointment Type Proportions |
+                            <small>
+                                <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+                            </small>
+                        </H2>
+                        <div class="row">
+                            <div class="col-auto">
+                                <i class="fa fa-exclamation-circle" aria-hidden="true"> Urgent Visits: </i>
+                                <span class="number-box" id="urgent_appointments"></span>
+                            </div>
+                            <div class="row">
+                                <div id="urgent_type_pie" class="pie-chart"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-auto">
+                                <i class="fa fa-plus-circle" aria-hidden="true"> Routine Visits: </i>
+                                <span class="number-box" id="routine_appointments"></span>
+                            </div>
+
+                            <div class="row">
+                                <div id="routine_type_pie" class="pie-chart"></div>
+                            </div>
+                            <p>Medical facilities an be catagorised into Hospitals, Medical Centers, Medical Clinics, Walk-in
+                                Clinics and local General Practice services.
+                                <br>The type of consultations can be further catagorised into urgent visists and routine visits.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            </div>
-        </section>
+       </section>
 
         <section class="section">
             <div class="container">
                 <div class="row">
-                    <div class="col">
-                        <h2>Staff Numbers per Facility</h2>
-                        <div id="staff_numbers"></div>
+                    <div class="col-12 col-md-6">
+                        <h2 class="section-heading">Average Waiting Times |
+                            <small>
+                                <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
+                            </small>
+                        </h2>
+                        <div id="ave_waiting_times"></div>
                     </div>
-                    <div class="col">
-                        <h2>Average Waiting Times</h2>
-                        <div id="ave_waiting_times" class="custom-chart"></div>
+                    <div class="col-12 col-md-6">
+                        <h2 class="section-heading">Staff Numbers Per Facility |
+                            <small>
+                                <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
+                            </small>
+                        </h2>
+                        <div id="staff_numbers" class="custom-chart"></div>
                     </div>
                 </div>
             </div>
-
         </section>
-
-
-
-
-
+       
     </main>
 
 </body>

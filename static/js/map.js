@@ -14,9 +14,9 @@ $.get('data/clinics.csv', function(clinicData){
                 var mapOptions = {
                     zoom: 4,
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    mapTypeControl: false,
-                    streetViewControl: false,
-                    panControl: false
+                    mapTypeControl: true,
+                    streetViewControl: true,
+                    panControl: true
                   };
                 map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
@@ -29,6 +29,7 @@ $.get('data/clinics.csv', function(clinicData){
                 clinicData.forEach(function(item){
                     markers.push([item.name, parseFloat(item.lat), parseFloat(item.long)]);
                     infoWindowContent.push([item.type]);
+
                 
                 });
                 //console.log(infoWindowContent);
