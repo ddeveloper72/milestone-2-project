@@ -22,6 +22,7 @@ function makeGraphs(error, clinicData) {
                 d.nurses = parseInt(+d['staff/nurses']);
                 d.councillors = parseInt(+d['staff/councillors']);
                 d.consultants = parseInt(+d['staff/consultants']);
+                //d.services = +d.no_of_services;
                 
                 
                 
@@ -36,6 +37,7 @@ function makeGraphs(error, clinicData) {
         show_average_waiting_time(ndx);
         show_urgentAppointments_number(ndx);
         show_routineAppointments_number(ndx);
+        //show_services(ndx);
         
 
         console.log(clinicData);
@@ -91,27 +93,26 @@ function show_urgentAppointments_number(ndx){
 
 }
 //*************************************************************************************************
-//Available departments
-function show_departments(ndx){
-        var dim = ndx.dimension(dc.pluck('type'));
+//Available Services
+/* function show_services(ndx){
+        var servicesDim = ndx.dimension(dc.pluck('type'));
                
-        var number_of_services = dim.group().reduce(add_item, remove_item, initialise);
+        
+        var number_of_services = servicesDim.group().reduceSum(add_item, remove_item, initialise);
 
+        
         function add_item(p, v) {
                 p.count++;
                 p.total += v.services;
-                p.average = p.total / p.count;
                 return p;
         }
 
         function remove_item(p, v) {
                 p.count--;
                 if (p.count == 0) {
-                        p.total = 0;
-                        p.average = 0;
-                } else {
-                        p.total -= v.services;
-                        p.average = p.total / p.count;
+                p.total = 0
+                } else {       
+                p.total -= v.services;                        
                 }
                 return p;
         }
@@ -120,7 +121,7 @@ function show_departments(ndx){
                 return {
                         count: 0,
                         total: 0,
-                        average: 0
+                        
                 };
         }
 
@@ -133,11 +134,11 @@ function show_departments(ndx){
         .x(d3.scale.ordinal())
         .elasticX(true)
         .dimension(number_of_services, "Number of Services")
-        .group(dim);
+        .group(servicesDim);
         
                 
 
-}
+} */
 //*************************************************************************************************
 // Count of all the urgent appointments at facilities in a pie-chart 
 
@@ -204,13 +205,13 @@ function show_number_staff(ndx) {
                 .dimension(dim)
                 .group(number_of_doctors, "Doctors")
                 .stack(number_of_nurses, "Nurses")
-                .stack(number_of_counsellors, "Councillors/Therapists")
+                .stack(number_of_counsellors, "Councillors")
                 .stack(number_of_consultants, "Consultants")
                 .transitionDuration(500)
                 .renderLabel(true)
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
-                .legend(dc.legend().x(410).y(0).horizontal(0).gap(5))
+                .legend(dc.legend().x(445).y(0).horizontal(0).gap(5))
                 .margins({
                         top: 10,
                         right: 100,
@@ -219,7 +220,6 @@ function show_number_staff(ndx) {
                 })
                 .elasticY(true)
                 .elasticX(true)
-                .yAxisPadding(1)
                 .xAxisLabel("Facility")
                 .yAxisLabel("Staff")
                 .yAxis().ticks(10);
