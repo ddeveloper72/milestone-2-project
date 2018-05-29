@@ -10,16 +10,16 @@ $.get('data/clinics.csv', function (clinicData) {
         var markers = [];
 
         var filter;
-        var nameDimension;
-        var nameGrouping;
-        var typeDimension;
-        var typeGrouping;
+       // var nameDimension;
+       // var nameGrouping;
+       // var typeDimension;
+       // var typeGrouping;
         var charts;
         var domCharts;
 
         var latDimension;
         var lngDimension;
-        var idDimesion;
+        var idDimension;
         var idGrouping;
 
 
@@ -193,32 +193,39 @@ window.reset = function (i) {
 function makeGraphs(error, clinicData) {
         // create our crossfilter dimensions
         var ndx = crossfilter(clinicData);
-
+        
 
 
         clinicData.forEach(function (d) {
-                d.day = Date.parse(d['date']);
-                d.time = parseInt(d['aveWaitingTime']);
+                
+                d.time = +d.aveWaitingTime;
+                d.routine = +d.routineAppointments;
+                d.urgent = +d.urgentAppointments;
+                d.doctors = parseInt(+d['staff/doctors']);
+                d.nurses = parseInt(+d['staff/nurses']);
+                d.councillors = parseInt(+d['staff/councillors']);
+                d.consultants = parseInt(+d['staff/consultants']);
+                d.services = +d.no_of_services;
 
         });
 
-
-
-
-
-
-        // show our chart objects
+// show our chart objects
         show_facility_type_selector(ndx);
-        show_facility_type(ndx);
-        show_facility_name(ndx);
+        show_facility_name_selector(ndx);
+        show_urgent_pie_type(ndx);
+        show_routine_pie_type(ndx);        
         show_number_staff(ndx);
         show_average_waiting_time(ndx);
         //show_patients_per_day(ndx);
-        //show_percent_appointments(ndx, "Urgent", "#urgent_appointments");
-        //show_percent_appointments(ndx, "Routine", "#routine_appointments");
+        show_urgentAppointments_number(ndx);
+        show_routineAppointments_number(ndx);
+        show_departments(ndx);
+
+        
 
         console.log(clinicData);
         dc.renderAll();
+
 
 }
 //*************************************************************************************************
@@ -231,34 +238,54 @@ function show_facility_type_selector(ndx) {
         dc.selectMenu("#service_type_selector")
                 .dimension(dim)
                 .group(group)
-        //.multiple(true);
+                .controlsUseVisibility(true);
 }
 //*************************************************************************************************
 // Medical facility name selector switch (shows specific facility in the dropdown)
 
-function show_facility_name(ndx) {
+function show_facility_name_selector(ndx) {
         dim = ndx.dimension(dc.pluck('name'));
         group = dim.group()
         dc.selectMenu("#facility_name_selector")
                 .dimension(dim)
                 .group(group);
 }
-
-
 //*************************************************************************************************
-// Count of all the medical facilities in a bar chart 
+// Count of all the urgent appointments at facilities in a pie-chart 
 
-function show_facility_type(ndx) {
-        var dim = ndx.dimension(dc.pluck('type'));
-        var group = dim.group();
+function show_urgent_pie_type(ndx) {
+        var urgentDim = ndx.dimension(dc.pluck('type'));
 
-        dc.pieChart("#facility_type")
-                .height(250)
+        var totalUrgentAppointments = urgentDim.group().reduceSum(dc.pluck('urgent'));
+        dc.pieChart("#urgent_type_pie")
+                .height(180)
                 .radius(90)
                 .dimension(dim)
-                .group(group)
+                .group(totalUrgentAppointments)
                 .transitionDuration(1500)
+                .innerRadius(20)
+                .turnOnControls(true);
+                
+                
 
+}
+//*************************************************************************************************
+// Count of all the routine appointments at facilities in a pie-chart 
+
+function show_routine_pie_type(ndx) {
+        var routineDim = ndx.dimension(dc.pluck('type'));
+
+        var totalRoutineAppointments = routineDim.group().reduceSum(dc.pluck('routine')); 
+        dc.pieChart("#routine_type_pie")
+                .height(180)
+                .radius(90)
+                .dimension(dim)
+                .group(totalRoutineAppointments)
+                .transitionDuration(1500)
+                .innerRadius(20)
+                .turnOnControls(true);
+                
+                
 
 }
 //*************************************************************************************************
@@ -271,14 +298,14 @@ function show_number_staff(ndx) {
         var consultants_dim = ndx.dimension(dc.pluck('type'));
 
 
-        var number_of_doctors = doctors_dim.group().reduceSum(dc.pluck('staff/doctors'));
-        var number_of_nurses = nurses_dim.group().reduceSum(dc.pluck('staff/nurses'));
-        var number_of_counsellors = counsellors_dim.group().reduceSum(dc.pluck('staff/counsellor'));
-        var number_of_consultants = consultants_dim.group().reduceSum(dc.pluck('staff/consultants'));
+        var number_of_doctors = doctors_dim.group().reduceSum(dc.pluck('doctors'));
+        var number_of_nurses = nurses_dim.group().reduceSum(dc.pluck('nurses'));
+        var number_of_counsellors = counsellors_dim.group().reduceSum(dc.pluck('councillors'));
+        var number_of_consultants = consultants_dim.group().reduceSum(dc.pluck('consultants'));
 
         var stackedChart = dc.barChart("#staff_numbers");
         stackedChart
-                .width(630)
+                .width(540)
                 .height(250)
                 .margins({
                         top: 10,
@@ -289,12 +316,13 @@ function show_number_staff(ndx) {
                 .dimension(dim)
                 .group(number_of_doctors, "Doctors")
                 .stack(number_of_nurses, "Nurses")
-                .stack(number_of_counsellors, "Counselors/Therapists")
+                .stack(number_of_counsellors, "Councillors/Therapists")
                 .stack(number_of_consultants, "Consultants")
                 .transitionDuration(500)
+                .renderLabel(true)
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
-                .legend(dc.legend().x(500).y(20).itemHeight(15).gap(5))
+                .legend(dc.legend().x(410).y(0).horizontal(0).gap(5))
                 .margins({
                         top: 10,
                         right: 100,
@@ -303,12 +331,10 @@ function show_number_staff(ndx) {
                 })
                 .elasticY(true)
                 .elasticX(true)
-                .xAxisLabel("Facilities")
+                .yAxisPadding(1)
+                .xAxisLabel("Facility")
                 .yAxisLabel("Staff")
                 .yAxis().ticks(10);
-
-
-        console.log(show_number_staff);
 
 }
 //*************************************************************************************************
@@ -317,6 +343,7 @@ function show_average_waiting_time(ndx) {
 
 
         var dim = ndx.dimension(dc.pluck('type'));
+        var averageWaitingTimeByClinic = dim.group().reduce(add_item, remove_item, initialise);
 
         function add_item(p, v) {
                 p.count++;
@@ -344,10 +371,10 @@ function show_average_waiting_time(ndx) {
                         average: 0
                 };
         }
-        var averageWaitingTimeByClinic = dim.group().reduce(add_item, remove_item, initialise);
+        
 
         dc.barChart("#ave_waiting_times")
-                .width(600)
+                .width(480)
                 .height(250)
                 .margins({
                         top: 10,
@@ -361,6 +388,7 @@ function show_average_waiting_time(ndx) {
                         return d.value.average;
                 })
                 .transitionDuration(500)
+                .renderLabel(true)
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
                 .elasticY(true)
@@ -370,36 +398,75 @@ function show_average_waiting_time(ndx) {
                 .yAxis().ticks();
 }
 //*************************************************************************************************
-// Patients visits per day
-/* function show_patients_per_day(ndx) {
+//Total routine appointments
+function show_routineAppointments_number(ndx){
+        var routineDim = ndx.dimension(dc.pluck('select_all'));
 
-        var dayOfWeek = ndx.dimension(function (d) {
-                var day = d.date.getDay();
-                var name = ['Sun', 'Mon', 'The', 'Wed', 'Thu', 'Fri', 'Sat'];
-                return day + '.' + name[day];
-        });
-        dayOfWeekChart("#visits_per_day")
-                .width(180)
-                .height(180)
-                .margins({
-                        top: 20,
-                        left: 10,
-                        right: 10,
-                        bottom: 20
-                })
-                .group(dayOfWeekGroup)
-                .dimension(dayOfWeek)
-                // Assign colors to each value in the x scale domain
-                .ordinalColors(['#3182bd', '#6baed6', '#9ecae1', '#c6dbef', '#dadaeb'])
-                .label(function (d) {
-                        return d.key.split('.')[1];
-                })
-                // Title sets the row text
-                .title(function (d) {
-                        return d.value;
-                })
-                .elasticX(true)
-                .xAxis().ticks(4);
-} */
+        var totalRoutineAppointments = routineDim.group().reduceSum(dc.pluck('routine'));      
+       
+        dc.numberDisplay("#routine_appointments")
+                .formatNumber(d3.format(",f"))
+                .group(totalRoutineAppointments);
+                
+}
 //*************************************************************************************************
-// Percentage routine vs urgent appointments
+//Total urgent appointments
+function show_urgentAppointments_number(ndx){
+        var urgentDim = ndx.dimension(dc.pluck('select_all'));
+
+        var totalUrgentAppointments = urgentDim.group().reduceSum(dc.pluck('urgent'));      
+       
+        dc.numberDisplay("#urgent_appointments")
+                .formatNumber(d3.format(",f"))
+                .group(totalUrgentAppointments);
+                
+
+}
+//*************************************************************************************************
+//Available departments
+function show_departments(ndx){
+        var dim = ndx.dimension(dc.pluck('type'));
+               
+        var number_of_services = dim.group().reduce(add_item, remove_item, initialise);
+
+        function add_item(p, v) {
+                p.count++;
+                p.total += v.services;
+                p.average = p.total / p.count;
+                return p;
+        }
+
+        function remove_item(p, v) {
+                p.count--;
+                if (p.count == 0) {
+                        p.total = 0;
+                        p.average = 0;
+                } else {
+                        p.total -= v.services;
+                        p.average = p.total / p.count;
+                }
+                return p;
+        }
+
+        function initialise() {
+                return {
+                        count: 0,
+                        total: 0,
+                        average: 0
+                };
+        }
+
+        dc.rowChart("#departments")
+        .width(768)
+        .height(480)
+        .valueAccessor(function (d) {
+                return d.value.total;
+        })
+        .x(d3.scale.ordinal())
+        .elasticX(true)
+        .dimension(number_of_services, "Number of Services")
+        .group(dim);
+        
+                
+
+}

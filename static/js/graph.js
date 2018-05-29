@@ -153,7 +153,7 @@ function show_number_staff(ndx) {
                 .elasticY(true)
                 .elasticX(true)
                 .yAxisPadding(1)
-                .xAxisLabel("Facilities")
+                .xAxisLabel("Facility")
                 .yAxisLabel("Staff")
                 .yAxis().ticks(10);
 
@@ -195,7 +195,7 @@ function show_average_waiting_time(ndx) {
         
 
         dc.barChart("#ave_waiting_times")
-                .width(540)
+                .width(480)
                 .height(250)
                 .margins({
                         top: 10,
@@ -209,6 +209,7 @@ function show_average_waiting_time(ndx) {
                         return d.value.average;
                 })
                 .transitionDuration(500)
+                .renderLabel(true)
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
                 .elasticY(true)

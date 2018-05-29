@@ -10,25 +10,18 @@
     <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="static/css/style.css" type="text/css" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXZnNo1jX7V4KYEjBEcCVR73OgG-lSzIM&callback=initMap"></script>
-    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="static/js/d3.min.js"></script>
     <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
     <script type="text/javascript" src="static/js/dc.min.js"></script>
     <script type="text/javascript" src="static/js/queue.min.js"></script>
 
-    <script type="text/javascript" src="static/js/map.js"></script>
-    <script type="text/javascript" src="static/js/graph.js"></script>
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("user_otJXtwN3f0lIaupelyNZO");
-        })();
-    </script>
-
+    
+    <script type="text/javascript" src="static/js/temp.js"></script>
+    <link rel="stylesheet" href="static/css/style.css" type="text/css" />
 
 
 </head>
@@ -40,14 +33,14 @@
                 <a class="navbar-brand" href="#">Medical Services</a>
             </div>
         </div>
-        <button class="btn btn-secondary my-2 my-sm-0" data-toggle="modal" data-target="#emailModal">Contact</button>
+
     </nav>
 
     <main>
         <section class="section">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12 col-md-6">
                         <h1 class="section-heading">Your Local Medical Services</h1>
                     </div>
                     <div class="row">
@@ -75,42 +68,39 @@
                         <br>
                         <p>Each medical facility has its own location identified on the map. Hover over the pin to see the facility
                             name, or click on it to see the facility type. Use CTRL+Mouse Scroll to zoom in and out of the
-                            map.
-                        </p>
+                            map.</p>
                     </div>
                     <div class="col-12 col-md-6 ">
-                        <H2 class="section-heading">Appointment Proportions |
+                        <H2 class="section-heading">Appointment Type Proportions |
                             <small>
                                 <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
                             </small>
                         </H2>
                         <div class="row">
-                            <div class="col-auto col-xs-12">
+                            <div class="col-auto">
                                 <i class="fa fa-exclamation-circle" aria-hidden="true"> Urgent Visits: </i>
                                 <span class="number-box" id="urgent_appointments"></span>
                             </div>
                             <div class="row">
-                                <div id="urgent_type_pie" class="pie-chart col-12"></div>
+                                <div id="urgent_type_pie" class="pie-chart"></div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-auto col-xs-12">
+                            <div class="col-auto">
                                 <i class="fa fa-plus-circle" aria-hidden="true"> Routine Visits: </i>
                                 <span class="number-box" id="routine_appointments"></span>
                             </div>
 
                             <div class="row">
-                                
-                                <div id="routine_type_pie" class="pie-chart col-12"></div>
+                                <div id="routine_type_pie" class="pie-chart"></div>
                             </div>
-                            <p>Medical facilities have been catagorised into Hospitals, Medical Centers, Medical Clinics, Walk-in
-                                Clinics and local General Practice services.  The Pie-Charts above show the vidsual proportions of all the urgent 
-                                and routine visits respectivly.  If one type of facility is selected, then the pie-chat will show 100% for that one type. 
-                                Click <a class="paragraph-link" href="javascript:dc.filterAll(); dc.renderAll();">here</a> to reset the charts.
+                            <p>Medical facilities an be catagorised into Hospitals, Medical Centers, Medical Clinics, Walk-in
+                                Clinics and local General Practice services.
+                                <br>The type of consultations can be further catagorised into urgent visists and routine visits.</p>
                         </div>
                     </div>
                 </div>
-        </section>
+       </section>
 
         <section class="section">
             <div class="container">
@@ -121,7 +111,7 @@
                                 <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
                             </small>
                         </h2>
-                        <div id="ave_waiting_times" class="custom-chart col-12"></div>
+                        <div id="ave_waiting_times"></div>
                     </div>
                     <div class="col-12 col-md-6">
                         <h2 class="section-heading">Staff Numbers Per Facility |
@@ -129,38 +119,14 @@
                                 <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
                             </small>
                         </h2>
-                        <div id="staff_numbers" class="custom-chart col-12"></div>
+                        <div id="staff_numbers" class="custom-chart"></div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Modal -->
-        <div class="modal" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
-            <div class="modal-dialog" role="document">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="myModalLabel2">Contact Us</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="contactForm" onsubmit="return sendMail(this);" method="POST">
-                            <input type="text" name="name" class="form-control" id="fullname" autocomplete="name" placeholder="Name" required/>
-                            <input type="text" name="emailaddress" class="form-control" id="emailaddress" autocomplete="email" placeholder="Email" required/>
-                            <textarea rows="5" name="messagesummary" class="form-control" id="messagesummary" placeholder="Your message here" required></textarea>
-                            <button id="submit" type="submit" class="btn btn-secondary center-block">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
+       
     </main>
-    <script type="text/javascript" src="static/js/sendEmail.js"></script>
+
 </body>
 
 </html>

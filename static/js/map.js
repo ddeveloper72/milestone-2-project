@@ -16,7 +16,11 @@ $.get('data/clinics.csv', function(clinicData){
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
                     mapTypeControl: true,
                     streetViewControl: true,
-                    panControl: true
+                    panControl: true,
+                    center: {
+                        lat: 53.144567,
+                        lng: -7.6920536
+                    }
                   };
                 map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
