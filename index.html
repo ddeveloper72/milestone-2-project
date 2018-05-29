@@ -35,28 +35,30 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
+        <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">Medical Services</a>
             </div>
         </div>
-        <button class="btn btn-secondary my-2 my-sm-0" data-toggle="modal" data-target="#emailModal">Contact</button>
+        <div>
+            <button class="btn btn-secondary my-2 my-sm-0" data-toggle="modal" data-target="#emailModal">Contact</button>
+        </div>
     </nav>
 
     <main>
         <section class="section">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-lg-6">
+                    <div class="col-auto col-xs-12">
                         <h1 class="section-heading">Your Local Medical Services</h1>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6">
+                        <div class="col-auto col-xs-12">
                             <h4 class="section-heading">Medical Center Type:</h4>
                             <br>
                             <div id="service_type_selector" class="list-box"></div>
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-auto col-xs-12">
                             <h4 class="section-heading">Medical Center Name:</h4>
                             <br>
                             <div id="facility_name_selector" class="list-box"></div>
@@ -100,13 +102,14 @@
                             </div>
 
                             <div class="row">
-                                
+
                                 <div id="routine_type_pie" class="pie-chart col-12"></div>
                             </div>
                             <p>Medical facilities have been catagorised into Hospitals, Medical Centers, Medical Clinics, Walk-in
-                                Clinics and local General Practice services.  The Pie-Charts above show the vidsual proportions of all the urgent 
-                                and routine visits respectivly.  If one type of facility is selected, then the pie-chat will show 100% for that one type. 
-                                Click <a class="paragraph-link" href="javascript:dc.filterAll(); dc.renderAll();">here</a> to reset the charts.
+                                Clinics and local General Practice services. The Pie-Charts above show the vidsual proportions
+                                of all the urgent and routine visits respectivly. If one type of facility is selected, then
+                                the pie-chat will show 100% for that one type. Click
+                                <a class="paragraph-link" href="javascript:dc.filterAll(); dc.renderAll();">here</a> to reset the charts.
                         </div>
                     </div>
                 </div>
@@ -115,7 +118,7 @@
         <section class="section">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-6">
+                    <div class="col-auto col-xs-12">
                         <h2 class="section-heading">Average Waiting Times |
                             <small>
                                 <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
@@ -123,7 +126,7 @@
                         </h2>
                         <div id="ave_waiting_times" class="custom-chart col-12"></div>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-auto col-xs-12">
                         <h2 class="section-heading">Staff Numbers Per Facility |
                             <small>
                                 <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
@@ -134,6 +137,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Modal -->
         <div class="modal" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
             <div class="modal-dialog" role="document">
@@ -157,9 +161,10 @@
                 </div>
             </div>
         </div>
-
-
     </main>
+    <footer>
+
+    </footer>
     <script type="text/javascript" src="static/js/sendEmail.js"></script>
 </body>
 

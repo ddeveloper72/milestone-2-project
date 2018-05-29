@@ -1,13 +1,9 @@
 queue()
         .defer(d3.csv, "data/clinics.csv")
+        .defer(d3.csv, "data/patients_day.csv")
         .await(makeGraphs);
-// load our data from csv file.
-//*************************************************************************************************
-// Restet medical facilities types pie-chart 
-d3.selectAll("a#all").on('click', function() {
-        dc.filterAll();
-        dc.renderAll();
-        });
+
+
 
 //*************************************************************************************************
 // Crossfilter Function   
@@ -26,8 +22,9 @@ function makeGraphs(error, clinicData) {
                 d.nurses = parseInt(+d['staff/nurses']);
                 d.councillors = parseInt(+d['staff/councillors']);
                 d.consultants = parseInt(+d['staff/consultants']);
-                d.services = +d.no_of_services;
-
+                
+                
+                
         });
 
 // show our chart objects
@@ -37,11 +34,8 @@ function makeGraphs(error, clinicData) {
         show_routine_pie_type(ndx);        
         show_number_staff(ndx);
         show_average_waiting_time(ndx);
-        //show_patients_per_day(ndx);
         show_urgentAppointments_number(ndx);
         show_routineAppointments_number(ndx);
-        show_departments(ndx);
-
         
 
         console.log(clinicData);
@@ -70,6 +64,79 @@ function show_facility_name_selector(ndx) {
         dc.selectMenu("#facility_name_selector")
                 .dimension(dim)
                 .group(group);
+}
+//*************************************************************************************************
+//Total routine appointments
+function show_routineAppointments_number(ndx){
+        var routineDim = ndx.dimension(dc.pluck('select_all'));
+
+        var totalRoutineAppointments = routineDim.group().reduceSum(dc.pluck('routine'));      
+       
+        dc.numberDisplay("#routine_appointments")
+                .formatNumber(d3.format(",f"))
+                .group(totalRoutineAppointments);
+                
+}
+//*************************************************************************************************
+//Total urgent appointments
+function show_urgentAppointments_number(ndx){
+        var urgentDim = ndx.dimension(dc.pluck('select_all'));
+
+        var totalUrgentAppointments = urgentDim.group().reduceSum(dc.pluck('urgent'));      
+       
+        dc.numberDisplay("#urgent_appointments")
+                .formatNumber(d3.format(",f"))
+                .group(totalUrgentAppointments);
+                
+
+}
+//*************************************************************************************************
+//Available departments
+function show_departments(ndx){
+        var dim = ndx.dimension(dc.pluck('type'));
+               
+        var number_of_services = dim.group().reduce(add_item, remove_item, initialise);
+
+        function add_item(p, v) {
+                p.count++;
+                p.total += v.services;
+                p.average = p.total / p.count;
+                return p;
+        }
+
+        function remove_item(p, v) {
+                p.count--;
+                if (p.count == 0) {
+                        p.total = 0;
+                        p.average = 0;
+                } else {
+                        p.total -= v.services;
+                        p.average = p.total / p.count;
+                }
+                return p;
+        }
+
+        function initialise() {
+                return {
+                        count: 0,
+                        total: 0,
+                        average: 0
+                };
+        }
+
+        dc.rowChart("#departments")
+        .width(768)
+        .height(480)
+        .valueAccessor(function (d) {
+                return d.value.total;
+        })
+        .x(d3.scale.ordinal())
+        .elasticX(true)
+        .dimension(number_of_services, "Number of Services")
+        .group(dim);
+        
+                
+
 }
 //*************************************************************************************************
 // Count of all the urgent appointments at facilities in a pie-chart 
@@ -217,77 +284,4 @@ function show_average_waiting_time(ndx) {
                 .xAxisLabel("Facility")
                 .yAxisLabel("Minutes")
                 .yAxis().ticks();
-}
-//*************************************************************************************************
-//Total routine appointments
-function show_routineAppointments_number(ndx){
-        var routineDim = ndx.dimension(dc.pluck('select_all'));
-
-        var totalRoutineAppointments = routineDim.group().reduceSum(dc.pluck('routine'));      
-       
-        dc.numberDisplay("#routine_appointments")
-                .formatNumber(d3.format(",f"))
-                .group(totalRoutineAppointments);
-                
-}
-//*************************************************************************************************
-//Total urgent appointments
-function show_urgentAppointments_number(ndx){
-        var urgentDim = ndx.dimension(dc.pluck('select_all'));
-
-        var totalUrgentAppointments = urgentDim.group().reduceSum(dc.pluck('urgent'));      
-       
-        dc.numberDisplay("#urgent_appointments")
-                .formatNumber(d3.format(",f"))
-                .group(totalUrgentAppointments);
-                
-
-}
-//*************************************************************************************************
-//Available departments
-function show_departments(ndx){
-        var dim = ndx.dimension(dc.pluck('type'));
-               
-        var number_of_services = dim.group().reduce(add_item, remove_item, initialise);
-
-        function add_item(p, v) {
-                p.count++;
-                p.total += v.services;
-                p.average = p.total / p.count;
-                return p;
-        }
-
-        function remove_item(p, v) {
-                p.count--;
-                if (p.count == 0) {
-                        p.total = 0;
-                        p.average = 0;
-                } else {
-                        p.total -= v.services;
-                        p.average = p.total / p.count;
-                }
-                return p;
-        }
-
-        function initialise() {
-                return {
-                        count: 0,
-                        total: 0,
-                        average: 0
-                };
-        }
-
-        dc.rowChart("#departments")
-        .width(768)
-        .height(480)
-        .valueAccessor(function (d) {
-                return d.value.total;
-        })
-        .x(d3.scale.ordinal())
-        .elasticX(true)
-        .dimension(number_of_services, "Number of Services")
-        .group(dim);
-        
-                
-
 }
