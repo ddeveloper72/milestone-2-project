@@ -104,8 +104,8 @@ function show_urgent_pie_type(ndx) {
         var totalUrgentAppointments = urgentDim.group().reduceSum(dc.pluck('urgent'));
         dc.pieChart("#urgent_type_pie")
                 .height(180)
-                .radius(90)
-                .dimension(dim)
+                .radius(100)
+                .dimension(urgentDim)
                 .group(totalUrgentAppointments)
                 .transitionDuration(1500)
                 .innerRadius(20);                            
@@ -121,8 +121,8 @@ function show_routine_pie_type(ndx) {
         var totalRoutineAppointments = routineDim.group().reduceSum(dc.pluck('routine')); 
         dc.pieChart("#routine_type_pie")
                 .height(180)
-                .radius(90)
-                .dimension(dim)
+                .radius(100)
+                .dimension(routineDim)
                 .group(totalRoutineAppointments)
                 .transitionDuration(1500)
                 .innerRadius(20);                
@@ -154,7 +154,7 @@ function show_number_staff(ndx) {
                         bottom: 30,
                         left: 50
                 })
-                .dimension(dim)
+                .dimension(doctors_dim)
                 .group(number_of_doctors, "Doctors")
                 .stack(number_of_nurses, "Nurses")
                 .stack(number_of_counsellors, "Councillors")
@@ -182,8 +182,8 @@ function show_number_staff(ndx) {
 function show_average_waiting_time(ndx) {
 
 
-        var dim = ndx.dimension(dc.pluck('type'));
-        var averageWaitingTimeByClinic = dim.group().reduce(add_item, remove_item, initialise);
+        var waitingTimeDim = ndx.dimension(dc.pluck('type'));
+        var averageWaitingTimeByClinic = waitingTimeDim.group().reduce(add_item, remove_item, initialise);
 
         function add_item(p, v) {
                 p.count++;
@@ -222,7 +222,7 @@ function show_average_waiting_time(ndx) {
                         bottom: 30,
                         left: 50
                 })
-                .dimension(dim)
+                .dimension(waitingTimeDim)
                 .group(averageWaitingTimeByClinic, 'Ave Waiting Time')
                 .valueAccessor(function (d) {
                         return d.value.average;
