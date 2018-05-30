@@ -1,6 +1,5 @@
 queue()
         .defer(d3.csv, "data/clinics.csv")
-        .defer(d3.csv, "data/patients_day.csv")
         .await(makeGraphs);
 
 
@@ -10,6 +9,7 @@ queue()
 function makeGraphs(error, clinicData) {
         // create our crossfilter dimensions
         var ndx = crossfilter(clinicData);
+        
         
 
 
@@ -22,7 +22,7 @@ function makeGraphs(error, clinicData) {
                 d.nurses = parseInt(+d['staff/nurses']);
                 d.councillors = parseInt(+d['staff/councillors']);
                 d.consultants = parseInt(+d['staff/consultants']);
-                //d.services = +d.no_of_services;
+                
                 
                 
                 
@@ -37,7 +37,7 @@ function makeGraphs(error, clinicData) {
         show_average_waiting_time(ndx);
         show_urgentAppointments_number(ndx);
         show_routineAppointments_number(ndx);
-        //show_services(ndx);
+        
         
 
         console.log(clinicData);
@@ -55,7 +55,8 @@ function show_facility_type_selector(ndx) {
         dc.selectMenu("#service_type_selector")
                 .dimension(dim)
                 .group(group)
-                .controlsUseVisibility(true);
+                .promptText('All Sites');
+                
 }
 //*************************************************************************************************
 // Medical facility name selector switch (shows specific facility in the dropdown)
@@ -65,7 +66,8 @@ function show_facility_name_selector(ndx) {
         group = dim.group()
         dc.selectMenu("#facility_name_selector")
                 .dimension(dim)
-                .group(group);
+                .group(group)
+                .promptText('Site Names');
 }
 //*************************************************************************************************
 //Total routine appointments
@@ -92,53 +94,7 @@ function show_urgentAppointments_number(ndx){
                 
 
 }
-//*************************************************************************************************
-//Available Services
-/* function show_services(ndx){
-        var servicesDim = ndx.dimension(dc.pluck('type'));
-               
-        
-        var number_of_services = servicesDim.group().reduceSum(add_item, remove_item, initialise);
 
-        
-        function add_item(p, v) {
-                p.count++;
-                p.total += v.services;
-                return p;
-        }
-
-        function remove_item(p, v) {
-                p.count--;
-                if (p.count == 0) {
-                p.total = 0
-                } else {       
-                p.total -= v.services;                        
-                }
-                return p;
-        }
-
-        function initialise() {
-                return {
-                        count: 0,
-                        total: 0,
-                        
-                };
-        }
-
-        dc.rowChart("#departments")
-        .width(768)
-        .height(480)
-        .valueAccessor(function (d) {
-                return d.value.total;
-        })
-        .x(d3.scale.ordinal())
-        .elasticX(true)
-        .dimension(number_of_services, "Number of Services")
-        .group(servicesDim);
-        
-                
-
-} */
 //*************************************************************************************************
 // Count of all the urgent appointments at facilities in a pie-chart 
 
@@ -152,9 +108,7 @@ function show_urgent_pie_type(ndx) {
                 .dimension(dim)
                 .group(totalUrgentAppointments)
                 .transitionDuration(1500)
-                .innerRadius(20)
-                .turnOnControls(true);
-                
+                .innerRadius(20);                            
                 
 
 }
@@ -171,9 +125,7 @@ function show_routine_pie_type(ndx) {
                 .dimension(dim)
                 .group(totalRoutineAppointments)
                 .transitionDuration(1500)
-                .innerRadius(20)
-                .turnOnControls(true);
-                
+                .innerRadius(20);                
                 
 
 }
@@ -211,7 +163,7 @@ function show_number_staff(ndx) {
                 .renderLabel(true)
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
-                .legend(dc.legend().x(445).y(0).horizontal(0).gap(5))
+                .legend(dc.legend().x(445).y(0).itemHeight(15).gap(5))
                 .margins({
                         top: 10,
                         right: 100,
@@ -276,7 +228,6 @@ function show_average_waiting_time(ndx) {
                         return d.value.average;
                 })
                 .transitionDuration(500)
-                .renderLabel(true)
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
                 .elasticY(true)

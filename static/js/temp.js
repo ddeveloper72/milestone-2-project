@@ -322,7 +322,7 @@ function show_number_staff(ndx) {
                 .renderLabel(true)
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
-                .legend(dc.legend().x(410).y(0).horizontal(0).gap(5))
+                .legend(dc.legend().x(445).y(0).itemHeight(15).gap(5))
                 .margins({
                         top: 10,
                         right: 100,
@@ -331,7 +331,6 @@ function show_number_staff(ndx) {
                 })
                 .elasticY(true)
                 .elasticX(true)
-                .yAxisPadding(1)
                 .xAxisLabel("Facility")
                 .yAxisLabel("Staff")
                 .yAxis().ticks(10);

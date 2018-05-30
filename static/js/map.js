@@ -33,8 +33,7 @@ $.get('data/clinics.csv', function(clinicData){
                 clinicData.forEach(function(item){
                     markers.push([item.name, parseFloat(item.lat), parseFloat(item.long)]);
                     infoWindowContent.push([item.type]);
-
-                
+                                  
                 });
                 //console.log(infoWindowContent);
                 

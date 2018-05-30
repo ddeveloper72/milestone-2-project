@@ -1,4 +1,4 @@
-id,name,lat,long,staff/doctors,staff/nurses,staff/councillors,staff/consultants,no_of_services,type,select_all,aveConsultTime,aveWaitingTime,urgentAppointments,routineAppointments,patientsPerDay,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday
+id,name,lat,long,staff/doctors,staff/nurses,staff/councillors,staff/consultants,services,type,select_all,aveConsultTime,aveWaitingTime,urgentAppointments,routineAppointments,patientsPerDay,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday
 0,Generation Health Medical Clinic,53.374805,-6.363206,5,2,9,0,12,Medical Clinic,service,10,23,44,24,74,69,57,30,110,75,100
 1,The Gables Medical Centre,53.292195,-6.267867,8,7,2,5,12,Medical Center,service,17,34,29,16,66,96,63,30,67,95,43
 2,Dame Street Medical Centre,53.344039,-6.2651859,4,5,5,2,11,Medical Center,service,20,22,84,46,87,138,19,87,30,135,113
