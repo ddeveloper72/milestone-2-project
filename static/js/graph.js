@@ -1,14 +1,16 @@
 queue()
         .defer(d3.csv, "data/clinics.csv")
+        .defer(d3.csv, "data/patients_day.csv")
         .await(makeGraphs);
 
 
 
 //*************************************************************************************************
 // Crossfilter Function   
-function makeGraphs(error, clinicData) {
+function makeGraphs(error, clinicData, attendenceData) {
         // create our crossfilter dimensions
         var ndx = crossfilter(clinicData);
+        var visits = crossfilter(attendenceData);
         
         
 
@@ -22,11 +24,12 @@ function makeGraphs(error, clinicData) {
                 d.nurses = parseInt(+d['staff/nurses']);
                 d.councillors = parseInt(+d['staff/councillors']);
                 d.consultants = parseInt(+d['staff/consultants']);
-                
-                
-                
+                d.departments = parseInt(+d['departments']);               
                 
         });
+        
+
+
 
 // show our chart objects
         show_facility_type_selector(ndx);
@@ -37,6 +40,8 @@ function makeGraphs(error, clinicData) {
         show_average_waiting_time(ndx);
         show_urgentAppointments_number(ndx);
         show_routineAppointments_number(ndx);
+        show_services_number(ndx);
+        show_departments(ndx);
         
         
 
@@ -50,11 +55,11 @@ function makeGraphs(error, clinicData) {
 function show_facility_type_selector(ndx) {
 
 
-        dim = ndx.dimension(dc.pluck('type'));
-        group = dim.group()
+        serviceSelectorDim = ndx.dimension(dc.pluck('type'));
+        serviceSelectorGroup = serviceSelectorDim.group()
         dc.selectMenu("#service_type_selector")
-                .dimension(dim)
-                .group(group)
+                .dimension(serviceSelectorDim)
+                .group(serviceSelectorGroup)
                 .promptText('All Sites');
                 
 }
@@ -62,11 +67,11 @@ function show_facility_type_selector(ndx) {
 // Medical facility name selector switch (shows specific facility in the dropdown)
 
 function show_facility_name_selector(ndx) {
-        dim = ndx.dimension(dc.pluck('name'));
-        group = dim.group()
+        facilitySelectorDim = ndx.dimension(dc.pluck('name'));
+        facilitySelectorGroup = facilitySelectorDim.group()
         dc.selectMenu("#facility_name_selector")
-                .dimension(dim)
-                .group(group)
+                .dimension(facilitySelectorDim)
+                .group(facilitySelectorGroup)
                 .promptText('Site Names');
 }
 //*************************************************************************************************
@@ -74,11 +79,11 @@ function show_facility_name_selector(ndx) {
 function show_routineAppointments_number(ndx){
         var routineDim = ndx.dimension(dc.pluck('select_all'));
 
-        var totalRoutineAppointments = routineDim.group().reduceSum(dc.pluck('routine'));      
+        var totalRoutineAppointmentsGroup = routineDim.group().reduceSum(dc.pluck('routine'));      
        
         dc.numberDisplay("#routine_appointments")
                 .formatNumber(d3.format(",f"))
-                .group(totalRoutineAppointments);
+                .group(totalRoutineAppointmentsGroup);
                 
 }
 //*************************************************************************************************
@@ -118,12 +123,12 @@ function show_urgent_pie_type(ndx) {
 function show_routine_pie_type(ndx) {
         var routineDim = ndx.dimension(dc.pluck('type'));
 
-        var totalRoutineAppointments = routineDim.group().reduceSum(dc.pluck('routine')); 
+        var totalRoutineAppointmentsGroup = routineDim.group().reduceSum(dc.pluck('routine')); 
         dc.pieChart("#routine_type_pie")
                 .height(180)
                 .radius(100)
                 .dimension(routineDim)
-                .group(totalRoutineAppointments)
+                .group(totalRoutineAppointmentsGroup)
                 .transitionDuration(1500)
                 .innerRadius(20);                
                 
@@ -133,43 +138,37 @@ function show_routine_pie_type(ndx) {
 // Number of staff per facility 
 function show_number_staff(ndx) {
 
-        var doctors_dim = ndx.dimension(dc.pluck('type'));
-        var nurses_dim = ndx.dimension(dc.pluck('type'));
-        var counsellors_dim = ndx.dimension(dc.pluck('type'));
-        var consultants_dim = ndx.dimension(dc.pluck('type'));
+        var doctorsDim = ndx.dimension(dc.pluck('type'));
+        var nursesDim = ndx.dimension(dc.pluck('type'));
+        var counsellorsDim = ndx.dimension(dc.pluck('type'));
+        var consultantsDim = ndx.dimension(dc.pluck('type'));
 
 
-        var number_of_doctors = doctors_dim.group().reduceSum(dc.pluck('doctors'));
-        var number_of_nurses = nurses_dim.group().reduceSum(dc.pluck('nurses'));
-        var number_of_counsellors = counsellors_dim.group().reduceSum(dc.pluck('councillors'));
-        var number_of_consultants = consultants_dim.group().reduceSum(dc.pluck('consultants'));
+        var numberOfDoctorsGroup = doctorsDim.group().reduceSum(dc.pluck('doctors'));
+        var numberOfNursesGroup = nursesDim.group().reduceSum(dc.pluck('nurses'));
+        var numberOfCounsellorsGroup = counsellorsDim.group().reduceSum(dc.pluck('councillors'));
+        var numberOfConsultantsGroup = consultantsDim.group().reduceSum(dc.pluck('consultants'));
 
         var stackedChart = dc.barChart("#staff_numbers");
         stackedChart
                 .width(540)
                 .height(250)
                 .margins({
-                        top: 10,
+                        top: 30,
                         right: 50,
                         bottom: 30,
-                        left: 50
+                        left: 30
                 })
-                .dimension(doctors_dim)
-                .group(number_of_doctors, "Doctors")
-                .stack(number_of_nurses, "Nurses")
-                .stack(number_of_counsellors, "Councillors")
-                .stack(number_of_consultants, "Consultants")
+                .dimension(doctorsDim)
+                .group(numberOfDoctorsGroup, "Doctors")
+                .stack(numberOfNursesGroup, "Nurses")
+                .stack(numberOfCounsellorsGroup, "Councillors")
+                .stack(numberOfConsultantsGroup, "Consultants")
                 .transitionDuration(500)
                 .renderLabel(true)
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
-                .legend(dc.legend().x(445).y(0).itemHeight(15).gap(5))
-                .margins({
-                        top: 10,
-                        right: 100,
-                        bottom: 30,
-                        left: 30
-                })
+                .legend(dc.legend().x(75).y(0).horizontal(1).gap(5))
                 .elasticY(true)
                 .elasticX(true)
                 .xAxisLabel("Facility")
@@ -183,7 +182,7 @@ function show_average_waiting_time(ndx) {
 
 
         var waitingTimeDim = ndx.dimension(dc.pluck('type'));
-        var averageWaitingTimeByClinic = waitingTimeDim.group().reduce(add_item, remove_item, initialise);
+        var averageWaitingTimeByClinicGroup = waitingTimeDim.group().reduce(add_item, remove_item, initialise);
 
         function add_item(p, v) {
                 p.count++;
@@ -217,13 +216,13 @@ function show_average_waiting_time(ndx) {
                 .width(480)
                 .height(250)
                 .margins({
-                        top: 10,
+                        top: 30,
                         right: 50,
                         bottom: 30,
-                        left: 50
+                        left: 30
                 })
-                .dimension(waitingTimeDim)
-                .group(averageWaitingTimeByClinic, 'Ave Waiting Time')
+                .dimension(waitingTimeDim, 'Ave Waiting Time')
+                .group(averageWaitingTimeByClinicGroup)
                 .valueAccessor(function (d) {
                         return d.value.average;
                 })
@@ -235,4 +234,80 @@ function show_average_waiting_time(ndx) {
                 .xAxisLabel("Facility")
                 .yAxisLabel("Minutes")
                 .yAxis().ticks();
+}
+//*************************************************************************************************
+//Available departments
+function show_services_number(ndx){
+        var servicesDim = ndx.dimension(dc.pluck('type'));
+               
+        var numberOfServicesGroup = servicesDim.group().reduce(add_item, remove_item, initialise);
+
+        function add_item(p, v) {
+                p.count++;
+                p.total += v.departments;
+                p.average = p.total / p.count;
+                return p;
+        }
+
+        function remove_item(p, v) {
+                p.count--;
+                if (p.count == 0) {
+                        p.total = 0;
+                        p.average = 0;
+                } else {
+                        p.total -= v.departments;
+                        p.average = p.total / p.count;
+                }
+                return p;
+        }
+
+        function initialise() {
+                return {
+                        count: 0,
+                        total: 0,
+                        average: 0
+                };
+        }
+
+        dc.rowChart("#departments")
+        .width(480)
+        .height(250)
+        .margins({top: 10, left: 10, right: 10, bottom: 20})
+        .valueAccessor(function (d) {
+                return d.value.average;
+        })
+        .x(d3.scale.ordinal())
+        .elasticX(true)
+        .dimension(servicesDim)
+        .group(numberOfServicesGroup);   
+
+}
+//*************************************************************************************************
+//Data table
+function show_departments(ndx){
+        var departmentsDim = ndx.dimension(dc.pluck('name'));
+
+        dc.dataTable("#data-table")
+        
+        .group(function (d) {return d.fields})
+        .size(60)
+        .dimension(departmentsDim)
+        .columns([
+                "name",
+                "Department 1",
+                "Department 2",
+                "Department 3",
+                "Department 4",
+                "Department 5",
+                "Department 6",
+                "Department 7",
+                "Department 8",
+                "Department 9",
+                "Department 10",
+                "Department 11",])
+                .order(d3.descending)
+                .on('renderlet', function (table) {
+                        table.selectAll('.dc-table-group').classed('info', true);
+                    });
+            
 }
