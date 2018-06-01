@@ -126,6 +126,13 @@ th {
     vertical-align: top;
     border-top: 1px solid #ddd;
 }
+
+@media only screen and (max-width: 415px){
+    .modal-content{
+        width:90%;
+    }
+}
+
 .modal-text {
     font-size: 1em;
     font-weight: 200;
@@ -136,6 +143,10 @@ th {
 .modal-link {
     font-size: 1em;
     font-weight: 400;
+}
+.backToTop{
+  padding-left: 15px; 
+  padding-bottom: 10px;  
 }
 .bookmark{
     font-size: 1em;
