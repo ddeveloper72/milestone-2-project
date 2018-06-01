@@ -47,6 +47,7 @@
         </nav>
     </header>
     <main>
+        <!--Google Map API, Appointment Proportions Numbers and Pie-Charts-->
         <section class="section">
             <div class="container">
                 <div class="col-xs-12">
@@ -72,7 +73,7 @@
                 </div>
             </div>
         </section>
-
+        <!-- Averge Waiting Times Bar Chart and Staff Numbers Per facility Stack Chart-->
         <section class="section">
             <div class="container">
                 <div class="row">
@@ -119,9 +120,9 @@
                     </div>
                 </div>
         </section>
-
+        <!--Proportion of Services per Facility Line Chart-->
         <section class="section">
-            <div class="container col-xs-12">
+            <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-md-6">
                         <h2 class="section-heading">Average Waiting Times |
@@ -142,8 +143,9 @@
                 </div>
             </div>
         </section>
+        <!-- Departments and Services Table-->
         <section>
-            <div class="container col-xs-12 col-md-12">
+            <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-md-6">
                         <h2 class="section-heading">Proportion of Services Per Facility |
@@ -154,9 +156,11 @@
                     </div>
         </section>
         <section>
-            <div class="container col-xs-12 col-md-12">
+            <div class="container">
                 <div class="row">
-                    <div id="departments" class="custom-chart col-6"></div>
+                    <div class="col-xs-12 col-md-12">
+                        <div id="departments" class="custom-chart"></div>
+                    </div>
                 </div>
                 <div class="row">
                     <h2 class="section-heading">Departments/Services Available |
@@ -165,26 +169,37 @@
                         </small>
                     </h2>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table id="data-table" class="table table-bordered table-striped">
+                            <thead>
+                                <tr class="header">
+                                    <th>Facility Name</th>
+                                    <th>Service</th>
+                                    <th>Service</th>
+                                    <th>Service</th>
+                                    <th>Service</th>
+                                    <th>Service</th>
+                                    <th>Service</th>
+                                    <th>Service</th>
+                                    <th>Service</th>
+                                    <th>Service</th>
+                                    <th>Service</th>
+                                    <th>Service</th>
+                                    <th>Service</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
 
-            <div class="row">
-                <div id="data-table" class="dc-table-group">
-                    <!-- create a custom header -->
-                    <div class="header">
-
-                        <!-- create a custom header -->
-
-                    </div class: "dc-table-column">
-                    <!-- data rows will filled in here -->
+                    <!-- <div class: "dc-table-column">
+                            <!-- data rows will filled in here -->
+                    <!-- </div>
+                    </div>
                 </div>
-            </div>
-            </div>
+            </div> -->
         </section>
-
-
-
-
-        <!-- Modal -->
+        <!-- Email Modal -->
         <div class="modal" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
             <div class="modal-dialog" role="document">
 
@@ -192,10 +207,16 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="myModalLabel2">Contact Us</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-wlabel="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+                    <section>
+                        <div class="row">
+                            <p class="modal-text">This project is for demonstration purposes only and is part of a college project.  The data for the medical sites relating to staff numbers and services is not accurate, but does have real world applications. If you like this dasboard and would like to know more about how it works, please contact the
+                                developer below, or click <a  class="modal-link"href="https://github.com/ddeveloper72" target="_blank">here</a> for information about the developer..</p>
+                        </div>
+                    </section>
                     <div class="modal-body">
                         <form id="contactForm" onsubmit="return sendMail(this);" method="POST">
                             <input type="text" name="name" class="form-control" id="fullname" autocomplete="name" placeholder="Name" required/>

@@ -292,22 +292,25 @@ function show_departments(ndx){
         .group(function (d) {return d.fields})
         .size(60)
         .dimension(departmentsDim)
+        
         .columns([
-                "name",
-                "Department 1",
-                "Department 2",
-                "Department 3",
-                "Department 4",
-                "Department 5",
-                "Department 6",
-                "Department 7",
-                "Department 8",
-                "Department 9",
-                "Department 10",
-                "Department 11",])
+                function (d) { return d.name; },
+                function (d) { return d.Service1; },
+                function (d) { return d.Service2; },
+                function (d) { return d.Service3; },
+                function (d) { return d.Service4; },
+                function (d) { return d.Service5; },
+                function (d) { return d.Service6; },
+                function (d) { return d.Service7; },
+                function (d) { return d.Service8; },
+                function (d) { return d.Service9; },
+                function (d) { return d.Service10; },
+                function (d) { return d.Service11; },
+                function (d) { return d.Service12; }
+                ])
                 .order(d3.descending)
                 .on('renderlet', function (table) {
-                        table.selectAll('.dc-table-group').classed('info', true);
+                        table.selectAll('tr.dc-table-group').remove()
                     });
             
 }
