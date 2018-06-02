@@ -79,7 +79,7 @@ button#submit {
 .custom_chart {
     margin-bottom: 40px;
 }
-div#map {
+#map {
     min-height: 20em;
     max-width: 600px;
     
@@ -152,3 +152,4 @@ th {
     font-size: 1em;
     font-weight: 400; 
 }
+

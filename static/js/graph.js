@@ -1,7 +1,7 @@
 queue()
         .defer(d3.csv, "data/clinics.csv")
         .defer(d3.csv, "data/patients_day.csv")
-        .await(makeGraphs);
+        .await(makeGraphs)
 
 
 
@@ -11,8 +11,11 @@ function makeGraphs(error, clinicData, attendenceData) {
         // create our crossfilter dimensions
         var ndx = crossfilter(clinicData);
         var visits = crossfilter(attendenceData);
-        
-        
+        var parseDate = d3.time.format("%d/%m/%Y").parse;
+        attendenceData.forEach(function (d){
+                d.date = parseDate(d.date);
+        });
+
 
 
         clinicData.forEach(function (d) {
@@ -26,8 +29,18 @@ function makeGraphs(error, clinicData, attendenceData) {
                 d.consultants = parseInt(+d['staff/consultants']);
                 d.departments = parseInt(+d['departments']);               
                 
+
         });
         
+        attendenceData.forEach(function (d) {
+                d.medClinic = +d.medicalClinic;
+                d.medCenter	= +d.medicalCenter;
+                d.medHospital	= +d.hospital;
+                d.medWalkInClinic = +d.walkInClinic;
+                d.medGp = +d.generalPractice;
+                d.count = +d.spend;
+        });
+
 
 
 
@@ -42,10 +55,13 @@ function makeGraphs(error, clinicData, attendenceData) {
         show_routineAppointments_number(ndx);
         show_services_number(ndx);
         show_departments(ndx);
+        show_number_visits(visits)
+        
         
         
 
         console.log(clinicData);
+        console.log(attendenceData);
         dc.renderAll();
 
 
@@ -109,7 +125,7 @@ function show_urgent_pie_type(ndx) {
         var totalUrgentAppointments = urgentDim.group().reduceSum(dc.pluck('urgent'));
         dc.pieChart("#urgent_type_pie")
                 .height(180)
-                .radius(100)
+                .radius(120)
                 .dimension(urgentDim)
                 .group(totalUrgentAppointments)
                 .transitionDuration(1500)
@@ -126,7 +142,7 @@ function show_routine_pie_type(ndx) {
         var totalRoutineAppointmentsGroup = routineDim.group().reduceSum(dc.pluck('routine')); 
         dc.pieChart("#routine_type_pie")
                 .height(180)
-                .radius(100)
+                .radius(120)
                 .dimension(routineDim)
                 .group(totalRoutineAppointmentsGroup)
                 .transitionDuration(1500)
@@ -282,6 +298,91 @@ function show_services_number(ndx){
         .group(numberOfServicesGroup);   
 
 }
+//*************************************************************************************************
+//Patient Numbers per Year Line Chart
+function show_number_visits(visits){
+
+var date_dim = visits.dimension(dc.pluck('date'));
+            
+var minDate = date_dim.bottom(1)[0].date;
+var maxDate = date_dim.top(1)[0].date;
+
+var medClinicDim = date_dim.group().reduceSum(function (d){
+        if (d.name === [].medClinic) {
+            return +d.medClinic;
+        } else {
+            return 0;
+        }
+    });
+
+    var medCenterDim = date_dim.group().reduceSum(function (d){
+        if (d.name === [].medCenter) {
+            return +d.medCenter;
+        } else {
+            return 0;
+        }
+    });
+
+    var medHospitalDim = date_dim.group().reduceSum(function (d){
+        if (d.name === [].medHospital) {
+            return +d.medHospital;
+        } else {
+            return 0;
+        }
+    });
+
+    var medWalkInClinicDim = date_dim.group().reduceSum(function (d){
+        if (d.name === [].medWalkInClinic) {
+            return +d.medWalkInClinic;
+        } else {
+            return 0;
+        }
+    });
+
+    var medGpDim = date_dim.group().reduceSum(function (d){
+        if (d.name === [].medGp) {
+            return +d.medGp;
+        } else {
+            return 0;
+        }
+    });
+
+var compositeChart = dc.compositeChart("#composite-chart"); 
+            compositeChart
+                .width(680)
+                .height(250)
+                .dimension(date_dim)
+                .x(d3.time.scale().domain([minDate, maxDate]))
+                .yAxisLabel("Patients per day")
+                .margins({
+                        top: 30,
+                        right: 50,
+                        bottom: 30,
+                        left: 45
+                })
+                .legend(dc.legend().x(75).y(0).horizontal(1).gap(5))
+                .renderHorizontalGridLines(true)
+                .compose([
+                dc.lineChart(compositeChart)
+                        .colors('pink')
+                        .group(medGpDim, 'GP'),
+                dc.lineChart(compositeChart)
+                        .colors('blue')
+                        .group(medHospitalDim, 'Hospital'),
+                dc.lineChart(compositeChart)
+                        .colors('red')
+                        .group(medCenterDim, 'Med Centre'),
+                        dc.lineChart(compositeChart)
+                        .colors('green')
+                        .group(medClinicDim, 'Med Clinic'),
+                dc.lineChart(compositeChart)
+                        .colors('yellow')
+                        .group(medWalkInClinicDim, 'Walk-In')
+                    ])
+                    .brushOn(false);
+
+
+}  
 //*************************************************************************************************
 //Data table
 function show_departments(ndx){

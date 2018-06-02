@@ -4,6 +4,7 @@
         "latex",
         "plaintext",
         "markdown",
-        "html"
+        "html",
+        "javascript"
     ]
 }
