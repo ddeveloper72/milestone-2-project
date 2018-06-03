@@ -1,6 +1,6 @@
 //*************************************************************************************************
 // Map Function  This code snipet was adapted from stack overflow, "Loading latitude longitude
-// data using Google maps API using CSV data"
+// data using Google maps API using CSV data" See https://goo.gl/G6GvHn for more details"
 function initMap() {} // now it IS a function and it is in global
 
 $.get('data/clinics.csv', function(clinicData){

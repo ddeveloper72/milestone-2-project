@@ -1,4 +1,5 @@
 data/node_modules/*
 .vscode/*
+milestone-2-project.code-workspace
 package-lock.json
  static/images/readme/Thumbs.db
