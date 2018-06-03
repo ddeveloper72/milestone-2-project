@@ -14,17 +14,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXZnNo1jX7V4KYEjBEcCVR73OgG-lSzIM&callback=initMap"></script>
-    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="static/js/d3.min.js"></script>
-    <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
-    <script type="text/javascript" src="static/js/dc.min.js"></script>
-    <script type="text/javascript" src="static/js/queue.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/d3.min.js"></script>
+    <script src="static/js/crossfilter.min.js"></script>
+    <script src="static/js/dc.min.js"></script>
+    <script src="static/js/queue.min.js"></script>
 
 
 
-    <script type="text/javascript" src="static/js/map.js"></script>
-    <script type="text/javascript" src="static/js/graph.js"></script>
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="static/js/map.js"></script>
+    <script src="static/js/graph.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
             emailjs.init("user_otJXtwN3f0lIaupelyNZO");
@@ -114,6 +114,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
         <!-- Average Waiting Times Bar Chart and Staff Numbers Per facility Stack Chart-->
 
@@ -142,30 +143,30 @@
         <!--Proportion of Services per Facility Line Chart and Patient visits Per facility line Chart-->
 
         <section class="section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <h2 class="section-heading">Proportion of Services per Facility |
-                                <small>
-                                    <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
-                                </small>
-                            </h2>
-                            <div id="departments" class="custom-chart col-12"></div>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <h2 class="section-heading">Patient Visits Per Type of Facility |
-                                <small>
-                                    <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
-                                </small>
-                            </h2>
-                            <div id="composite-chart" class="custom-chart col-12"></div>
-                        </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h2 class="section-heading">Proportion of Services per Facility |
+                            <small>
+                                <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
+                            </small>
+                        </h2>
+                        <div id="departments" class="custom-chart col-12"></div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h2 class="section-heading">Patient Visits Per Type of Facility |
+                            <small>
+                                <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
+                            </small>
+                        </h2>
+                        <div id="composite-chart" class="custom-chart col-12"></div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
         <section>
             <div class="container">
-                <div class="row">                    
+                <div class="row">
                     <div class="col-xs-12">
                         <h2 class="section-heading">Departments/Services Available |
                             <small>
@@ -194,6 +195,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
         <!-- Email Modal -->
         <div class="modal" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
@@ -203,7 +205,7 @@
                 <div class="modal-content col-xs-12">
                     <div class="modal-header">
                         <h5 class="modal-title" id="myModalLabel2">Contact Us</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-wlabel="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -229,7 +231,7 @@
             </div>
         </div>
     </main>
-    <script type="text/javascript" src="static/js/sendEmail.js"></script>
+    <script src="static/js/sendEmail.js"></script>
 </body>
 
 </html>
