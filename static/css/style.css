@@ -108,24 +108,7 @@ font-size: 0.8em;
     font-size: 1em;
 }
 
-th { 
-    margin-left: 0px;
-    margin-top: 10px;
-    padding: 8px; 
-    text-align: left;
-    vertical-align: top;
-    font-size: 0.7em; 
-    font-weight: bold; 
-}
-.dc-table-column {     
-    font-size: 0.7em; 
-    font-weight: 500; 
-    padding: 2px;
-    line-height: 15px;
-    text-align: left;
-    vertical-align: top;
-    border-top: 1px solid #ddd;
-}
+
 
 @media only screen and (max-width: 415px){
     .modal-content{

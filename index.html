@@ -11,15 +11,18 @@
     <link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/css/style.css" type="text/css" />
-    
+    <link rel="stylesheet" href="static/css/table.css" type="text/css" />
+
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXZnNo1jX7V4KYEjBEcCVR73OgG-lSzIM&callback=initMap"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
     <script src="static/js/d3.min.js"></script>
     <script src="static/js/crossfilter.min.js"></script>
     <script src="static/js/dc.min.js"></script>
     <script src="static/js/queue.min.js"></script>
+    <script src="static/js/jquery.tablesorter.js"></script>
+    <script src="static/js/jquery.tablesorter.pager.js"></script>
 
 
 
@@ -31,7 +34,18 @@
             emailjs.init("user_otJXtwN3f0lIaupelyNZO");
         })();
     </script>
-
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#data-table")
+                .tablesorter({
+                    widthFixed: false,
+                    widgets: ['zebra']
+                })
+                .tablesorterPager({
+                    container: $("#pager")
+                });
+        });
+    </script>
 
 
 </head>
@@ -184,14 +198,31 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
-                            <table id="data-table" class="table table-bordered table-striped">
+                            <table id="data-table" class="table table-bordered table-striped tablesorter">
                                 <thead>
                                     <tr class="header">
                                         <th>Facility Name</th>
                                         <th colspan="12">Services and Departments</th>
                                     </tr>
                                 </thead>
+                                <tbody></tbody>
                             </table>
+                            <div id="pager" class="pager">
+                                <form>
+                                    <img src="static/icons/first.png" class="first" />
+                                    <img src="static/icons/prev.png" class="prev" />
+                                    <input type="text" class="pagedisplay" />
+                                    <img src="static/icons/next.png" class="next" />
+                                    <img src="static/icons/last.png" class="last" />
+                                    <select class="pagesize">
+                                        <option selected="selected" value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="30">30</option>
+                                        <option value="40">40</option>
+                                    </select>
+                                </form>
+                            </div>
+
                             <a class="backToTop" href="#" target="_top">back to the top</a>
                         </div>
                     </div>
