@@ -56,13 +56,13 @@ queue()
         var totalRoutineAppointmentsGroup = routineDim.group().reduceSum(dc.pluck('routine'));
 
         var urgentDim = ndx.dimension(dc.pluck('select_all'));
-        var totalUrgentAppointments = urgentDim.group().reduceSum(dc.pluck('urgent'));
+        var totalUrgentAppointmentsGroup = urgentDim.group().reduceSum(dc.pluck('urgent')); 
 
-        var urgentDim = ndx.dimension(dc.pluck('type'));
-        var totalUrgentAppointments = urgentDim.group().reduceSum(dc.pluck('urgent'));
+        var urgentPieDim = ndx.dimension(dc.pluck('type'));
+        var UrgentAppointments = urgentPieDim.group().reduceSum(dc.pluck('urgent'));
 
-        var routineDim = ndx.dimension(dc.pluck('type'));
-        var totalRoutineAppointmentsGroup = routineDim.group().reduceSum(dc.pluck('routine'));
+        var routinePieDim = ndx.dimension(dc.pluck('type'));
+        var RoutineAppointments = routinePieDim.group().reduceSum(dc.pluck('routine'));
 
         var doctorsDim = ndx.dimension(dc.pluck('type'));
         var nursesDim = ndx.dimension(dc.pluck('type'));
@@ -111,7 +111,7 @@ queue()
 
         urgentNumber
                 .formatNumber(d3.format(",.2r"))
-                .group(totalUrgentAppointments);
+                .group(totalUrgentAppointmentsGroup);
                 urgentNumber.render();
 
 //*************************************************************************************************
@@ -120,8 +120,8 @@ queue()
         urgentPie
                 .height(180)
                 .radius(120)
-                .dimension(urgentDim)
-                .group(totalUrgentAppointments)
+                .dimension(urgentPieDim)
+                .group(UrgentAppointments)
                 .transitionDuration(1500)
                 .innerRadius(20);
                 urgentPie.render();
@@ -132,8 +132,8 @@ queue()
         routinePie
                 .height(180)
                 .radius(120)
-                .dimension(routineDim)
-                .group(totalRoutineAppointmentsGroup)
+                .dimension(routinePieDim)
+                .group(RoutineAppointments)
                 .transitionDuration(1500)
                 .innerRadius(20);
                 routinePie.render();
