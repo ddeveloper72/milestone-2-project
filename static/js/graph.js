@@ -3,7 +3,9 @@ queue()
         .defer(d3.csv, "data/patients_day.csv")
         .await(makeGraphs)
 
-
+        $(document).ready( function () {
+                $('#table_id').DataTable();
+            } );
 
 //*************************************************************************************************
 // Crossfilter Function   
@@ -388,7 +390,7 @@ var compositeChart = dc.compositeChart("#composite-chart");
 function show_departments(ndx){
         var departmentsDim = ndx.dimension(dc.pluck('name'));
 
-        dc.dataTable("#data-table")
+        dc.dataTable("#data_table")
         
         .group(function (d) {return d.fields})
         .size(60)

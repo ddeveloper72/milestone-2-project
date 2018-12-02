@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/css/style.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.4/sc-1.5.0/datatables.min.css"/>
     
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXZnNo1jX7V4KYEjBEcCVR73OgG-lSzIM&callback=initMap"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.4/sc-1.5.0/datatables.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
     <script src="static/js/d3.min.js"></script>
     <script src="static/js/crossfilter.min.js"></script>
@@ -184,13 +186,27 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
-                            <table id="data-table" class="table table-bordered table-striped">
+                            <table id="table_id" class="display">
                                 <thead>
-                                    <tr class="header">
-                                        <th>Facility Name</th>
-                                        <th colspan="12">Services and Departments</th>
+                                    <tr lass="header">
+                                        <th>Facility</th>
+                                        <th>Service</th>
+                                        <!-- <th colspan="11">Services and Departments</th> -->
+                                        
                                     </tr>
                                 </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Row 1 Data 1</td>
+                                        <td>Row 1 Data 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Row 2 Data 1</td>
+                                        <td>Row 2 Data 2</td>
+                                    </tr>
+                                </tbody>
+
+
                             </table>
                             <a class="backToTop" href="#" target="_top">back to the top</a>
                         </div>
