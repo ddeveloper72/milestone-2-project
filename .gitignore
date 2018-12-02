@@ -4,3 +4,4 @@ milestone-2-project.code-workspace
 package-lock.json
  static/images/readme/Thumbs.db
 *.xlsx
+.code-workspace
