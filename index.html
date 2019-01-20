@@ -53,22 +53,22 @@
     </header>
     <main>
         <!--Page Heading and Medical Centre Type and Medical Centre Name Selectors-->
-        <section class="section">
+        
             <div class="container">
                 <div class="col-xs-12">
-                    <h1 class="section-heading">Your Local Medical Services</h1>
+                    <h1 class="card-title">Your Local Medical Services</h1>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-md-6">
-                        <h4 class="section-heading">Medical Centre Type:</h4>
+                    <div class="col-xs-12 col-sm">
+                        <h4 class="card-title">Medical Centre Type:</h4>
                         <small>
                             <a href="javascript:dc.filterAll(); dc.renderAll();">Reset</a>
                         </small>
                         <br>
                         <div id="service_type_selector" class="list-box"></div>
                     </div>
-                    <div class="col-xs-12 col-md-6">
-                        <h4 id="bookmark1" class="section-heading">Medical Centre Name:</h4>
+                    <div class="col-xs-12 col-sm">
+                        <h4 id="bookmark1" class="card-title">Medical Centre Name:</h4>
                         <small>
                             <a href="javascript:dc.filterAll(); dc.renderAll();">Reset</a>
                         </small>
@@ -77,144 +77,177 @@
                     </div>
                 </div>
             </div>
-        </section>
+        
         <!--Google Map API, Appointment Proportions Numbers and Pie-Charts-->
-        <section class="section">
-            <div class="container">
+        
+            <div class="container">                    
                 <div class="row">
-                    <div class="col-xs-12 col-md-6">
-                        <h2 class="section-heading">Geographic Locations of Medical Facilities</h2>
-                        <div id="map" class="custom-chart">Map</div>
-                        <br>
-                        <p>Each medical facility has its own location identified on the map. Hover over the pin to see the facility
-                            name, or click on it to see the facility type. Use CTRL+Mouse Scroll to zoom in and out of the
-                            map.
-                        </p>
+                        
+                    <div class="card col-xs-12 col-sm">
+                        <div class="card-body">                            
+                            <div class="container">
+                                <h2 class="card-title">Geographic Locations of Medical Facilities</h2>
+                                <br>
+                                <div id="map" class="custom-chart">Map</div>
+                                <div class="card-body">
+                                    <p class="card-text">Each medical facility has its own location identified on the map. Hover over the pin to see the facility
+                                        name, or click on it to see the facility type. Use CTRL+Mouse Scroll to zoom in and out of the
+                                        map.</p>                      
+                                </div> 
+                            </div>                        
+                        </div>                        
                     </div>
-                    <div class="col-xs-12 col-md-6">
-                        <H2 class="section-heading">Appointment Proportions |
-                            <small>
-                                <a href="javascript:dc.filterAll(); dc.renderAll();">Reset</a>
-                            </small>
-                        </H2>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-6">
-                                <i class="fa fa-exclamation-circle" aria-hidden="true"> Urgent Visits: </i>
-                                <span class="number-box" id="urgent_appointments"></span>
-                                <div id="urgent_type_pie" class="pie-chart col-12"></div>
-                            </div>
 
-                            <div class="col-xs-12 col-md-6">
-                                <i class="fa fa-plus-circle" aria-hidden="true"> Routine Visits: </i>
-                                <span class="number-box" id="routine_appointments"></span>
-                                <div id="routine_type_pie" class="pie-chart col-12"></div>
-                            </div>
-                            <p>Medical facilities have been categorised into Hospitals, Medical Centres, Medical Clinics, Walk-in
-                                Clinics and local General Practice services. The Pie-Charts above show the visual proportions
-                                of all the urgent and routine visits respectively. If one type of facility is selected, then
-                                the pie-chat will show 100% for that one type. Click
-                                <a class="paragraph-link" href="javascript:dc.filterAll(); dc.renderAll();">here</a> to reset the charts.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <div class="card col-xs-12 col-sm">
+                        <div class="card-body">
+                            <div class="container">
+                                
+                                <div class="col-xs-12 col-sm">
+                                <H2 class="card-title">Appointment Proportions |
+                                    <small>
+                                        <a href="javascript:dc.filterAll(); dc.renderAll();">Reset</a>
+                                    </small>
+                                </H2>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm ">
+                                    <i class="fa fa-exclamation-circle" aria-hidden="true"> Urgent Visits: </i>
+                                    <span class="number-box" id="urgent_appointments"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-xs-12 col-sm">                                            
+                                            <div id="urgent_type_pie" class="pie-chart col-xs-12"></div>    
+                                        </div>
+                                </div>
+                                <div class="row">                                                                
+                                    <div class="col-xs-12 col-sm">                                        
+                                        <i class="fa fa-plus-circle" aria-hidden="true"> Routine Visits: </i>
+                                        <span class="number-box" id="routine_appointments"></span>
+                                    </div>
+                                </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm">                                        
+                                            <div id="routine_type_pie" class="pie-chart col-xs-12"></div>                                            
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm">                                        
+                                            <div class="card-text">
+                                                <p >Medical facilities have been categorised into Hospitals, Medical Centres, Medical Clinics, Walk-in
+                                                    Clinics and local General Practice services. The Pie-Charts above show the visual proportions
+                                                    of all the urgent and routine visits respectively. If one type of facility is selected, 
+                                                    then the pie-chat will show 100% for that one type. Click
+                                                    <a class="paragraph-link" href="javascript:dc.filterAll(); dc.renderAll();">here</a> to reset the charts.                                             
+                                                    </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>                                              
+                    </div>           
+                </div>           
+            </div>           
+        
         <!-- Average Waiting Times Bar Chart and Staff Numbers Per facility Stack Chart-->
 
-        <section class="section">
-            <div class="container">
+            <div class="container mt-auto">
                 <div class="row">
-                    <div class="col-xs-12 col-md-6">
-                        <h2 class="section-heading">Average Waiting Times |
+                    <div class="card col-xs-12 col-sm">
+                        <div class="card-body">
+                        <h2 class="card-title">Average Waiting Times |
                             <small>
                                 <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
                             </small>
                         </h2>
                         <div id="ave_waiting_times" class="custom-chart col-12"></div>
                     </div>
-                    <div class="col-xs-12 col-md-6">
-                        <h2 class="section-heading">Staff Numbers Per Facility |
+                    </div>
+                    <div class="card col-xs-12 col-sm">
+                        <div class="card-body">
+                        <h2 class="card-title">Staff Numbers Per Facility |
                             <small>
                                 <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
                             </small>
                         </h2>
-                        <div id="staff_numbers" class="custom-chart col-12"></div>
+                        <div id="staff_numbers" class="custom-chart col-xs-12 col-sm"></div>
                     </div>
                 </div>
+                </div>
             </div>
-        </section>
+        
         <!--Proportion of Services per Facility Line Chart and Patient visits Per facility line Chart-->
-
-        <section class="section">
-            <div class="container">
+        
+            <div class="container mt-auto">
                 <div class="row">
-                    <div class="col-xs-12 col-md-6">
-                        <h2 class="section-heading">Proportion of Services per Facility |
+                    <div class="card col-xs-12 col-sm">
+                        <div class="card-body">
+                        <h2 class="card-title">Proportion of Services per Facility |
                             <small>
                                 <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
                             </small>
                         </h2>
-                        <div id="departments" class="custom-chart col-12"></div>
+                        <div id="departments" class="custom-chart col-xs-12 col-sm"></div>
                     </div>
-                    <div class="col-xs-12 col-md-6">
-                        <h2 class="section-heading">Patient Visits Per Type of Facility |
+                    </div>
+                    <div class="card col-xs-12 col-sm">
+                        <div class="card-body">
+                        <h2 class="card-title">Patient Visits Per Type of Facility |
                             <small>
                                 <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
                             </small>
                         </h2>
-                        <div id="composite-chart" class="custom-chart col-12"></div>
+                        <div id="composite-chart" class="custom-chart col-sm"></div>
                     </div>
                 </div>
+                </div>
             </div>
-        </section>
-        <section>
-            <div class="container">
+     
+            <!-- Departments and Services Table-->
+
+            <div class="container mt-auto">
                 <div class="row">
-                    <div class="col-xs-12">
-                        <h2 class="section-heading">Departments/Services Available |
+                    <div class="card col-xs-12 col-sm">                        
+                        <div class="card-body">
+                        <h2 class="card-title">Departments/Services Available |
                             <small>
                                 <a href="javascript:dc.filterAll();dc.renderAll();">Reset</a>
                             </small>
                         </h2>
-                        <p>Selecting any of the facility types on a chart above, will filter the list below. This table has
+                        <p class="card-text">Selecting any of the facility types on a chart above, will filter the list below. This table has
                             more detailed information about the services and departments offered by each of the facilities.
                             By selecting a specific practice name from the drop-down
                             <a class="bookmark" href="#bookmark1">medical centre name</a> list above, you can refine your search better.</p>
-                    </div>
-                </div>
-                <!-- Departments and Services Table-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <table id="table_id" class="display">
-                                <thead>
-                                    <tr lass="header">
-                                        <th>Facility</th>
-                                        <th>Service</th>
-                                        <!-- <th colspan="11">Services and Departments</th> -->
-                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Row 1 Data 1</td>
-                                        <td>Row 1 Data 2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Row 2 Data 1</td>
-                                        <td>Row 2 Data 2</td>
-                                    </tr>
-                                </tbody>
-
-
-                            </table>
-                            <a class="backToTop" href="#" target="_top">back to the top</a>
+                            
+                            <div class="col-sm">         
+                                <table id="table_data" class="table data_table">
+                                    <thead>
+                                        <tr lass="header">
+                                            <th>Facility</th>
+                                            <th>Type</th>
+                                            <th colspan="11">Services and Departments</th>                                            
+                                        </tr>
+                                    </thead>
+                                </table> 
+                            </div>    
+                            <div class="row ml-0">                            
+                                <div id="paging">
+                                    Showing
+                                    <span id="begin"></span>-
+                                    <span id="end"></span> of
+                                    <span id="size"></span>.
+                                    <input id="last" class="btn btn-primary btn-sm" type="Button" value="Last" onclick="javascript:last()" disabled="true">
+                                    <input id="next" class="btn btn-primary btn-sm" type="button" value="Next" onclick="javascript:next()">
+                                    <a class="backToTop" href="#" target="_top">back to the top</a>    
+                                </div>                                            
+                            </div>                        
                         </div>
-                    </div>
+                    </div>                
                 </div>
             </div>
-        </section>
+        
         <!-- Email Modal -->
+
         <div class="modal" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
             <div class="modal-dialog" role="document">
 
@@ -247,7 +280,13 @@
                 </div>
             </div>
         </div>
+        <footer mt-auto py-3>
+            <div class="container">
+              <span class="text-muted">Milestone 2 project for the Code Institute <br />by Duncan Falconer, 2018</span>
+          </div> 
+          </footer> 
     </main>
+    
     <script src="static/js/sendEmail.js"></script>
 </body>
 

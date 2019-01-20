@@ -1,4 +1,5 @@
-.list-box{
+/* chart styles */
+.list-box {
     margin-right: 75px;
     
 }
@@ -15,11 +16,11 @@ button#submit {
     margin-top: 0.5em;
 }
 
-@media only screen and (max-width: 415px){
+/* @media only screen and (max-width: 415px){
     .list-box{
         margin-left: 10px;
     }
-}
+} */
 
 .number-box{
     margin-left: 10px;
@@ -40,7 +41,7 @@ button#submit {
 }
 }
 
-.section-heading, #service_type_selector, #facility_name_selector {
+#service_type_selector, #facility_name_selector {
     display: block;
     float: none;
     margin: 0;
@@ -48,7 +49,7 @@ button#submit {
 }
 
 @media only screen and (max-width: 769px){
-    .section-heading, #service_type_selector, #facility_name_selector {
+    #service_type_selector, #facility_name_selector {
         display: block;
         float: none;
         margin: 0;
@@ -60,10 +61,6 @@ button#submit {
     
 }
 
-.section {
-    border-bottom: 1px solid #e6e6e6;
-    padding: 30px 0;
-}
 
 @media only screen and (max-width: 769px){
     .section {
@@ -72,26 +69,19 @@ button#submit {
 }
 }
 
-.section-paragraph {
-    line-height: 1.2;
-}
 
-.custom_chart {
-    margin-bottom: 40px;
-}
 #map {
     min-height: 20em;
     max-width: 600px;
     
 }
 
-.dc-chart g.axis text {
-  
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
+#composite-chart dc-chart, #composite-chart g.axis.x text {  
+    transform: rotate(20deg); /* x axis label text too long. Add rotation */
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
 }
 .dc-chart g.axis text span::before {
     content: "\A";
@@ -100,13 +90,28 @@ button#submit {
 
 a { 
     cursor: pointer;
-font-size: 0.8em;
+    font-size: 0.8em;
 }
 
 .paragraph-link { 
     cursor: pointer;
     font-size: 1em;
 }
+
+
+ /* table_data styles */
+#table_data th, #table_data td {
+    text-align: left;
+    padding: 12px;
+  }
+  
+  #table_data tr {
+    border-bottom: 1px solid #ddd; 
+  }
+
+#table_data tr.header, #table_data tr:hover {
+    background-color: #f1f1f1;
+  }
 
 th { 
     margin-left: 0px;
@@ -116,6 +121,8 @@ th {
     vertical-align: top;
     font-size: 0.7em; 
     font-weight: bold; 
+    color: white;
+    background-color: #EB773D;
 }
 .dc-table-column {     
     font-size: 0.7em; 
@@ -127,6 +134,7 @@ th {
     border-top: 1px solid #ddd;
 }
 
+/* modal styles for email */
 @media only screen and (max-width: 415px){
     .modal-content{
         width:95vw;

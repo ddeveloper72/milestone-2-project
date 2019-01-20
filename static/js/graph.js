@@ -3,8 +3,9 @@ queue()
         .defer(d3.csv, "data/patients_day.csv")
         .await(makeGraphs)
 
-        $(document).ready( function () {
-                $('#table_id').DataTable();
+        $(document).ready(function() {
+                $('data_table').DataTable();
+                
             } );
 
 //*************************************************************************************************
@@ -56,8 +57,8 @@ function makeGraphs(error, clinicData, attendenceData) {
         show_urgentAppointments_number(ndx);
         show_routineAppointments_number(ndx);
         show_services_number(ndx);
-        show_departments(ndx);
-        show_number_visits(visits)
+        show_number_visits(visits);
+        show_departments(ndx)
         
         
         
@@ -169,8 +170,8 @@ function show_number_staff(ndx) {
 
         var stackedChart = dc.barChart("#staff_numbers");
         stackedChart
-                .width(540)
-                .height(250)
+                /* .width(540)
+                .height(250) */
                 .margins({
                         top: 30,
                         right: 50,
@@ -231,8 +232,8 @@ function show_average_waiting_time(ndx) {
         
 
         dc.barChart("#ave_waiting_times")
-                .width(480)
-                .height(250)
+                /* .width(480)
+                .height(250) */
                 .margins({
                         top: 30,
                         right: 50,
@@ -288,8 +289,8 @@ function show_services_number(ndx){
         }
 
         dc.rowChart("#departments")
-        .width(480)
-        .height(250)
+        /* .width(480)
+        .height(250) */
         .margins({top: 10, left: 10, right: 10, bottom: 20})
         .valueAccessor(function (d) {
                 return d.value.average;
@@ -351,8 +352,8 @@ var medClinicDim = date_dim.group().reduceSum(function (d){
 
 var compositeChart = dc.compositeChart("#composite-chart"); 
             compositeChart
-                .width(680)
-                .height(250)
+                /* .width(540)
+                .height(250) */
                 .dimension(date_dim)
                 .x(d3.time.scale().domain([minDate, maxDate]))
                 .yAxisLabel("Patients per day")
@@ -389,13 +390,11 @@ var compositeChart = dc.compositeChart("#composite-chart");
 //Data table
 function show_departments(ndx){
         var departmentsDim = ndx.dimension(dc.pluck('name'));
-
-        dc.dataTable("#data_table")
+        var chart = dc.dataTable('#table_data')
         
         .group(function (d) {return d.fields})
-        .size(60)
+        .size(Infinity)
         .dimension(departmentsDim)
-        
         .columns([
                 function (d) { return d.name; },
                 function (d) { return d.Service1; },
@@ -410,10 +409,67 @@ function show_departments(ndx){
                 function (d) { return d.Service10; },
                 function (d) { return d.Service11; },
                 function (d) { return d.Service12; }
-                ])
-                .order(d3.descending)
-                .on('renderlet', function (table) {
-                        table.selectAll('tr.dc-table-group').remove()
-                    });
-            
-}
+        ])
+        .order(d3.descending)
+        .order(d3.ascending)
+        .on('preRender', update_offset)
+        .on('preRedraw', update_offset)
+        .on('pretransition', display)
+        .on('renderlet', function (table) {
+                table.selectAll('tr.dc-table-group').remove();
+        })
+        update();
+        /* chart.beginSlice(ofs);
+        chart.endSlice(ofs+pag); */
+        chart.render();
+        dc.renderAll;       
+        
+        
+
+//*************************************************************************************************
+//Data table pagination
+
+
+        var chart;
+        var ndx;              
+        var ofs = 0, pag = 10;
+        document.getElementById("last").onclick = last;
+        document.getElementById("next").onclick = next;
+
+        function update_offset() {
+                var totFilteredRecs = ndx.groupAll().value();
+                var end = ofs + pag > totFilteredRecs ? totFilteredRecs : ofs + pag;
+                ofs = ofs >= totFilteredRecs ? Math.floor((totFilteredRecs - 1) / pag) * pag : ofs;
+                ofs = ofs < 0 ? 0 : ofs;
+                chart.beginSlice(ofs);
+                chart.endSlice(ofs+pag);
+        }
+        function display() {
+
+                d3.select("#begin")
+                .text(ofs);
+                d3.select("#end")
+                .text(ofs+pag-1);
+                d3.select("#last")
+                .attr('disabled', ofs-pag<0 ? 'true' : null);
+                d3.select("#next")
+                .attr('disabled', ofs+pag>=ndx.size() ? 'true' : null);
+                d3.select("#size").text(ndx.size());
+        }
+        function update() {
+                    chart.beginSlice(ofs);
+                    chart.endSlice(ofs+pag);
+                display();
+        }
+        function next() {
+                ofs += pag;
+                update();
+                chart.redraw();
+        }
+        function last() {
+                ofs -= pag;
+                update();
+                chart.redraw();
+        }
+
+}           
