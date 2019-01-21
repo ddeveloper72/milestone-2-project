@@ -161,3 +161,8 @@ th {
     font-weight: 400; 
 }
 
+.dc-chart .pie-slice {
+    fill: #0a0a0a;
+    font-size: 0.6em;
+    cursor: pointer;
+}

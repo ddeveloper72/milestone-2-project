@@ -1,0 +1,22 @@
+/* tables */
+th { 
+    margin-left: 0px;
+    margin-top: 10px;
+    padding: 8px; 
+    text-align: left;
+	vertical-align: top;
+	width: auto;
+    font-size: 0.8em; 
+	font-weight: normal; 
+	color: white;
+	background-color: #EB773D;
+}
+.dc-table-column {  
+	font-size: 0.7em; 
+    font-weight: 500; 
+    padding: 2px;
+    line-height: 15px;
+    text-align: left;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
