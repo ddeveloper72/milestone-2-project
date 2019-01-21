@@ -9,24 +9,18 @@ $.get('data/clinics.csv', function(clinicData){
     initMap = function() {
                 
                 var bounds = new google.maps.LatLngBounds();
+                var heuston = new google.maps.LatLng(53.346193, -6.293543);
                 var mapOptions = {
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
-                
-                var mapOptions = {
-                    zoom: 14,
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    mapTypeControl: true,
-                    streetViewControl: true,
+                    streetViewControl: false,
                     panControl: true,
-                    /*  Center map over my required location area, that way if anye one else, somewhere out
-                        of this location area views this map, it will show them this location and not theirs.
+                    zoom: 7,
+                    /*  Center map over my required location area (in full-screen view )that way if you are located 
+                    outside of this location area, the view will center over the specified area.
                     */
-                    center: {
-                        lat: 53.2042,
-                        lng: -6.1730
-                    }
+                   center: heuston                   
                   };
+
                 // Display a map on the page
                 map = new google.maps.Map(document.getElementById("map"), mapOptions);
                 
@@ -75,7 +69,7 @@ $.get('data/clinics.csv', function(clinicData){
                     
                     
                     var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event){
-                        this.setZoom(14);
+                        this.setZoom();
                         google.maps.event.removeListener(boundsListener);
                     });
                 
