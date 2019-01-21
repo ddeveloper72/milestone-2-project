@@ -14,7 +14,7 @@ $.get('data/clinics.csv', function(clinicData){
                 };
                 
                 var mapOptions = {
-                    zoom: 4,
+                    zoom: 14,
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
                     mapTypeControl: true,
                     streetViewControl: true,
@@ -23,8 +23,8 @@ $.get('data/clinics.csv', function(clinicData){
                         of this location area views this map, it will show them this location and not theirs.
                     */
                     center: {
-                        lat: 53.144567,
-                        lng: -7.6920536
+                        lat: 53.2042,
+                        lng: -6.1730
                     }
                   };
                 // Display a map on the page
