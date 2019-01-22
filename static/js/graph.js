@@ -175,8 +175,8 @@ function show_number_staff(ndx) {
                 .margins({
                         top: 30,
                         right: 50,
-                        bottom: 30,
-                        left: 30
+                        bottom: 40,
+                        left: 35
                 })
                 .dimension(doctorsDim)
                 .group(numberOfDoctorsGroup, "Doctors")
@@ -237,7 +237,7 @@ function show_average_waiting_time(ndx) {
                 .margins({
                         top: 30,
                         right: 50,
-                        bottom: 30,
+                        bottom: 40,
                         left: 30
                 })
                 .dimension(waitingTimeDim, 'Ave Waiting Time')
