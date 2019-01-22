@@ -93,22 +93,22 @@ button#submit {
 @media only screen and (max-width: 415px){
 #ave_waiting_times dc-chart, 
 #ave_waiting_times g.axis.x text {  
-    transform: rotate(5deg); /* x axis label text too long. Add rotation */
-    -webkit-transform: rotate(5deg);
-    -moz-transform: rotate(5deg);
-    -ms-transform: rotate(5deg);
-    -o-transform: rotate(5deg);
+    transform: rotate(8deg); /* x axis label text too long. Add rotation */
+    -webkit-transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    -ms-transform: rotate(8deg);
+    -o-transform: rotate(8deg);
 }
 }
 
 @media only screen and (max-width: 415px){
 #staff_numbers dc-chart, 
 #staff_numbers g.axis.x text {  
-    transform: rotate(5deg); /* x axis label text too long. Add rotation */
-    -webkit-transform: rotate(5deg);
-    -moz-transform: rotate(5deg);
-    -ms-transform: rotate(5deg);
-    -o-transform: rotate(5deg);
+    transform: rotate(8deg); /* x axis label text too long. Add rotation */
+    -webkit-transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    -ms-transform: rotate(8deg);
+    -o-transform: rotate(8deg);
 }
 }
 
