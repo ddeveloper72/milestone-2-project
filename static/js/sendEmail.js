@@ -1,18 +1,22 @@
 function sendMail(contactForm) {
-    emailjs.send("gmail", "medical_dashboard", {
+    emailjs.send("gmail", "online_profile", {
         "from_name": contactForm.name.value,
-        "from_email": contactForm.emailaddress.value,
-        "information_request": contactForm.messagesummary.value
-        })    
+        "from_email": contactForm.email.value,
+        "from_phone_number": contactForm.phone.value,
+        "information_request": contactForm.message.value
+    })
+    
     .then(
         function(response) {
-            alert("Thank you for your message!  Send Successful");
+            alert('Your mail is sent!')
+
             console.log("SUCCESS", response);
       },
         function(error) {
-            alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+            alert('Oops... ' + JSON.stringify(error));
             console.log("FAILED", error);
         }
     );
-    return false;    
+    document.getElementById("contactForm").reset();
+    return false;
 }
