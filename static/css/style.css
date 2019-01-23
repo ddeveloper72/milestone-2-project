@@ -191,3 +191,13 @@ th {
     width:16px;
     height:16px;
     }
+    
+/* Modal Custom Styles */
+.modal-header, .close {
+    background-color: #3393ff;
+    color: white;
+}
+
+.close :focus {
+    color: #fff;
+}
