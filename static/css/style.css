@@ -16,26 +16,21 @@ button#submit {
     margin-top: 0.5em;
 }
 
-/* @media only screen and (max-width: 415px){
-    .list-box{
-        margin-left: 10px;
-    }
-} */
 
-.number-box{
+.number-box {
     margin-left: 10px;
 
 }
 
 .number-box,
-.fa {
+.fas :not(p) {
     font-size: 1.5em;
     font-weight: 500;
 }
 
 @media only screen and (max-width: 415px){
-    .number-box,
-.fa {
+    .number-box
+    .fas {
     font-size: 1.2em;
     font-weight: 500;
 }
@@ -191,3 +186,8 @@ th {
     font-size: 0.6em;
     cursor: pointer;
 }
+
+.glyph-icon svg {
+    width:16px;
+    height:16px;
+    }
