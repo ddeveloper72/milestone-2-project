@@ -33,13 +33,17 @@ select, button {
 /* ###################################*/
 /* Modal Styles */
 
-.close :focus {
+.close:focus {
     color: #fff;
 }
 
 .modal-header, .close {
     background-color: #3393ff;
     color: white;
+}
+
+.close:hover {
+    color: #fff;
 }
 
 .modal-link {
