@@ -1,7 +1,24 @@
-/* chart styles */
-.list-box {
-    margin-right: 75px;
-    
+/* ###################################*/
+/* Custom Style Sheet*/
+
+a { 
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.backToTop{
+  padding-left: 15px; 
+  padding-bottom: 10px;  
+}
+
+.bookmark{
+    font-size: 1em;
+    font-weight: 400; 
+}
+
+.paragraph-link { 
+    cursor: pointer;
+    font-size: 1em;
 }
 
 select, button {
@@ -9,23 +26,75 @@ select, button {
     margin-left:5px;
     background-color: beige;
     border-color: #185ddd9d;
-   
 }
+
+
+
+/* ###################################*/
+/* Modal Styles */
+
+.close :focus {
+    color: #fff;
+}
+
+.modal-header, .close {
+    background-color: #3393ff;
+    color: white;
+}
+
+.modal-link {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.modal-text {
+    font-size: 1em;
+    font-weight: 200;
+    margin-right: 20px;
+    margin-left: 35px;
+    padding:10px;
+}
+
+@media only screen and (max-width: 415px){
+    .modal-content{
+        width:95vw;
+    }
+}
+
+/* ###################################*/
+/* Chart Styles */
 
 button#submit {
     margin-top: 0.5em;
 }
 
-
-.number-box {
-    margin-left: 10px;
-
+.dc-chart g.axis text span::before {
+    content: "\A";
+    white-space: pre;
 }
 
-.number-box,
-.fas :not(p) {
-    font-size: 1.5em;
-    font-weight: 500;
+.dc-chart .pie-slice {
+    fill: #0a0a0a;
+    font-size: 0.6em;
+    cursor: pointer;
+}
+
+#composite-chart dc-chart, #composite-chart g.axis.x text {  
+    transform: rotate(20deg); /* x axis label text too long. Add rotation */
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+}
+
+.list-box {
+    margin-right: 75px;
+}
+
+
+#map {
+    min-height: 20em;
+    max-width: 600px;
+    
 }
 
 @media only screen and (max-width: 415px){
@@ -33,14 +102,7 @@ button#submit {
     .fas {
     font-size: 1.2em;
     font-weight: 500;
-}
-}
-
-#service_type_selector, #facility_name_selector {
-    display: block;
-    float: none;
-    margin: 0;
-    padding-bottom: 1em;
+    }
 }
 
 @media only screen and (max-width: 769px){
@@ -56,34 +118,36 @@ button#submit {
     
 }
 
-
 @media only screen and (max-width: 769px){
     .section {
     border-bottom: 1px solid #e6e6e6;
     padding-bottom: 1em;
-}
-}
-
-
-#map {
-    min-height: 20em;
-    max-width: 600px;
-    
+    }
 }
 
-#composite-chart dc-chart, #composite-chart g.axis.x text {  
-    transform: rotate(20deg); /* x axis label text too long. Add rotation */
-    -webkit-transform: rotate(20deg);
-    -moz-transform: rotate(20deg);
-    -ms-transform: rotate(20deg);
+.number-box {
+    margin-left: 10px;
 }
 
-.dc-chart g.axis text span::before {
-    content: "\A";
-    white-space: pre;
+.number-box,
+.fas :not(p) {
+    font-size: 1.5em;
+    font-weight: 500;
 }
 
-/* Media queris for configuring x acis labels on small screens */
+
+
+
+
+#service_type_selector, #facility_name_selector {
+    display: block;
+    float: none;
+    margin: 0;
+    padding-bottom: 1em;
+}
+
+/* ###################################*/
+/* Config x axis labels on small screens */
 
 @media only screen and (max-width: 415px){
 #ave_waiting_times dc-chart, 
@@ -93,7 +157,7 @@ button#submit {
     -moz-transform: rotate(8deg);
     -ms-transform: rotate(8deg);
     -o-transform: rotate(8deg);
-}
+    }
 }
 
 @media only screen and (max-width: 415px){
@@ -104,28 +168,29 @@ button#submit {
     -moz-transform: rotate(8deg);
     -ms-transform: rotate(8deg);
     -o-transform: rotate(8deg);
-}
-}
-
-
-a { 
-    cursor: pointer;
-    font-size: 0.8em;
-}
-
-.paragraph-link { 
-    cursor: pointer;
-    font-size: 1em;
+    }
 }
 
 
- /* table_data styles */
+/* ###################################*/
+/* table_data styles */
+
+.dc-table-column {     
+    font-size: 0.7em; 
+    font-weight: 500; 
+    padding: 2px;
+    line-height: 15px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+
 #table_data th, #table_data td {
     text-align: left;
     padding: 12px;
   }
   
-  #table_data tr {
+#table_data tr {
     border-bottom: 1px solid #ddd; 
   }
 
@@ -144,60 +209,4 @@ th {
     color: white;
     background-color: #EB773D;
 }
-.dc-table-column {     
-    font-size: 0.7em; 
-    font-weight: 500; 
-    padding: 2px;
-    line-height: 15px;
-    text-align: left;
-    vertical-align: top;
-    border-top: 1px solid #ddd;
-}
 
-/* modal styles for email */
-@media only screen and (max-width: 415px){
-    .modal-content{
-        width:95vw;
-    }
-}
-
-.modal-text {
-    font-size: 1em;
-    font-weight: 200;
-    margin-right: 20px;
-    margin-left: 35px;
-    padding:10px;
-}
-.modal-link {
-    font-size: 1em;
-    font-weight: 400;
-}
-.backToTop{
-  padding-left: 15px; 
-  padding-bottom: 10px;  
-}
-.bookmark{
-    font-size: 1em;
-    font-weight: 400; 
-}
-
-.dc-chart .pie-slice {
-    fill: #0a0a0a;
-    font-size: 0.6em;
-    cursor: pointer;
-}
-
-.glyph-icon svg {
-    width:16px;
-    height:16px;
-    }
-    
-/* Modal Custom Styles */
-.modal-header, .close {
-    background-color: #3393ff;
-    color: white;
-}
-
-.close :focus {
-    color: #fff;
-}

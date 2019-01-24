@@ -46,7 +46,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/"><i class="fas fa-user-md"></i> Medical Services</a>
+                    <a class="navbar-brand" href="#"><i class="fas fa-user-md"></i> Medical Services</a>
                 </div>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -54,13 +54,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                    </li>
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                     </li>
+                     
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target="#emailModal"><i
-                                class="far fa-paper-plane"> Contact</i></a>
+                            <i class="far fa-paper-plane"><a class="nav-link" data-toggle="modal" data-target="#emailModal"> Contact</a></i>
                     </li>
                 </ul>
             </div>
@@ -81,7 +81,7 @@
                             data-placement="right" title="Select to reset">Reset</a>
                     </small>
                     <br>
-                    <div id="service_type_selector" class="list-box" data-toggle="tooltip" data-placement="right" title="Select site"></div>
+                    <div id="service_type_selector" class="list-box"></div>
                 </div>
                 <div class="col-xs-12 col-sm">
                     <h4 id="bookmark1" class="card-title">Medical Centre Name:</h4>
@@ -90,8 +90,7 @@
                             data-placement="right" title="Select to reset">Reset</a>
                     </small>
                     <br>
-                    <div id="facility_name_selector" class="list-box" data-toggle="tooltip" data-placement="right"
-                        title="Select Specific Site"></div>
+                    <div id="facility_name_selector" class="list-box"></div>
                 </div>
             </div>
         </div>
