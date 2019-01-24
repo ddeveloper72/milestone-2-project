@@ -19,6 +19,24 @@ a {
     font-weight: 400; 
 }
 
+a:not([href]):not([tabindex]) {
+    color: #ffffff;
+}
+
+.dropdown-menu {
+    background-color:#3393ff;
+}
+
+.dropdown-item {
+    color: #ffffff;
+    background-color: #3393ff;
+}
+
+.dropdown-item:hover {
+    color: #ffffff;
+    background-color: #4133ff58;
+}
+
 .paragraph-link { 
     cursor: pointer;
     font-size: 1em;
