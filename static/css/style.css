@@ -150,6 +150,10 @@ button#submit {
     padding-bottom: 1em;
 }
 
+.table {
+    overflow-x:auto
+}
+
 /* ###################################*/
 /* Config x axis labels on small screens */
 
