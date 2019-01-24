@@ -1,7 +1,8 @@
-//*************************************************************************************************
-// Map Function  This code snipet was adapted from stack overflow, "Loading latitude longitude
-// data using Google maps API using CSV data" See https://goo.gl/G6GvHn for more details"
-// The original notes have been kept to demonstrate the work and how it was done.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Map Function  This code snippet was adapted from stack overflow, "Loading latitude longitude             //
+// data using Google maps API using CSV data" See https://goo.gl/G6GvHn for more details"                   //
+// The original notes have been kept to demonstrate the work and how it was done.                           //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 function initMap() {} // now it IS a function and it is in global
 

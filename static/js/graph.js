@@ -8,11 +8,13 @@ queue()
                 
             } );
 
-//*************************************************************************************************
-// Crossfilter Function   
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Crossfilter Function                                                                                     //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
 function makeGraphs(error, clinicData, attendenceData) {
         // create our crossfilter dimensions
-        var ndx = crossfilter(clinicData);
+        var ndx = crossfilter(clinicData); 
         var visits = crossfilter(attendenceData);
         var parseDate = d3.time.format("%d/%m/%Y").parse;
         attendenceData.forEach(function (d){
@@ -69,8 +71,10 @@ function makeGraphs(error, clinicData, attendenceData) {
 
 
 }
-//*************************************************************************************************
-// Medical facility selector switch (shows number of facilities in the dropdown)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Medical facility selector switch (shows number of facilities in the dropdown)                            //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
 function show_facility_type_selector(ndx) {
 
 
@@ -82,8 +86,9 @@ function show_facility_type_selector(ndx) {
                 .promptText('All Sites');
                 
 }
-//*************************************************************************************************
-// Medical facility name selector switch (shows specific facility in the dropdown)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Medical facility name selector switch (shows specific facility in the dropdown)                          //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 function show_facility_name_selector(ndx) {
         facilitySelectorDim = ndx.dimension(dc.pluck('name'));
@@ -93,8 +98,11 @@ function show_facility_name_selector(ndx) {
                 .group(facilitySelectorGroup)
                 .promptText('Site Names');
 }
-//*************************************************************************************************
-//Total routine appointments
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Total routine appointments                                                                               //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
 function show_routineAppointments_number(ndx){
         var routineDim = ndx.dimension(dc.pluck('select_all'));
 
@@ -105,8 +113,11 @@ function show_routineAppointments_number(ndx){
                 .group(totalRoutineAppointmentsGroup);
                 
 }
-//*************************************************************************************************
-//Total urgent appointments
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Total urgent appointments                                                                                //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
 function show_urgentAppointments_number(ndx){
         var urgentDim = ndx.dimension(dc.pluck('select_all'));
 
@@ -119,8 +130,9 @@ function show_urgentAppointments_number(ndx){
 
 }
 
-//*************************************************************************************************
-// Count of all the urgent appointments at facilities in a pie-chart 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Count of all the urgent appointments at facilities in a pie-chart                                        //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 function show_urgent_pie_type(ndx) {
         var urgentDim = ndx.dimension(dc.pluck('type'));
@@ -136,8 +148,10 @@ function show_urgent_pie_type(ndx) {
                 
 
 }
-//*************************************************************************************************
-// Count of all the routine appointments at facilities in a pie-chart 
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Count of all the routine appointments at facilities in a pie-chart                                       //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 function show_routine_pie_type(ndx) {
         var routineDim = ndx.dimension(dc.pluck('type'));
@@ -153,8 +167,11 @@ function show_routine_pie_type(ndx) {
                 
 
 }
-//*************************************************************************************************
-// Number of staff per facility 
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Number of staff per facility                                                                             //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
 function show_number_staff(ndx) {
 
         var doctorsDim = ndx.dimension(dc.pluck('type'));
@@ -195,8 +212,11 @@ function show_number_staff(ndx) {
                 .yAxis().ticks(10);
 
 }
-//*************************************************************************************************
-// Patient waiting time
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Patient waiting time                                                                                     //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
 function show_average_waiting_time(ndx) {
 
 
@@ -254,8 +274,11 @@ function show_average_waiting_time(ndx) {
                 .yAxisLabel("Minutes")
                 .yAxis().ticks();
 }
-//*************************************************************************************************
-//Available departments
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Available departments                                                                                    //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
 function show_services_number(ndx){
         var servicesDim = ndx.dimension(dc.pluck('type'));
                
@@ -301,8 +324,11 @@ function show_services_number(ndx){
         .group(numberOfServicesGroup);   
 
 }
-//*************************************************************************************************
-//Patient Numbers per Year Line Chart
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Patient Numbers per Year Line Chart                                                                      //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
 function show_number_visits(visits){
 
 var date_dim = visits.dimension(dc.pluck('date'));
@@ -386,8 +412,11 @@ var compositeChart = dc.compositeChart("#composite-chart");
 
 
 }  
-//*************************************************************************************************
-//Data table
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Data table                                                                                               //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
 function show_departments(ndx){
         var departmentsDim = ndx.dimension(dc.pluck('name'));
         var chart = dc.dataTable('#table_data')
@@ -412,28 +441,33 @@ function show_departments(ndx){
         ])
         .order(d3.descending)
         .order(d3.ascending)
+
+        // modification to include pagination
         .on('preRender', update_offset)
         .on('preRedraw', update_offset)
         .on('pretransition', display)
+        
         .on('renderlet', function (table) {
                 table.selectAll('tr.dc-table-group').remove();
         })
         update();
-        /* chart.beginSlice(ofs);
-        chart.endSlice(ofs+pag); */
+        
         chart.render();
         dc.renderAll;       
         
         
 
-//*************************************************************************************************
-//Data table pagination
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Data table pagination.  Adapted from reference material from https://dc-js.github.io/dc.js/              //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 
         var chart;
         var ndx;              
         var ofs = 0, pag = 10;
-        document.getElementById("last").onclick = last;
+
+        // modification to modification to make function accessible from user interface
+        document.getElementById("last").onclick = last; 
         document.getElementById("next").onclick = next;
 
         function update_offset() {
@@ -452,6 +486,8 @@ function show_departments(ndx){
                 .text(ofs+pag-1);
                 d3.select("#last")
                 .attr('disabled', ofs-pag<0 ? 'true' : null);
+
+                // modification to access clinicData
                 d3.select("#next")
                 .attr('disabled', ofs+pag>=ndx.size() ? 'true' : null);
                 d3.select("#size").text(ndx.size());
