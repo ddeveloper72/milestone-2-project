@@ -23,7 +23,7 @@ To do this, I had to crate my own custom data-set.  I sourced my data from diffe
 ## 1. The Project Goals:  Create a  dc.js and d3.js dashboard
 
 <div>
-<img src="https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/fullPageSmall.png" alt="Screenshot of the webpage"style="float: right; margin-left: 10px; margin-top: 5px; margin-bottom: 5px;"> <p>Fig 1 Webpage screenshot</p></div>
+<img src="https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/fullPage.png" alt="Screenshot of the webpage"style="float: right; margin-left: 10px; margin-top: 5px; margin-bottom: 5px;"> <p>Fig 1 Webpage screenshot</p></div>
 
 During the development of my database I used faker.js and found that because I am new to web development, I was unable to refine the use of the tool to my specific needs within the confines of the project time-line.  I used faker.js  to generate average the number of patient visits per medical facility type as well as number of patient visits per facility type every day for a year, 2017.  I then cleaned up may data when it was in csv format using Microsoft Excel and the =RANDBETWEEN(lowerval,upperval) function.  The result is functional static data.  If you have a look at the composite chart how ever, because it’s random patient count values, there is no variation in the data from week to week, month to month or any seasonal variations which would have been nice to demonstrate.  The purpose of the project was to create a dashboard and not a database, though the project could be changed in time to use actual real-world dynamic data if it becomes available in the form of an API.
 
