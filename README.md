@@ -20,7 +20,7 @@ To do this, I had to crate my own custom data-set.  I sourced my data from diffe
 
 
 
-## 1. The Project Goals:  Create a  dc.js and d3.js dashboard
+## 1. The Project Goals:  Create a  dc.js dashboard
 
 <div>
 <img src="https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/fullPage.PNG" alt="Screenshot of the webpage"style="float: right; margin-left: 10px; margin-top: 5px; margin-bottom: 5px;"> <p>Fig 1 Webpage screenshot</p></div>
@@ -43,16 +43,13 @@ The webpage is made using semantic HTML5 with a Bootstrap grid layout.  I have u
 
 | Focus                                                       | User Needs                                                            | Business Objectives                             |
 |-------------------------------------------------------------|-----------------------------------------------------------------------|-------------------------------------------------|
-| What are you aiming to achieve?                             | To be able to see information about local medical facilities  |  |
-|                                                             | To be able to see graphical stats about medical facilities.  |  |
-| For whom?                                                   | To be able to filter information in the charts |  |
-| TARGET AUDIENCE                                             | To show all this information in a single page application  |  |
+| What are you aiming to achieve?                             | To be able to see information about local medical facilities  | To inform users about our facilities |
+|                                                             | To be able to see graphical stats about medical facilities.  | To advertise where we are located, using a Google maps API |
 |                                                             | To present and demonstrate dc-js charts in the best way possible  |  |
-|                                                             |   |  |
-|                                                             |   |  |
-|                                                             |   |  |
-|                                                             |   |  |
-|                                                             |   |  |
+| For whom?                                                   | Anyone looking for information about our medical facilities |  |
+| TARGET AUDIENCE                                             | Customers with access to mobile devices and PCs  |  |
+
+
 
 
 
@@ -65,13 +62,7 @@ The webpage is made using semantic HTML5 with a Bootstrap grid layout.  I have u
 |                                                             | Use of Bootstrap CSS framework |  |
 |                                                             | Use of JavaScript & jQuery |  |
 |                                                             | Version control managed with Git & GitHub |  |
-|                                                             |  |  |
-|                                                             |  |  |
-|                                                             |  |  |
-|                                                             |  |  |
-|                                                             |  |  |
-|                                                             |  |  |
-|                                                             |  |  |
+
 
 
 #### Structure
@@ -79,13 +70,10 @@ The webpage is made using semantic HTML5 with a Bootstrap grid layout.  I have u
 | Focus                                                       | Interaction Design                                                           | Information Architecture                                                               |
 |-------------------------------------------------------------|------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
 | How is the information structured?                          | Where am I? / How did I get here? / What can I do here? / Where can I go?    | Organizational / Navigational schemas (tree / nested list / hub and spoke / dashboard) |
-|                                                             | The information is presented as a dc-js dashbard | Single root page |
+|                                                             | The information is presented as a dc-js dashboard | Single root page |
 | How is it logically grouped?                                | The nav-bar provides access to an email modal | About/contact |
 |                               							  | The nav-bar provides a link to the project readme on the developers gitHub repository | About/readme |
-|                                                             |  |  |
-|                                                             |  |  |
-|                                                             |  |  |
-|                                                             |  |  |
+
 
 
 #### Skeleton
@@ -94,11 +82,7 @@ The webpage is made using semantic HTML5 with a Bootstrap grid layout.  I have u
 |-------------------------------------------------------------|--------------------------------------------------------|----------------------|---------------------|
 | How will the information be represented?                    | See wireframes                                         |                      |                     |
 | How will the user navigate to the information and features? | See mockups designs |  |  |
-|                                                             |  |  |  |
-|                                                             |  |  |  |
-|                                                             |  |  |  |
-|                                                             |  |  |  |
-|                                                             |  |  |  |
+
 
 
 #### Surface
@@ -115,34 +99,73 @@ Structure will be a bootstrap grid.
 
 ![alt text](https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/gridTable.png "Fig 2 Grid layout shown as table rows")
 
-## **The page layout:**
+## 4. The page layout
+
+The page template has been built using off the shelf Bootstrap v4.2.  I used BooBootstrap cards to contain the charts and google maps graph.  The challenge ahs always been to render the dc-js charts.  I hope that this dashboard demonstrates how useful amazing they are for cross-filtering even larger amounts of data, than what I was able to prepare as a sample.
 
 General Bootstrap Grid Layout:
 
 ![alt text](https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/bootstrapGridLayout.png "Fig 3 Screensot of webpage with the grid overlay")
 
-## **Getting into checking the HTML & CSS Code:**
+## 5. Getting the JavaScript
 
-I wrote this project in VS Code which helped me with much of the programming syntax.  I then used the html and CSS code validator by W3C Validation Service.  I found two open div elements, which were not plainly visible when parsing the code visually. The validation checker found a problem with the border colour used by bootswatch.  I suspect that it is because the the colour is a hexadecimal value with transparency and I felt that there was no need to change something that is already working fine.
+I would like to say that checking the JavaScript has been the most challenging part of this project.  Google Chrome Dev Tools has been my best friend throughout this whole process.  I have used console.log to return my arrays from the start which was essential for learning to see my data and so parse the correct information from objects to integers and dates. The most difficult bugs that I came across were the ones were I couldn't return any data at all, or ones where the faults were in a dc or d3 JavaScript file, brought about by a coding error on my part.  
 
-## **Getting the JavaScript:**
+I discovered errors in my dimensions, were I had used the dimension name more than once across multiple functions.  I had also intermixed dimension and group names.  This was easily solved by completely nailing down how dimensions and groups were used. Fatigue had also had a big influence in causing coding errors. Changing my approach solved many of my problems, but the long lead time the discovery of the root case was difficult. As a new developer, 3 months into going from no coding experience at all, to this project, I found myself using functions as examples from my class tutorials as well as referenced material from google dev tools, stack overflow and [dc-js](https://github.com/dc-js) on gitHub plus numerous other sites.  My coding is probably very long-winded and could be simplified to be more efficient. This will come with experience in time.
 
->I would like to say that checking the JavaScript has been the most challenging part of this project.  Google Chrome Dev Tools has been my best friend throughout this whole process.  I have used console.log to return my arrays from the start which was essential for learning to see my data and so parse the correct information from objects to integers and dates. The most difficult bugs that I came across were the ones were I couldn't return any data at all, or ones where the faults were in a dc or d3 JavaScript file, brought about by a coding error on my part.  
->I discovered errors in my dimensions, were I had used the dimension name more than once across multiple functions.  I had also intermixed dimension and group names.  This was easily solved by completely nailing down how dimensions and groups were used. Fatigue had also had a big influence in causing coding errors. Changing my approach solved many of my problems, but the long lead time the discovery of the root case was difficult. As a new developer, 3 months into going from no coding experience at all, to this project, I found myself using functions as examples from my class tutorials as well as referenced material from google dev tools, stack overflow and [dc-js
-](https://github.com/dc-js) on gitHub plus numerous other sites.  My coding is probably very long-winded and could be simplified to be more efficiendc-jst. This will come with experience in time.
+## 6. Testing & Debugging
 
-## **Testing & Debugging:**
-
->My method of testing has been primarily by peer review.  The very nature of using dc-charts has meant that viewing the charts on smaller mobile devices has been very challenging.  To test the charts and how they are rendered, used Chrome Dev tools to simulate the smaller mobile device screens. I then hosted the site on github so that I could then access it from my Samsung Galaxy S5.  I shared the site with other colleagues on Slack as well as on WhatsApp to gain feedback on the look and feel.  I also tested the site on additional web browser, so see how it was being rendered.  I used:
-
-    * Chrome
-    * Microsoft Edge
-    * Firefox
-    * Opera
+1. Tools used
+   
+   * Written in VSCode
+   * Tested Chrome dev tools & VSCode debugger
+   * HTML and CSS checked with help from the [Markup Validation Service](https://validator.w3.org/)
+   * Version management and test branches created in git
+   * Web deployment hosted on GitHub
   
->One of the most difficult challenges I faced, toward the end of crating all of the charts, was implementing pagination on the data_table.  Paginating is easy to find and implement, if ones data is all hard coded into the html or piped in through an API, but not so easily done with dc-js.  I used git to create a branch of my project then refactored all of my functions to use globalVariables.  This got me working pagination but a less than ideal project.  Thanks to git, I was able to branch my project and then spend time refactoring just the pagination function for the table. Again with help from referencing the dc-js material, I finally resolved the pagination issue.
+2. Challenges
+   
+   1. dc-js charts will use the width and height of the element in which they are placed, but the text will overflow... To fix this, I used media queries to rotate the x-axis text, by 10deg so allowing the text to remain legible.
+   2. The data table pagination was most difficult to resolve and took time to research to create the function as well as to let let onClick call the function.  
+   
+   HTML function call
+   ``` javaScript
+        <input id="last" class="btn btn-primary btn-sm" type="Button" value="Last" onclick="javascript:last()"
+        disabled="true">
+        <input id="next" class="btn btn-primary btn-sm" type="button" value="Next" onclick="javascript:next()">
 
-## **Wire Frames - The Concept Started Here:**
+   ```
+   JavaScript function listener
+   ``` javascript
+        document.getElementById("last").onclick = last; 
+        document.getElementById("next").onclick = next;
+
+        function next() {
+                ofs += pag;
+                update();
+                chart.redraw();
+        }
+        function last() {
+                ofs -= pag;
+                update();
+                chart.redraw();
+        }
+
+   ```
+
+  
+   3. Testing
+
+        My method of testing has been primarily by peer review.  The very nature of using dc-charts has meant that viewing the charts on smaller mobile devices has been very challenging.  To test the charts and how they are rendered, I used Chrome Dev tools to simulate the smaller mobile device screens. I then hosted the site on gitHub so that I could then access it from other mobile devices.  I shared the site with other colleagues on Slack as well as on WhatsApp to gain feedback on the look and feel.  I also tested the site on additional web browser, so see how it was being rendered.  I used:
+
+   * Chrome
+   * Microsoft Edge
+   * Firefox
+   * Opera
+  
+        One of the most difficult challenges I faced, toward the end of crating all of the charts, was implementing pagination on the data_table.  I found Pagination tools available which were simple to implement, if ones data is all hard coded into the html or linked in through an API, but not so easily done with dc-js.  I used git to create a branch of my project then refactored all of my functions to use globalVariables.  This got me working pagination but left me with a less than ideal project.  Thanks to git again, I was able to branch my project and then spend time refactoring just the pagination function for the table. Again with help from referencing the dc-js material, I finally resolved the pagination issue.
+
+## 7. Wire Frames - The Concept Started Here
 >The webpage evolved from these concept drawings:
 
 ![alt text](https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/projectIdea-1.png "Fig 4 Project Idea Page 1")
