@@ -51,11 +51,32 @@ a:not([href]):not([tabindex]) {
     font-size: 1em;
 }
 
+.reset {
+    padding-left: 20px;
+}
+
 select, button {
 
     margin-left:5px;
     background-color: beige;
     border-color: #185ddd9d;
+}
+
+.main-title {
+    font-size: 2rem;
+}
+
+.title {
+    font-size: 1.8rem;
+}
+
+@media only screen and (max-width: 768px){
+    .main-title {
+        font-size: 2rem;
+    }    
+    .title {
+        font-size: 1rem;
+    }
 }
 
 
@@ -194,6 +215,11 @@ div.dc-chart {
     font-weight: 500;
 }
 
+@media only screen and (max-width: 769px){
+select, button {
+    font-size: 11px;
+    }
+}
 
 #service_type_selector, #facility_name_selector {
     display: block;

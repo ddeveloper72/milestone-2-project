@@ -83,27 +83,46 @@
         <!--Page Heading and Medical Centre Type and Medical Centre Name Selectors-->
 
         <div class="container">
-            <div class="col-12 -col-sm">
-                <h1 class="card-title">Your Local Medical Services</h1>
+            <div class="row">
+                <div class="col-12 -col-sm">
+                    <h1 class="main-title">Your Local Medical Services</h1>
+                </div>
             </div>
+
+
+
+
             <div class="row">
                 <div class="col-12 col-sm">
-                    <h4 class="card-title">Medical Centre Type:</h4>
-                    <small>
-                        <a href="javascript:dc.filterAll(); dc.renderAll();" class="btn btn-sm" data-toggle="tooltip"
-                            data-placement="right" title="Select to reset">Reset</a>
-                    </small>
-                    <br>
-                    <div id="service_type_selector" class="list-box"></div>
+                    
+                        <h4 class="title">Medical Centre Type:</h4>
+                        <div class="row">
+                            <div id="service_type_selector" class="list-box"></div>
+                            <div class="row reset">
+                                <small>
+                                    <a href="javascript:dc.filterAll(); dc.renderAll();" class="btn btn-sm" data-toggle="tooltip"
+                                    data-placement="right" title="Select to reset">Reset</a>
+                                </small>
+
+                            </div>
+                        </div>
                 </div>
+
+
+
+
                 <div class="col-12 col-sm">
-                    <h4 id="bookmark1" class="card-title">Medical Centre Name:</h4>
-                    <small>
-                        <a href="javascript:dc.filterAll(); dc.renderAll();" class="btn btn-sm" data-toggle="tooltip"
-                            data-placement="right" title="Select to reset">Reset</a>
-                    </small>
-                    <br>
-                    <div id="facility_name_selector" class="list-box"></div>
+                    <h4 id="bookmark1" class="title">Medical Centre Name:</h4>
+                    <div class="row">
+                        <div id="facility_name_selector" class="list-box"></div>
+                        <div class="row reset">
+                            <small>
+                                <a href="javascript:dc.filterAll(); dc.renderAll();" class="btn btn-sm" data-toggle="tooltip"
+                                    data-placement="right" title="Select to reset">Reset</a>
+                            </small>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,7 +156,7 @@
                                 <h2 class="card-title">Appointment Proportions |
                                     <small>
                                         <a href="javascript:dc.filterAll(); dc.renderAll();" class="btn btn-sm"
-                                            data-toggle="tooltip" data-placement="right" title="Select to reset">Reset</a>
+                                            data-toggle="tooltip" data-placement="top" title="Select to reset">Reset</a>
                                     </small>
                                 </h2>
                                 <div class="row">
