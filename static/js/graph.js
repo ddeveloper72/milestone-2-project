@@ -141,8 +141,7 @@ function show_urgent_pie_type(ndx) {
 
         var totalUrgentAppointments = urgentDim.group().reduceSum(dc.pluck('urgent'));
         dc.pieChart("#urgent_type_pie")
-                /* .height(180)
-                .radius(120) */                
+                             
                 .dimension(urgentDim)
                 .group(totalUrgentAppointments)
                 .transitionDuration(1500)
@@ -160,8 +159,7 @@ function show_routine_pie_type(ndx) {
 
         var totalRoutineAppointmentsGroup = routineDim.group().reduceSum(dc.pluck('routine')); 
         dc.pieChart("#routine_type_pie")
-                /* .height(180)
-                .radius(120) */
+                
                 .dimension(routineDim)
                 .group(totalRoutineAppointmentsGroup)
                 .transitionDuration(1500)
@@ -189,8 +187,7 @@ function show_number_staff(ndx) {
 
         var stackedChart = dc.barChart("#staff_numbers");
         stackedChart
-                /* .width(540)
-                .height(250) */
+                
                 .margins({
                         top: 30,
                         right: 50,
@@ -254,8 +251,7 @@ function show_average_waiting_time(ndx) {
         
 
         dc.barChart("#ave_waiting_times")
-                /* .width(480)
-                .height(250) */
+                
                 .margins({
                         top: 30,
                         right: 50,
@@ -314,8 +310,7 @@ function show_services_number(ndx){
         }
 
         dc.rowChart("#departments")
-        /* .width(480)
-        .height(250) */
+        
         .margins({top: 10, left: 10, right: 10, bottom: 20})
         .valueAccessor(function (d) {
                 return d.value.average;
@@ -380,8 +375,7 @@ var medClinicDim = date_dim.group().reduceSum(function (d){
 
 var compositeChart = dc.compositeChart("#composite-chart"); 
             compositeChart
-                /* .width(540)
-                .height(250) */
+                
                 .dimension(date_dim)
                 .x(d3.time.scale().domain([minDate, maxDate]))
                 .yAxisLabel("Patients per day")
