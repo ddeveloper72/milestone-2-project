@@ -9,7 +9,9 @@ queue()
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 function makeGraphs(error, clinicData, attendenceData) {
-        // create our crossfilter dimensions
+
+// create our crossfilter dimensions
+
         var ndx = crossfilter(clinicData); 
         var visits = crossfilter(attendenceData);
         var parseDate = d3.time.format("%d/%m/%Y").parse;
@@ -59,10 +61,13 @@ function makeGraphs(error, clinicData, attendenceData) {
         show_departments(ndx)
         
         
-        
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//       
+// Console logs used in development                     //
+//                                                      //
+//      console.log(clinicData);                        //
+//      console.log(attendenceData);                    //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// 
 
-        console.log(clinicData);
-        console.log(attendenceData);
         dc.renderAll();
 
 
@@ -132,11 +137,12 @@ function show_urgentAppointments_number(ndx){
 
 function show_urgent_pie_type(ndx) {
         var urgentDim = ndx.dimension(dc.pluck('type'));
+        
 
         var totalUrgentAppointments = urgentDim.group().reduceSum(dc.pluck('urgent'));
         dc.pieChart("#urgent_type_pie")
-                .height(180)
-                .radius(120)
+                /* .height(180)
+                .radius(120) */                
                 .dimension(urgentDim)
                 .group(totalUrgentAppointments)
                 .transitionDuration(1500)
@@ -154,8 +160,8 @@ function show_routine_pie_type(ndx) {
 
         var totalRoutineAppointmentsGroup = routineDim.group().reduceSum(dc.pluck('routine')); 
         dc.pieChart("#routine_type_pie")
-                .height(180)
-                .radius(120)
+                /* .height(180)
+                .radius(120) */
                 .dimension(routineDim)
                 .group(totalRoutineAppointmentsGroup)
                 .transitionDuration(1500)

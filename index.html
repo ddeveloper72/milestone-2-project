@@ -83,11 +83,11 @@
         <!--Page Heading and Medical Centre Type and Medical Centre Name Selectors-->
 
         <div class="container">
-            <div class="col-xs-12">
+            <div class="col-12 -col-sm">
                 <h1 class="card-title">Your Local Medical Services</h1>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm">
+                <div class="col-12 col-sm">
                     <h4 class="card-title">Medical Centre Type:</h4>
                     <small>
                         <a href="javascript:dc.filterAll(); dc.renderAll();" class="btn btn-sm" data-toggle="tooltip"
@@ -96,7 +96,7 @@
                     <br>
                     <div id="service_type_selector" class="list-box"></div>
                 </div>
-                <div class="col-xs-12 col-sm">
+                <div class="col-12 col-sm">
                     <h4 id="bookmark1" class="card-title">Medical Centre Name:</h4>
                     <small>
                         <a href="javascript:dc.filterAll(); dc.renderAll();" class="btn btn-sm" data-toggle="tooltip"
@@ -113,9 +113,9 @@
         <div class="container">
             <div class="row">
 
-                <div class="card col-xs-12 col-sm">
+                <div class="card col-12 col-sm">
                     <div class="card-body">
-                        <div class="container">
+                        
                             <h2 class="card-title">Geographic Locations of Medical Facilities</h2>
                             <br>
                             <div id="map" class="custom-chart">Map</div>
@@ -126,45 +126,44 @@
                                     out of the
                                     map.</p>
                             </div>
-                        </div>
-                    </div>
+                        </div>                   
                 </div>
 
-                <div class="card col-xs-12 col-sm">
+                
+                <div class="card col-12 col-sm">
                     <div class="card-body">
-                        <div class="container">
 
-                            <div class="col-xs-12 col-sm">
-                                <H2 class="card-title">Appointment Proportions |
+                            <div class="col-12">
+                                <h2 class="card-title">Appointment Proportions |
                                     <small>
                                         <a href="javascript:dc.filterAll(); dc.renderAll();" class="btn btn-sm"
                                             data-toggle="tooltip" data-placement="right" title="Select to reset">Reset</a>
                                     </small>
-                                </H2>
+                                </h2>
                                 <div class="row">
-                                    <div class="col-xs-12 col-sm ">
+                                    <div class="col-12">
                                         <i class="fas fa-exclamation-circle" aria-hidden="true"> Urgent Visits: </i>
                                         <span class="number-box" id="urgent_appointments"></span>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-12 col-sm">
-                                        <div id="urgent_type_pie" class="pie-chart col-xs-12"></div>
+                                    <div class="col-12">
+                                        <div id="urgent_type_pie" class="pie-chart center"></div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-12 col-sm">
+                                    <div class="col-12">
                                         <i class="fas fa-plus-circle" aria-hidden="true"> Routine Visits: </i>
                                         <span class="number-box" id="routine_appointments"></span>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-12 col-sm">
-                                        <div id="routine_type_pie" class="pie-chart col-xs-12"></div>
+                                    <div class="col-12">
+                                        <div id="routine_type_pie" class="pie-chart center"></div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-12 col-sm">
+                                    <div class="col-12">
                                         <div class="card-text">
                                             <p>Medical facilities have been categorised into Hospitals, Medical
                                                 Centres, Medical Clinics, Walk-in
@@ -182,7 +181,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                
             </div>
         </div>
 
@@ -190,7 +189,7 @@
 
         <div class="container mt-auto">
             <div class="row">
-                <div class="card col-xs-12 col-sm">
+                <div class="card col-12 col-sm">
                     <div class="card-body">
                         <h2 class="card-title">Average Waiting Times |
                             <small>
@@ -201,7 +200,7 @@
                         <div id="ave_waiting_times" class="custom-chart col-12"></div>
                     </div>
                 </div>
-                <div class="card col-xs-12 col-sm">
+                <div class="card col-12 col-sm">
                     <div class="card-body">
                         <h2 class="card-title">Staff Numbers Per Facility |
                             <small>
@@ -209,7 +208,7 @@
                                     data-placement="right" title="Select to reset">Reset</a>
                             </small>
                         </h2>
-                        <div id="staff_numbers" class="custom-chart col-xs-12 col-sm"></div>
+                        <div id="staff_numbers" class="custom-chart col-12 col-sm"></div>
                     </div>
                 </div>
             </div>
@@ -219,7 +218,7 @@
 
         <div class="container mt-auto">
             <div class="row">
-                <div class="card col-xs-12 col-sm">
+                <div class="card col-12 col-sm">
                     <div class="card-body">
                         <h2 class="card-title">Proportion of Services per Facility |
                             <small>
@@ -227,10 +226,10 @@
                                     data-placement="right" title="Select to reset">Reset</a>
                             </small>
                         </h2>
-                        <div id="departments" class="custom-chart col-xs-12 col-sm"></div>
+                        <div id="departments" class="custom-chart col-12"></div>
                     </div>
                 </div>
-                <div class="card col-xs-12 col-sm">
+                <div class="card col-12 col-sm">
                     <div class="card-body">
                         <h2 class="card-title">Patient Visits Per Type of Facility |
                             <small>
@@ -238,7 +237,7 @@
                                     data-placement="right" title="Select to reset">Reset</a>
                             </small>
                         </h2>
-                        <div id="composite-chart" class="custom-chart col-sm"></div>
+                        <div id="composite-chart" class="custom-chart col-12"></div>
                     </div>
                 </div>
             </div>
@@ -248,7 +247,7 @@
 
         <div class="container mt-auto">
             <div class="row">
-                <div class="card col-xs-12 col-sm">
+                <div class="card col-12 col-sm">
                     <div class="card-body d-xs-block d-sm-none">
                         <h2 class="card-title">
                             <i class="fas fa-retweet"></i>

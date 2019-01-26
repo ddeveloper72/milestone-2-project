@@ -9,9 +9,13 @@ a {
     font-size: 0.8em;
 }
 
+a:not([href]):not([tabindex]) {
+    color: #ffffff;
+}
+
 .backToTop{
-  padding-left: 15px; 
-  padding-bottom: 10px;  
+    padding-left: 15px; 
+    padding-bottom: 10px;  
 }
 
 .bookmark{
@@ -19,9 +23,14 @@ a {
     font-weight: 400; 
 }
 
-a:not([href]):not([tabindex]) {
-    color: #ffffff;
-}
+.card-title {
+    font-size: 2rem;
+    }
+@media only screen and (max-width: 768px){
+        .card-title {
+            font-size: 1.5rem;
+        }
+    }
 
 .dropdown-menu {
     background-color:#3393ff;
@@ -97,9 +106,30 @@ button#submit {
     margin-top: 0.5em;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
 .dc-chart g.axis text span::before {
     content: "\A";
     white-space: pre;
+}
+
+div.dc-chart {
+    float: left;
+}
+
+@media only screen and (max-width: 761px){
+    div.dc-chart,
+    .svg {
+        overflow-x: visible;
+        display: block;
+        margin: auto;
+          
+    }
 }
 
 .dc-chart .pie-slice {
