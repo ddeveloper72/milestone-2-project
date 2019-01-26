@@ -23,14 +23,29 @@ a:not([href]):not([tabindex]) {
     font-weight: 400; 
 }
 
-.card-title {
-    font-size: 2rem;
+.main-title {
+    font-size: 1.8em;
     }
+
 @media only screen and (max-width: 768px){
-        .card-title {
-            font-size: 1.5rem;
+        .main-title {
+            font-size: 1.6em;
         }
     }
+
+.card-title {
+    font-size: 1.2em;
+    }
+
+@media only screen and (max-width: 768px){
+        .card-title {
+            font-size: 1em;
+        }
+    }
+
+.card-body {
+    font-family: 1em;
+}
 
 .dropdown-menu {
     background-color:#3393ff;
@@ -63,19 +78,19 @@ select, button {
 }
 
 .main-title {
-    font-size: 2rem;
+    font-size: 2em;
 }
 
 .title {
-    font-size: 1.8rem;
+    font-size: 1.8em;
 }
 
 @media only screen and (max-width: 768px){
     .main-title {
-        font-size: 2rem;
+        font-size: 2em;
     }    
     .title {
-        font-size: 1rem;
+        font-size: 1em;
     }
 }
 
@@ -222,7 +237,7 @@ div.dc-chart {
 
 @media only screen and (max-width: 769px){
 select, button {
-    font-size: 11px;
+    font-size: 1em;
     }
 }
 
