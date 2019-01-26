@@ -84,6 +84,10 @@ The webpage is made using semantic HTML5 with a Bootstrap grid layout.  I have u
 | How will the user navigate to the information and features? | See mockups designs |  |  |
 
 
+![alt text](https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/wfselect.PNG "Fig 1 Nav bar & select boxes")
+![alt text](https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/wfsection1.PNG "Fig 2 Map & dc-js pie charts")
+![alt text](https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/wfsection2.PNG "Fig 3 dc-js bar & composit charts")
+![alt text](https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/wfsection3.PNG "Fig 4 dc-js table with pagination")
 
 #### Surface
 
