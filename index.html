@@ -58,9 +58,10 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#"><i class="fas fa-user-md"></i> Medical Services</a>
                 </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
@@ -68,11 +69,11 @@
                                 Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/ddeveloper72/milestone-2-project/blob/master/README.md" target="_blank" ><i class="fas fa-info-circle"></i> Readme</a>
+                            <a class="nav-link" href="https://github.com/ddeveloper72/milestone-2-project/blob/master/README.md"
+                                target="_blank"><i class="fas fa-info-circle"></i> Readme</a>
 
                         </li>
                     </ul>
-                
                 </div>
             </div>
         </nav>
@@ -92,18 +93,18 @@
 
             <div class="row">
                 <div class="col-12 col-sm">
-                    
-                        <h4 class="title">Medical Centre Type:</h4>
-                        <div class="row">
-                            <div id="service_type_selector" class="list-box"></div>
-                            <div class="row reset">
-                                <small>
-                                    <a href="javascript:dc.filterAll(); dc.renderAll();" class="btn btn-sm" data-toggle="tooltip"
-                                    data-placement="right" title="Select to reset">Reset</a>
-                                </small>
 
-                            </div>
+                    <h4 class="title">Medical Centre Type:</h4>
+                    <div class="row">
+                        <div id="service_type_selector" class="list-box"></div>
+                        <div class="row reset">
+                            <small>
+                                <a href="javascript:dc.filterAll(); dc.renderAll();" class="btn btn-sm" data-toggle="tooltip"
+                                    data-placement="right" title="Select to reset">Reset</a>
+                            </small>
+
                         </div>
+                    </div>
                 </div>
 
 
@@ -132,73 +133,73 @@
 
                 <div class="card col-12 col-sm">
                     <div class="card-body">
-                        
-                            <h2 class="card-title">Geographic Locations of Medical Facilities</h2>
-                            <br>
-                            <div id="map" class="custom-chart">Map</div>
-                            <div class="card-body">
-                                <p class="card-text">Each medical facility has its own location identified on the map.
-                                    Hover over the pin to see the facility
-                                    name, or click on it to see the facility type. Use CTRL+Mouse Scroll to zoom in and
-                                    out of the
-                                    map.</p>
-                            </div>
-                        </div>                   
+
+                        <h2 class="card-title">Geographic Locations of Medical Facilities</h2>
+                        <br>
+                        <div id="map" class="custom-chart">Map</div>
+                        <div class="card-body">
+                            <p class="card-text">Each medical facility has its own location identified on the map.
+                                Hover over the pin to see the facility
+                                name, or click on it to see the facility type. Use CTRL+Mouse Scroll to zoom in and
+                                out of the
+                                map.</p>
+                        </div>
+                    </div>
                 </div>
 
-                
+
                 <div class="card col-12 col-sm">
                     <div class="card-body">
 
-                            <div class="col-12">
-                                <h2 class="card-title">Appointment Proportions |
-                                    <small>
-                                        <a href="javascript:dc.filterAll(); dc.renderAll();" class="btn btn-sm"
-                                            data-toggle="tooltip" data-placement="top" title="Select to reset">Reset</a>
-                                    </small>
-                                </h2>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <i class="fas fa-exclamation-circle" aria-hidden="true"> Urgent Visits: </i>
-                                        <span class="number-box" id="urgent_appointments"></span>
-                                    </div>
+                        <div class="col-12">
+                            <h2 class="card-title">Appointment Proportions |
+                                <small>
+                                    <a href="javascript:dc.filterAll(); dc.renderAll();" class="btn btn-sm" data-toggle="tooltip"
+                                        data-placement="top" title="Select to reset">Reset</a>
+                                </small>
+                            </h2>
+                            <div class="row">
+                                <div class="col-12">
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"> Urgent Visits: </i>
+                                    <span class="number-box" id="urgent_appointments"></span>
                                 </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div id="urgent_type_pie" class="pie-chart center"></div>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div id="urgent_type_pie" class="pie-chart center"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <i class="fas fa-plus-circle" aria-hidden="true"> Routine Visits: </i>
-                                        <span class="number-box" id="routine_appointments"></span>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <i class="fas fa-plus-circle" aria-hidden="true"> Routine Visits: </i>
+                                    <span class="number-box" id="routine_appointments"></span>
                                 </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div id="routine_type_pie" class="pie-chart center"></div>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div id="routine_type_pie" class="pie-chart center"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card-text">
-                                            <p>Medical facilities have been categorised into Hospitals, Medical
-                                                Centres, Medical Clinics, Walk-in
-                                                Clinics and local General Practice services. The Pie-Charts above show
-                                                the visual proportions
-                                                of all the urgent and routine visits respectively. If one type of
-                                                facility is selected,
-                                                then the pie-chat will show 100% for that one type. Click
-                                                <a class="paragraph-link" href="javascript:dc.filterAll(); dc.renderAll();">
-                                                    here</a> to reset the charts.
-                                            </p>
-                                        </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card-text">
+                                        <p>Medical facilities have been categorised into Hospitals, Medical
+                                            Centres, Medical Clinics, Walk-in
+                                            Clinics and local General Practice services. The Pie-Charts above show
+                                            the visual proportions
+                                            of all the urgent and routine visits respectively. If one type of
+                                            facility is selected,
+                                            then the pie-chat will show 100% for that one type. Click
+                                            <a class="paragraph-link" href="javascript:dc.filterAll(); dc.renderAll();">
+                                                here</a> to reset the charts.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                
+                </div>
+
             </div>
         </div>
 
@@ -312,7 +313,8 @@
                                 <span id="size"></span>.
                                 <button id="last" class="btn btn-primary btn-sm" type="Button" onclick="javascript:last()"
                                     disabled="true"><i class="fas fa-chevron-left"></i> Back</button>
-                                <button id="next" class="btn btn-primary btn-sm" type="button" onclick="javascript:next()">Next <i class="fas fa-chevron-right"></i></button>
+                                <button id="next" class="btn btn-primary btn-sm" type="button" onclick="javascript:next()">Next
+                                    <i class="fas fa-chevron-right"></i></button>
                                 <a class="backToTop" href="#" target="_top">back to the top</a>
                             </div>
                         </div>
@@ -336,7 +338,7 @@
                     </div>
                     <section>
                         <div class="row">
-                                                    
+
                             <p class="modal-text">This project is for demonstration purposes only and is part of a
                                 college milestone project for
                                 assessment. The data for the medical sites relating to staff numbers and services is
@@ -386,14 +388,15 @@
                             <div id="success"></div>
                             <div class="form-group">
                                 <div class="row">
-                                        <div class="col-md-2">
-                                            <button type="submit" class="btn btn-primary " id="sendMessageButton">Send</button>
-                                        </div>
-                                        <div class="col-md-6 ml-auto">
-                                            <span class="text-muted">Milestone 2 project for the Code Institute by Duncan Falconer, 2018</span>
-                                        </div>
-                                </div>                         
-                            </div>                         
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn btn-primary " id="sendMessageButton">Send</button>
+                                    </div>
+                                    <div class="col-md-6 ml-auto">
+                                        <span class="text-muted">Milestone 2 project for the Code Institute by Duncan
+                                            Falconer, 2018</span>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
