@@ -163,7 +163,8 @@ div.dc-chart {
     cursor: pointer;
 }
 
-#composite-chart dc-chart, #composite-chart g.axis.x text {  
+#composite-chart dc-chart, 
+#composite-chart g.axis.x text {  
     transform: rotate(20deg); /* x axis label text too long. Add rotation */
     -webkit-transform: rotate(20deg);
     -moz-transform: rotate(20deg);
@@ -242,7 +243,7 @@ select, button {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 
-@media only screen and (max-width: 415px){
+@media only screen and (max-width: 1170px){
 #ave_waiting_times dc-chart, 
 #ave_waiting_times g.axis.x text {  
     transform: rotate(8deg); /* x axis label text too long. Add rotation */
@@ -253,7 +254,7 @@ select, button {
     }
 }
 
-@media only screen and (max-width: 415px){
+@media only screen and (max-width: 1170px){
 #staff_numbers dc-chart, 
 #staff_numbers g.axis.x text {  
     transform: rotate(8deg); /* x axis label text too long. Add rotation */
