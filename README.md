@@ -196,3 +196,5 @@ Once you have click save, it will take some time for the site to deploy.  Refres
 * Friends and colleagues from the Code Institute who were involved in the user testing and were able to provide me with valuable user feedback to help me improve and debug my code.
 
 
+<h6><span class="text-muted">Milestone 2 project for the Code Institute <br />by Duncan Falconer, 2018</span></h6>
+
