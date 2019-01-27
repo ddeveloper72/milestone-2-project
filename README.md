@@ -173,7 +173,20 @@ I discovered errors in my dimensions, were I had used the dimension name more th
   
         One of the most difficult challenges I faced, toward the end of crating all of the charts, was implementing pagination on the data_table.  I found Pagination tools available which were simple to implement, if ones data is all hard coded into the html or linked in through an API, but not so easily done with dc-js.  I used git to create a branch of my project then refactored all of my functions to use globalVariables.  This got me working pagination but left me with a less than ideal project.  Thanks to git again, I was able to branch my project and then spend time refactoring just the pagination function for the table. Again with help from referencing the dc-js material, I finally resolved the pagination issue.
 
-## 7. References
+## 7. Deployment
+
+To deploy this site to GitHub Pages follow the following steps:
+
+        └── <> Code --> select Settings tab
+                        └── Github Pages
+                                └── Select None in Source --> Select master branch
+                                                                        └──  Select Save
+
+Once you have click save, it will take some time for the site to deploy.  Refresh the page. You will be provide with a notification that the site is published with a link to the site.  See the graphic below.
+<img src="https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/deployment5.png" width="560" alt="Fig 5 dc-js table with pagination"/>
+
+
+## 8. References
 
 * GitHub dc-js dimensional charting JavaScript library: for information on how to construct the dc-js charts and table pagination
 * Google developer for information on how to setup and use google maps API
