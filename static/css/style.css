@@ -6,7 +6,7 @@
 
 a { 
     cursor: pointer;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 a:not([href]):not([tabindex]) {
@@ -23,6 +23,18 @@ a:not([href]):not([tabindex]) {
     font-weight: 400; 
 }
 
+.card-title {
+    font-size: 1.2em;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.734);
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: rgb(255, 255, 255);
+}
+
 .main-title {
     font-size: 1.8em;
     }
@@ -33,9 +45,6 @@ a:not([href]):not([tabindex]) {
         }
     }
 
-.card-title {
-    font-size: 1.2em;
-    }
 
 @media only screen and (max-width: 768px){
         .card-title {
