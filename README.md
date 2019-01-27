@@ -7,28 +7,22 @@
 
 ### by Duncan Falconer for the Code Institute, 2018
 
-1. The project brief from the Code Institute can be found by clicking [here](https://github.com/ddeveloper72/milestone-2-project/blob/master/readme/brief.md).
-
-This project is about creating a dashboard filled with useful information and incorporates good user experience on both a small mobile device scree as well as a desktop monitor.  I have used the Bootswatch Cosmo theme with bootstrap v.4.1
+1. The project brief from the Code Institute can be found by clicking [here](https://github.com/ddeveloper72/milestone-2-project/blob/master/readme/brief.md). This project is about creating a dashboard filled with useful information and incorporates good user experience on both a small mobile device screen as well as a desktop monitor.  I have used the Bootswatch Cosmo theme with bootstrap v.4.1
   
-2. The Guidelines for the project from the Code Institute can be found by clicking [here](https://github.com/ddeveloper72/milestone-2-project/blob/master/readme/guidelines.md).
-   
-The purpose of this webpage is to show data about my local medical facilities in a visual way.
-
-To do this, I had to crate my own custom data-set.  I sourced my data from different locations.  First  I used the google maps search function to locate any medical facilities near me.  Based on the search results, I collected the names and gps coordinates which I later used with the google maps API to place markers on my map.  I then researched actual clinics, found in the search, to study the kind of  information that was published by them.  I collated the common characteristics of each one, such as the advertised service categories offered, details about the number of practitioners at the facilities and contact details, open close times etc.  I then sorted and sifted through the data to pick out elements that was useful and changed other elements to make them generic to maintain the privacy of the facilities that I was researching. 
+2. The Guidelines for the project from the Code Institute can be found by clicking [here](https://github.com/ddeveloper72/milestone-2-project/blob/master/readme/guidelines.md). The purpose of this webpage is to show data about my local medical facilities in a visual way.  To do this, I had to crate my own custom data-set.  I sourced my data from different locations.  First  I used the google maps search function to locate any medical facilities near me.  Based on the search results, I collected the names and gps coordinates which I later used with the google maps API to place markers on my map.  I then researched actual clinics, found in the search, to study the kind of  information that was published by them.  I collated the common characteristics of each one, such as the advertised service categories offered, details about the number of practitioners at the facilities and contact details, open close times etc.  I then sorted and sifted through the data to pick out elements that was useful and changed other elements to make them generic to maintain the privacy of the facilities that I was researching. 
 
 
 
 
-## 1. The Project Goals:  Create a  dc.js dashboard
+## 1. The Project Goals:  Create a D3.js and dc.js dashboard
 
 During the development of my database I used faker.js and found that because I am new to web development, I was unable to refine the use of the tool to my specific needs within the confines of the project time-line.  I used faker.js  to generate average the number of patient visits per medical facility type as well as number of patient visits per facility type every day for a year, 2017.  I then cleaned up may data when it was in csv format using Microsoft Excel and the =RANDBETWEEN(lowerval,upperval) function.  The result is functional static data.  If you have a look at the composite chart how ever, because it’s random patient count values, there is no variation in the data from week to week, month to month or any seasonal variations which would have been nice to demonstrate.  The purpose of the project was to create a dashboard and not a database, though the project could be changed in time to use actual real-world dynamic data if it becomes available in the form of an API.
 
-I would like to have been able to link the google maps geolocation data with the cross filter data from the charts.  Unfortunately I was unsuccessful in all my attempts to do this. I have an idea to output the dynamic crossfilter data as a table, which includes the lat lng coordinates.  My work around would be to use the google maps JavaScript to read the coordinates from the dynamic html table.  I will look to see if this is possible to do.   I would like to credit a user in stack overflow for the JavaScript method which I adopted, to read and place the markers on my own google map, along with information tags from my csv database.  There is no name given.  Here is a link to the resource on [stackoverflow](https://goo.gl/G6GvHn)
+I would like to have been able to link the google maps geolocation data with the cross filter data from the charts.  Unfortunately I was unsuccessful in my attempts at the time to do this. I have an idea to output the dynamic crossfilter data as a table, which includes the lat lng coordinates.  My work around would be to use the google maps JavaScript to read the coordinates from the returned crossfilter data.  I would like to credit a user on stack overflow for the JavaScript method which I adopted, to read and place the markers on my own google map, along with information tags from my csv database.  There is no name given.  Here is a link to the resource on [stackoverflow](https://goo.gl/G6GvHn)
 
 This project relies heavily on dc-js charts.  My inspiration came from the class tutorials as well as from work by the likes of Gordon Woodhull.  I spent a lot of my time reading through the [dc.js - Dimensional Charting Javascript Library](http://dc-js.github.io/dc.js/)
 
-I have included a contact modal that uses emailJS for the dashboard user to send a message via a google email account.
+As my own addition to the project scope, I have included a contact modal that uses emailJS for the dashboard user to send a message through a google email account.
 
 The webpage is made using semantic HTML5 with a Bootstrap grid layout.  I have used css media queries as well as full screen width bootstrap grid layout for small screen sizes.
 
