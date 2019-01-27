@@ -9,7 +9,7 @@
 
 1. The project brief from the Code Institute can be found by clicking [here](https://github.com/ddeveloper72/milestone-2-project/blob/master/readme/brief.md). This project is about creating a dashboard filled with useful information and incorporates good user experience on both a small mobile device screen as well as a desktop monitor.  I have used the Bootswatch Cosmo theme with bootstrap v.4.1
   
-2. The Guidelines for the project from the Code Institute can be found by clicking [here](https://github.com/ddeveloper72/milestone-2-project/blob/master/readme/guidelines.md). The purpose of this webpage is to show data about my local medical facilities in a visual way.  To do this, I had to crate my own custom data-set.  I sourced my data from different locations.  First  I used the google maps search function to locate any medical facilities near me.  Based on the search results, I collected the names and gps coordinates which I later used with the google maps API to place markers on my map.  I then researched actual clinics, found in the search, to study the kind of  information that was published by them.  I collated the common characteristics of each one, such as the advertised service categories offered, details about the number of practitioners at the facilities and contact details, open close times etc.  I then sorted and sifted through the data to pick out elements that was useful and changed other elements to make them generic to maintain the privacy of the facilities that I was researching. 
+2. The Guidelines for the project from the Code Institute can be found by clicking [here](https://github.com/ddeveloper72/milestone-2-project/blob/master/readme/guidelines.md). The purpose of this webpage is to show data about my local medical facilities in a visual way.  To do this, I had to create my own custom data-set.  I sourced my data from different locations.  First  I used the google maps search function to locate any medical facilities near me.  Based on the search results, I collected the names and gps coordinates which I later used with the google maps API to place markers on my map.  I then researched actual clinics, found in the search, to study the kind of  information that was published by them.  I collated the common characteristics of each one, such as the advertised service categories offered, details about the number of practitioners at the facilities and contact details, open close times etc.  I then sorted and sifted through the data to pick out elements that was useful and changed other elements to make them generic to maintain the privacy of the facilities that I was researching. 
 
 
 
@@ -72,7 +72,7 @@ The webpage is made using semantic HTML5 with a Bootstrap grid layout.  I have u
 | Focus                                                       | Interface Design                                       | Navigational Design  | Information Design  |
 |-------------------------------------------------------------|--------------------------------------------------------|----------------------|---------------------|
 | How will the information be represented?                    | See wireframes                                         |                      |                     |
-| How will the user navigate to the information and features? | See mockups designs |  |  |
+| How will the user navigate to the information and features? | See wireframes |  |  |
 
 ### Wireframes
 

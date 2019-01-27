@@ -306,8 +306,12 @@ select, button {
     border-bottom: 1px solid #ddd; 
   }
 
+  #table_data tr:nth-child(even){
+      background-color: #f2f2f2;
+  }
+
 #table_data tr.header, #table_data tr:hover {
-    background-color: #f1f1f1;
+    background-color: #fad0bb;
   }
 
 th { 
