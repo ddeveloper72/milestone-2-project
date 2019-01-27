@@ -175,7 +175,7 @@ I discovered errors in my dimensions, were I had used the dimension name more th
 
 ## 7. Deployment
 
-To deploy this site to GitHub Pages follow the following steps:
+To deploy this site to GitHub Pages from the project dashboard, follow the following steps:
 
         └── <> Code --> select Settings tab
                         └── Github Pages
@@ -190,7 +190,8 @@ Once you have click save, it will take some time for the site to deploy.  Refres
 
 * GitHub dc-js dimensional charting JavaScript library: for information on how to construct the dc-js charts and table pagination
 * Google developer for information on how to setup and use google maps API
-* @Eventyret for showing me how to user faker faker to generate my data
+* @Eventyret for showing me how to user faker to generate my data.
+* @Miro who showed me how to return my debug and console log my data.
 * Stackoverflow for everything else!
 * Friends and colleagues from the Code Institute who were involved in the user testing and were able to provide me with valuable user feedback to help me improve and debug my code.
 
