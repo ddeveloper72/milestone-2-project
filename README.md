@@ -84,16 +84,17 @@ The webpage is made using semantic HTML5 with a Bootstrap grid layout.  I have u
 | How will the user navigate to the information and features? | See mockups designs |  |  |
 
 
-![alt text](https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/wfselect.png "Fig 1 Nav bar & select boxes")
-Bootstrap card: col-12 col-sm.  Chart: col-12,  svg pie-chart scale: not programable
+<img src="https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/wfselect.png" width="280" alt="Fig 1 Nav bar & select boxes"/>
+1. Bootstrap card: col-12 col-sm.
 
-![alt text](https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/wfsection1.png =250x "Fig 2 Map & dc-js pie charts")
-Bootstrap card: col-12 col-sm.  Chart: col-12,  svg chart scale: dynamic
+<img src="https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/wfsection1.png" width="280" alt="Fig 2 Map & dc-js pie charts"/>
+2. Bootstrap card: col-12 col-sm.  Chart: col-12,  svg pie-chart scale: not programable
 
-![alt text](https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/wfsection2.png =250x "Fig 3 dc-js bar & composit charts")
-Bootstrap card: col-12 col-sm.  Chart: col-12,  svg chart scale: dynamic
+<img src="https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/wfsection2.png" wudth="280" alt="Fig 3 dc-js bar & composit charts"/>
+3. Bootstrap card: col-12 col-sm.  Chart: col-12,  svg chart scale: dynamic
 
-![alt text](https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/wfsection3.png =250x "Fig 4 dc-js table with pagination")
+<img src="https://github.com/ddeveloper72/milestone-2-project/blob/master/static/images/readme/wfsection3.png" wudth="280" alt="Fig 4 dc-js table with pagination"/>
+4. Bootstrap card: col-12 col-sm.  Chart: col-12,  svg chart scale: dynamic
 
 #### Surface
 
